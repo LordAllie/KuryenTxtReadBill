@@ -18,6 +18,7 @@
     <string name="upload_backup">Upload Backup</string>
     <string name="backup_json">Backup Reading</string>
     <string name="backup_to_pc">Backup to PC</string>
+    <string name="generateTransact">Generate Transactions</string>
 
     <!--textview & title-->
     <string name="enterMasterKey">Please enter master key.</string>
