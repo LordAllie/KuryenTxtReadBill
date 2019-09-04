@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivMode"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_check" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#1482ff" />
+
+                    <TextView
+                        android:id="@+id/tvRoute"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Route 0001"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/font_black"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#1482ff" />
+
+                    <TextView
+                        android:id="@+id/tvSeqNo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="SEQ 10"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/font_black"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/vOldSeqNo"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="#1482ff" />
+
+                    <TextView
+                        android:id="@+id/tvOldSeqNo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center|center_vertical"
+                        android:padding="5dp"
+                        android:text="Old SEQ 10"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/font_black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#0d0d0d" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvAcctName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="54"
+                            android:gravity="center"
+                            android:text="@string/acctname"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="#810c38"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="30"
+                            android:gravity="start"
+                            android:text="@string/meterno"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMeterNo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="70"
+                            android:gravity="end"
+                            android:text="@string/meterno"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="30"
+                            android:gravity="start"
+                            android:text="@string/acctno"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvAcctNo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="70"
+                            android:gravity="end"
+                            android:text="@string/acctno"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="40"
+                            android:gravity="start"
+                            android:text="@string/ratecode"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvRateCode"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="60"
+                            android:gravity="end"
+                            android:text="@string/ratecode"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/lblPrevRdg"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="start"
+                            android:text="@string/prevReading"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tvPrevRdg"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="end"
+                            android:text="@string/num"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/red"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="start"
+                            android:text="@string/curReading"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textColor="@color/font_black"
+                            android:textStyle="bold" />
+
+
+                        <EditText
+                            android:id="@+id/etCurRdg"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:background="@drawable/edittext_box"
+                            android:gravity="end"
+                            android:inputType="number|numberSigned|numberDecimal"
+                            android:padding="5dp"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llSaveMore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:text="@string/save"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/btnShowOtherBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:text="@string/others"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/btnHideOtherBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:text="@string/hide"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llShowOtherBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <Button
+                            android:id="@+id/btnAddAvg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:enabled="false"
+                            android:text="@string/setAvg"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btnCopyLastMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:enabled="true"
+                            android:text="@string/copyLastMonth"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llPrintNotificationRemarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+                        <Button
+                            android:id="@+id/btnPrintNotification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:text="@string/printNotification"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btnShowRemarks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:text="@string/addremarks"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btnHideRemarks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_v2"
+                            android:text="@string/hideremarks"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llRemarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/llRemarksTemplate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/spRouteList"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textAppearance="?android:textAppearanceLarge" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/etRemarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_box"
+                            android:gravity="start"
+                            android:lines="5"
+                           android:maxLength="40"
+                            android:textAppearance="?android:textAppearanceLarge" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llPrintBill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <Button
+                        android:id="@+id/btnPrintBill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_v2"
+                        android:gravity="center"
+                        android:text="@string/printbill"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/chartView"
+            android:layout_width="384dp"
+            android:layout_height="340dp"
+            android:visibility="invisible">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/consumptionGraph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"></com.github.mikephil.charting.charts.BarChart>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="#979797"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_prev"
+            android:gravity="start"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/readCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1/432"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/font_black"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_next"
+            android:gravity="end"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

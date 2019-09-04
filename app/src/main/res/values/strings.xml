@@ -1,0 +1,259 @@
+<resources>
+    <string name="app_name">KuryenTxt</string>
+    <string name="app_released_date">09/02/2019</string>
+    <!-- Homepage Text -->
+    <string name="transact">Transact</string>
+    <string name="reports">Reports</string>
+    <string name="tools">Tools</string>
+    <string name="sync">Sync</string>
+    <!--Configuration Title -->
+    <string name="changepass">Password</string>
+    <string name="changeserverip">Server IP</string>
+    <string name="updatedu">Update DU</string>
+    <string name="acctrec">Accounts</string>
+    <string name="devid">Device ID</string>
+    <string name="info">App Info</string>
+    <string name="viewrate">Current Rate</string>
+    <string name="updateacc">Update Account</string>
+    <string name="upload_backup">Upload Backup</string>
+    <string name="backup_json">Backup Reading</string>
+    <string name="backup_to_pc">Backup to PC</string>
+
+    <!--textview & title-->
+    <string name="enterMasterKey">Please enter master key.</string>
+    <string name="logout_text"> You have been logout from your last session.</string>
+    <string name="welcomemsg">Welcome to KuryenTxt Read &amp; Bill App.</string>
+    <string name="activationmsg">Please enter Activation Code</string>
+    <string name="set_ip">Please Set the Server IP Address</string>
+    <string name="set_port">Web Server Port</string>
+    <string name="activated">Device has been activated</string>
+    <string name="setpass">Set your password</string>
+    <string name="password">Password</string>
+    <string name="confirmpass">Confirm Password</string>
+    <string name="ratename">Rate Name</string>
+    <string name="perkwcharge">Current Rate</string>
+    <string name="perkwchargeStl">Current STL Rate</string>
+    <string name="perkwchargesc">Current per KW Charge SC</string>
+    <string name="perkwchargestl">Current per KW Charge STL</string>
+    <string name="lifelinedc">Lifeline Discount</string>
+    <string name="fixedcharge">Fixed Charge</string>
+    <string name="acctno">Acct#</string>
+    <string name="acctname">Name</string>
+    <string name="ratecode">Rate Code</string>
+    <string name="prevReading">Prev Reading</string>
+    <string name="curReading">Reading</string>
+    <string name="previousConsumption">Prev kWh Used</string>
+    <string name="printreading">Print Reading</string>
+    <string name="readagain">Back</string>
+    <string name="readnext">Read Next</string>
+    <string name="genbill">Generate Bill</string>
+    <string name="acctid">Account ID</string>
+    <string name="meterno">Meter#</string>
+    <string name="mce">MCE</string>
+    <string name="addoncharges">Addon Charges</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="reading">Reading</string>
+    <string name="amount">Amount</string>
+    <string name="generateTransact">Generate Transactions</string>
+
+    <!--Modify Reading-->
+    <string name="editremarks">Edit Remarks</string>
+    <string name="editreading">Modify Reading</string>
+    <string name="oldcur">Current Reading:</string>
+    <string name="newcur">New Reading:</string>
+
+    <!--Generate Bill-->
+    <string name="billnotice">Billing Notice</string>
+    <string name="cutoff">Cut-off Period</string>
+    <string name="rundate">Rundatetime</string>
+    <string name="billid">Bill No</string>
+    <string name="coreloss">Coreloss</string>
+    <string name="kwhAddon">Kwh Add-on</string>
+    <string name="consumption">kWh Used</string>
+    <string name="multiplier">Meter Multiplier</string>
+    <string name="totalConsumption">Total kWh Used</string>
+    <string name="perkwch">Per Kwh Charge</string>
+    <string name="totalperkwch">Total PerKw Charge</string>
+    <string name="totalbill">Total Bill</string>
+    <string name="showdetailed">Show Detailed</string>
+
+    <!-- Number and date format-->
+    <string name="decimal">0.00</string>
+    <string name="dateformat">0000-00-00</string>
+    <string name="ipformat">No Set IP Address</string>
+    <string name="portformat">No Set Port</string>
+    <string name="timeformat">00:00</string>
+    <string name="num">00</string>
+    <string name="kwh">kwh</string>
+
+    <!--Detailed Bill-->
+    <string name="note">FOR DISCONNECTION AFTER DUE DATE</string>
+    <string name="duedate">Due Date</string>
+    <string name="reader">Reader </string>
+    <string name="deviceid">Device ID</string>
+    <string name="printbill">Print Bill</string>
+    <string name="notif">This is NOT valid as Official Receipt <br> Please pay in the office or to
+        Authorized Collector and demand official receipt.</br><br> Thank You!</br></string>
+
+    <string name="filter">Filter</string>
+    <string name="print">Print</string>
+    <string name="printSummary">Print Bill Summary</string>
+    <string name="printAllBill">Print All Bills</string>
+    <string name="download">Download</string>
+    <string name="upload">Upload</string>
+    <string name="diagnostic"><u>Diagnostics</u></string>
+    <string name="errLogs"><u>Error Logs</u></string>
+    <string name="noInternet">No Internet Connection</string>
+    <string name="readmeter">Read Meter</string>
+    <string name="seqno">Sequence No.:</string>
+    <string name="save">Save</string>
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="addremarks">Remarks</string>
+    <string name="printNotification">Notification</string>
+    <string name="hideremarks">Hide Remarks</string>
+    <string name="remarks">Add remarks if you see a problem, if not just leave it blank.</string>
+    <string name="viewlifeline">View Lifeline</string>
+    <string name="currentbill">Current Bill</string>
+    <string name="amountDue">Total Amount Due</string>
+    <string name="Send">Send</string>
+    <string name="Ok">OK</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Void">Void</string>
+    <string name="unVoid">Unvoid</string>
+    <string name="EnterCurrentServerIP">Enter Current Server IP</string>
+    <string name="EnterNewServerIP">Enter New Server IP</string>
+    <string name="appInfo">App Info</string>
+    <string name="devID">Device ID: </string>
+    <string name="appVersion">Version: </string>
+    <string name="releasedDate">Released Date: </string>
+    <string name="printingDelay">Printing Delay: </string>
+    <string name="isSuppressedPrintBuffer">Is Suppresed Print Buffer: </string>
+    <string name="oldPassword">Old Password: </string>
+    <string name="newPassword">New Password: </string>
+    <string name="confirmPassword">Confirm Password: </string>
+    <string name="prevRead">Previous Reading</string>
+    <string name="curRead">Current Reading</string>
+    <string name="reupload">Reupload</string>
+
+    <string name="clearDataEnterPass">Please enter your password</string>
+
+    <string name="clearData">Clear Data</string>
+    <string name="userName">Readers Name</string>
+    <string name="serverIP">Change Server IP</string>
+    <string name="localIP">Change Local IP</string>
+
+    <string name="currentLocalIPandPort">Local IP Address and Port</string>
+    <string name="EnterNewLocalIP">New IP Address</string>
+    <string name="EnterNewLocalPort">New Port</string>
+    <string name="OldRDM">Old RDM</string>
+    <string name="NewRDM">Nominate new RDM</string>
+    <string name="lblIPAddress">IP Address</string>
+    <string name="lblport">Port</string>
+    <string name="version">V</string>
+    <string name="ver">0.0</string>
+    <string name="change_du_prop">Change DU Properties</string>
+    <string name="set_du_code">DU Code</string>
+    <string name="set_du_add">Address</string>
+
+    <string name="http">http://</string>
+    <string name="base_url">/KuryentxtAPI/</string>
+    <string name="acct_url">accounts</string>
+    <string name="acct_version">1.6</string>
+    <string name="no_dl_account_err_msg">No downloaded accounts \nPlease contact your administrator</string>
+    <string name="rate_master_url">ratemaster</string>
+    <string name="rate_master_status">ratemaster/check-rate-status</string>
+    <string name="route_def_url">routedefinition</string>
+    <string name="rateperkwchargedetail">rateperkwchargedetailV2</string>
+    <string name="coreloss_url">coreloss</string>
+    <string name="kwh_addon_url">addonkwh</string>
+    <string name="rate_addon_url">rateaddon</string>
+    <string name="rateaddontranspecial">rateaddon-special</string>
+    <string name="area">du-area-rate</string>
+    <string name="remarks_url">remarks</string>
+    <string name="cutoff_master_url">cutoffmaster</string>
+    <string name="fix_charge_url">fixedchargedetails</string>
+    <string name="ll_detail_url">lifeline</string>
+    <string name="charge_type">chargeheader</string>
+    <string name="du_prop">duproperties</string>
+    <string name="dls">logs/dls</string>
+    <string name="dlf">logs/dlf</string>
+    <string name="uls">logs/uls</string>
+    <string name="ulf">logs/ulf</string>
+    <string name="accountOtherCharges">accountOtherCharges</string>
+    <string name="otherCharges">otherCharges</string>
+    <string name="surcharges">surcharges</string>
+    <string name="accountBillAux">accountBillAux</string>
+
+    <!--CHARGES for Bill Computation-->
+    <string name="other_charges">OTHER CHARGES</string>
+    <string name="govt_charges">GOVT CHARGES</string>
+    <string name="dsm_charges">DSM CHARGES</string>
+    <string name="gt_charges">GT CHARGES</string>
+
+    <string name="ip_port_notes">Note: To change IP Address and Port settings, press the edit icon on the left.</string>
+    <string name="auth_warning">Warning: </string>
+    <string name="activate">Activate</string>
+    <string name="yes">Yes</string>
+
+    <string name="app_key">appPassword</string>
+    <string name="login">Login</string>
+    <string name="server_not_found">"Can't connect to the server "</string>
+    <string name="checkConnection">Test Connection</string>
+    <string name="unlock">Unlock</string>
+    <string name="lock_msg">Your app is locked \n Please contact your administrator</string>
+    <string name="isactive">No</string>
+    <string name="logoInfo">Note: Check your image directory found in your Tomcat Directory Folder</string>
+    <string name="tbillafterdd">Bill After Due</string>
+    <string name="properties">Properties</string>
+    <string name="back">Back</string>
+    <string name="update">Update</string>
+    <string name="discodate">Disco Date</string>
+    <string name="addmeter">Add Meter</string>
+    <string name="addnewmeter">New Meter</string>
+    <string name="routecode">Route Code</string>
+    <string name="msn">Meter Serial No</string>
+
+    <!-- Sync Messages-->
+    <string name="existing_bills">Existing bill(s) found. Upload the bills to your local server.</string>
+    <string name="records_found">Records found, this will delete all the existing data.\n Do you want to proceed?</string>
+    <string name="nodatafound">No data found!, Please check your web service.</string>
+
+    <!--Alert Header Notif-->
+    <string name="warning">Warning!</string>
+
+    <!-- Clear Data Messages-->
+    <string name="clearDataMsg">This will delete all the records and bill transaction on this app. Are you sure you want to proceed?</string>
+
+    <string name="clearDataSuccessMsg">All records and bill transaction successfully deleted</string>
+    <string name="show_all_connected">Active</string>
+    <string name="no_rate_err_msg1">Failed to Generate Bill \n</string>
+    <string name="no_rate_err_msg2">is not available \nPlease check your downloaded rates</string>
+    <string name="reorder">Seq#</string>
+    <string name="read">Read</string>
+    <string name="totalBillAfterDue">Total bill after due</string>
+    <string name="routes">route</string>
+    <string name="failedtouploadbillsmsg1">Failed to upload bill(s) cause by network interruption. </string>
+    <string name="faildtouploadbillmsg2">Total bill(s) uploaded</string>
+    <string name="saved">Saved</string>
+    <string name="uploadmsgsucess">All bills are successfully uploaded</string>
+    <string name="failed">Failed</string>
+    <string name="nodatareceived">No data received</string>
+    <string name="uploadsuccesswitherr">Bill(s) successfully uploaded, except for</string>
+    <string name="uploaderr">record(s) failed to upload the bill(s)</string>
+    <string name="failedtouploadmsg">Failed to upload </string>
+    <string name="qrcode_filename">bill_qr_code.bmp</string>
+    <string name="barcode_filename">bill_bar_code.bmp</string>
+    <string name="reminder">TURN OFF WiFi, Data,\n GPS, NFC and Bluetooth \nfor longer battery life.</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="others">More</string>
+    <string name="hide">Hide</string>
+    <string name="setAvg">Set Average</string>
+    <string name="copyLastMonth">Copy Last</string>
+
+    <string name="downloadDate">Download Datetime</string>
+    <string name="uploadDate">Upload Datetime</string>
+
+
+</resources>

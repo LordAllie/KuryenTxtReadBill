@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_shape"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="left"
+        android:padding="10dp"
+        android:text="Warning!"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnYes"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
+            android:layout_gravity="left"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_v2"
+            android:text="Proceed"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnVoid"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_v2"
+            android:fontFamily="sans-serif"
+            android:text="@string/Void"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_v2"
+            android:fontFamily="sans-serif"
+            android:text="@string/Cancel"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

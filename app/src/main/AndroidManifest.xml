@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xesi.xenuser.kuryentxtreadbill">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".network.Kuryentxt"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".WelcomeScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".IPServerSetting"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+
+        <activity
+            android:name=".Authenticate"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".PasswordCreation"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Homepage"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Sync"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".NewMeter"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".NewMeterViewer"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Tools"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Transaction"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt"
+            android:windowSoftInputMode="stateUnchanged|adjustPan" />
+        <activity
+            android:name=".ReadMeter"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ShowDetailedBill"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Reports"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Diagnostics"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Logout"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".LockedApp"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+        <activity
+            android:name=".Logs"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
+
+        <receiver
+            android:name=".network.NetworkReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

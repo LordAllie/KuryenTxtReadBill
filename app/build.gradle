@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.xesi.xenuser.kuryentxtreadbill"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 66
+        versionName "3.0.2.6"
+        multiDexEnabled true
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+    }
+    buildTypes {
+        Kuryentxt {
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/xesi.library.jar')
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    compile 'org.apache.commons:commons-lang3:3.5'
+    compile 'com.clough.android.androiddbviewer:androiddbviewer:1.0.0'
+    // retrofit 2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    // GSON body parser
+    compile 'com.google.code.gson:gson:2.7'
+    // RxJava and RxAndroid
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.7'
+    compile 'org.bouncycastle:bcprov-jdk15on:1.59'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
+    }
+}
+// Required because retrolambda is on maven central
+repositories {
+    mavenCentral()
+}
+apply plugin: 'com.android.application' //or apply plugin: 'java'
+
+
+afterEvaluate {
+    tasks.matching {
+        it.name.startsWith('dex')
+    }.each { dx ->
+        if (dx.additionalParameters == null) {
+            dx.additionalParameters = ['--multi-dex']
+        } else {
+            dx.additionalParameters += '--multi-dex'
+        }
+    }
+}

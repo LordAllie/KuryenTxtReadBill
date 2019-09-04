@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tvrateName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/ratename"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/text_dark"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/perkwcharge"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/text_dark" />
+
+        <TextView
+            android:id="@+id/tvPerkwCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/decimal"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/text_dark"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fixedcharge"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/text_dark" />
+
+        <TextView
+            android:id="@+id/tvFixedCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/decimal"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/text_dark"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
