@@ -232,14 +232,13 @@ public class Tools extends BaseActivity {
 
     }
 
-
     public void btnBackupToPC(View view){
         String json = headerJson(sharedPref.getString("authID", ""), sharedPref.getString("idRDM", ""), String.valueOf(sharedPref.getInt("idReader", 0)));
         helper.saveJsonHeader(json);
         if(!sharedPref.getString("authID", "").equals("") && !sharedPref.getString("idRDM", "").equals("0") && sharedPref.getInt("idReader", 0)!=0) {
-        File[] files = new File(jsonDIR + "/RNBFile").listFiles();
-        if (files.length > 0) {
-            uploadFile();
+            File[] files = new File(jsonDIR + "/RNBFile").listFiles();
+            if (files.length > 0) {
+                uploadFile();
             } else
                 Toast.makeText(getApplicationContext(), "No files to backup.", Toast.LENGTH_LONG).show();
         }else{
