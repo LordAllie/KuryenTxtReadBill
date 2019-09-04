@@ -139,54 +139,6 @@ public class AccountDao extends BaseDAO {
         return contactInfoList;
     }
 
-    public List<AccountModelV2> getAllAccount(boolean showAllActive,
-                                              boolean reOrderSequence, boolean isRead) {
-        List<AccountModelV2> contactInfoList = new ArrayList<>();
-        String orderQuery;
-        String addQuery = "";
-
-        // order by Is Read
-        if (isRead)
-            orderQuery = " isRead DESC ";
-        else
-            orderQuery = " isRead ";
-
-        // order by SeqNo
-        if (reOrderSequence)
-            orderQuery = orderQuery + ", sequenceNumber DESC, id DESC ";
-        else
-            orderQuery = orderQuery + ", sequenceNumber, id ";
-
-        // show all active only
-        if (showAllActive)
-            addQuery = " AND isActive = 'Y' ";
-
-
-        String selectQuery = " SELECT * FROM " + TABLE_NAME +
-                " WHERE isRead = 0 " +  addQuery + " ORDER BY " + orderQuery;
-
-        mcfDB = this.getWritableDatabase();
-        Cursor cursor = null;
-        try {
-            cursor = mcfDB.rawQuery(selectQuery, null);
-            // looping through all rows and adding to list
-            if (cursor.moveToFirst()) {
-                do {
-                    contactInfoList.add(setQueryAccountModels(cursor));
-                }
-                while (cursor.moveToNext());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            // return batch list
-            cursor.close();
-            mcfDB.close();
-        }
-
-        return contactInfoList;
-    }
-
     public List<String> getRouteList() {
         List<String> routeList = new ArrayList<>();
 
