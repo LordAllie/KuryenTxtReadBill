@@ -191,7 +191,6 @@ public class Tools extends BaseActivity {
         retrofitHandler = new RetrofitHandler(this);
         List<AccountModelV2> accountModelV2List = displayAccts(false, false, false);
 
-        Toast.makeText(this, String.valueOf(accountModelV2List.size()), Toast.LENGTH_SHORT).show();
 
     }
 

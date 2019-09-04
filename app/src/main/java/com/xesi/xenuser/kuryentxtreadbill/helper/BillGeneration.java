@@ -726,6 +726,7 @@ public class BillGeneration extends BaseDAO {
             totalBillAfterDueDate = totalBillAfterDueDate.setScale(2, BigDecimal.ROUND_HALF_UP);
             billHeaderDAO.updateOneFieldByBillNo(totalBillAfterDueDate.toString(), billModel.getBillHeaders().getBillNo(),"totalBillAfterDueDate");
             billHeader.setTotalBillAfterDueDate(totalBillAfterDueDate.toString());
+            billHeader.setApkVersion(sharedPref.getString("version", ""));
             billModel.setBillHeaders(billHeader);
             return gson.toJson(billModel);
 

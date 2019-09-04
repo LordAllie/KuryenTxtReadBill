@@ -51,6 +51,7 @@ import com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen;
 import com.xesi.xenuser.kuryentxtreadbill.model.message.Message;
 import com.xesi.xenuser.kuryentxtreadbill.network.Kuryentxt;
 import com.xesi.xenuser.kuryentxtreadbill.network.NetworkReceiver;
+import com.xesi.xenuser.kuryentxtreadbill.util.PrintReceipt;
 import com.xesi.xenuser.kuryentxtreadbill.util.UniversalHelper;
 
 
@@ -109,6 +110,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     private DbCreate _dbCreate;
     public final int[] checkingError = new int[1];
     private int uploadedCnt=0;
+    private boolean isConnected;
     protected void onCreate(Bundle savedInstanceState) {
 
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -178,8 +180,24 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     private void syncData() {
         btnDownload = (Button) findViewById(R.id.btnDL);
         btnUpload = (Button) findViewById(R.id.btnUL);
-        btnDownload.setOnClickListener(v -> isRdmReady(idRDM));
-        btnUpload.setOnClickListener(v -> uploadData());
+        btnDownload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isConnected)
+                    isRdmReady(idRDM);
+                else
+                    msgDialog.showDialog("Connection","No Wifi/Intern connection.");
+            }
+        });
+        btnUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isConnected)
+                    uploadData();
+                else
+                    msgDialog.showDialog("Connection","No Wifi/Intern connection.");
+            }
+        });
     }
 
     private void isRdmReady(String idRDM) {
@@ -356,13 +374,15 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     private void showSendButton(boolean isConnected) {
         String message;
         if (!isConnected) {
-            btnDownload.setEnabled(false);
-            btnUpload.setEnabled(false);
-            message = "No Internet connection. Download and upload are disabled.";
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            this.isConnected=false;
+//            btnDownload.setEnabled(false);
+//            btnUpload.setEnabled(false);
+//            message = "No Internet connection. Download and upload are disabled.";
+//            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         } else {
-            btnDownload.setEnabled(true);
-            btnUpload.setEnabled(true);
+//            btnDownload.setEnabled(true);
+//            btnUpload.setEnabled(true);
+            this.isConnected=true;
         }
     }
 
@@ -654,6 +674,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     @Override
     public void onNetworkConnectionChanged(boolean isConnected) {
         showSendButton(isConnected);
+        this.isConnected=isConnected;
     }
 
     private boolean checkConnection() {

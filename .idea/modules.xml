@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KuryenTxtRead&amp;Bill.iml" filepath="$PROJECT_DIR$/KuryenTxtRead&amp;Bill.iml" />
-      <module fileurl="file://C:\Users\Daryll-POGI\workspace\forGenerics\KuryenTxtRead&amp;Bill\KuryenTxtRead&amp;Bill.iml" filepath="C:\Users\Daryll-POGI\workspace\forGenerics\KuryenTxtRead&amp;Bill\KuryenTxtRead&amp;Bill.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Daryll-POGI\workspace\forGenerics\KuryenTxtRead&amp;Bill\app\app.iml" filepath="C:\Users\Daryll-POGI\workspace\forGenerics\KuryenTxtRead&amp;Bill\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -211,32 +211,32 @@ public class Homepage extends BaseActivity implements NetworkReceiver.Connectivi
     public void sync(View view) {
 
         settingDialog("Checking your server, please wait...");
-        observables.checkServer().subscribe(new Observer<ConChecker>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-            }
-
-            @Override
-            public void onNext(ConChecker conChecker) {
-                if (conChecker.getCode() == 200 && conChecker.getMessage().equals("Connected")) {
-                    mProgressDialog.dismiss();
+//        observables.checkServer().subscribe(new Observer<ConChecker>() {
+//            @Override
+//            public void onSubscribe(Disposable d) {
+//            }
+//
+//            @Override
+//            public void onNext(ConChecker conChecker) {
+//                if (conChecker.getCode() == 200 && conChecker.getMessage().equals("Connected")) {
+//                    mProgressDialog.dismiss();
                     Intent i = new Intent(getApplicationContext(), Sync.class);
                     startActivity(i);
                     finish();
-                }
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                mProgressDialog.dismiss();
-                msgDialog.checkConnectionDialog(e.getMessage() + "\n\nPlease check your server IP or\n the API Service");
-            }
-
-            @Override
-            public void onComplete() {
-                mProgressDialog.dismiss();
-            }
-        });
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//                mProgressDialog.dismiss();
+//                msgDialog.checkConnectionDialog(e.getMessage() + "\n\nPlease check your server IP or\n the API Service");
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//                mProgressDialog.dismiss();
+//            }
+//        });
     }
 
     //Tools
@@ -282,7 +282,7 @@ public class Homepage extends BaseActivity implements NetworkReceiver.Connectivi
     }
 
     private void checkConnection() {
-        showSendButton(isConnected);
+//        showSendButton(isConnected);
     }
 
     private void showSendButton(boolean isConnected) {

@@ -402,4 +402,5 @@ public class MsgDialog {
     public interface DialogListener {
         void onReturnValue(String value);
     }
+
 }
