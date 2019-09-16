@@ -84,17 +84,23 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
             //tvAcctName.setTextColor(Color.BLUE);
             tvAcctName.setTextColor(Color.parseColor("#08639A"));
             tvAcctName.setText(WordUtils.capitalizeFully(billHeaders.get(position).getAcctName()));
-            tvIsPrinted.setText("YES");
-            tvIsPrinted.setTextColor(Color.parseColor("#003300"));
+
         } else if (billHeaders.get(position).getIsPrinted() == 0 && billHeaders.get(position).getIsUploaded() == 0) {
             llAcctBg.setBackgroundResource(R.drawable.border_bottom);
             tvAcctName.setTextColor(Color.RED);
             tvAcctName.setTextColor(Color.parseColor("#810c38"));
             tvAcctName.setText(WordUtils.capitalizeFully(billHeaders.get(position).getAcctName()));
-            tvIsPrinted.setText("NO");
-            tvIsPrinted.setTextColor(Color.RED);
+
         }
 
+        if (billHeaders.get(position).getIsPrinted() == 1) {
+            tvIsPrinted.setText("YES");
+            tvIsPrinted.setTextColor(Color.parseColor("#003300"));
+        } else {
+            tvIsPrinted.setText("NO");
+            tvIsPrinted.setTextColor(Color.RED);
+            
+        }
         tvAcctNo.setText(billHeaders.get(position).getOldAccountNo());
         tvmeterNo.setText(billHeaders.get(position).getMeterNo());
         tvDate.setText(billHeaders.get(position).getRunDate());
