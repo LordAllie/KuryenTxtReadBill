@@ -366,6 +366,21 @@ public class ReadMeterFragment extends Fragment implements View.OnClickListener 
         if (curRdg < prevRdg) {
             msgDialog.showConfirmDialogVoid("Is this a meter reset", value -> {
                 if (value.equals("Yes")) {
+//                    editor.putString("remarks", "Meter Reset");
+//                    editor.commit();
+//                    accountDao.updateReadingAndIsRead(curRdg, accountModelV2.getSequenceNumber(), accountModelV2.getIdRoute(), accountModelV2.getId());
+//                    boolean lastSeq = lastRecordSeqNo == accountModelV2.getSequenceNumber();
+//                    if (lastSeq) {
+//                        btnNext.setEnabled(false);
+//                        showReadingDialog("You reach the last record on the list.",value);
+//                    } else
+//                        accountNavigator("getReadMeterDataNext", isChecked);
+//                    String addQuery = "";
+//                    if (isChecked)
+//                        addQuery = "isActive = 'Y' AND ";
+//                    firstRecordSeqNo =  Integer.parseInt(genericDao.getOneField("sequenceNumber","arm_account","WHERE " +addQuery+"isRead = 0 AND routeCode=",accountModelV2.getRouteCode(),"ORDER BY sequenceNumber LIMIT 1","0"));
+//                    if (firstRecordSeqNo == accountModelV2.getSequenceNumber())
+//                        btnPrev.setEnabled(false);
                     msgDialog.promptReadingEntry(curRdg, value1 -> {
                         if (value1.equals("Yes")) {
                             double dKwhConsumption = helper.calculateResetMeterConsumption(curRdg, prevRdg);

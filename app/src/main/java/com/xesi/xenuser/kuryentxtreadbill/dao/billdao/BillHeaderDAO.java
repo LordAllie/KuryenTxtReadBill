@@ -482,6 +482,25 @@ public class BillHeaderDAO extends BaseDAO {
         return reading;
     }
 
+    public List<Double> getRdg(String gAccountNo) {
+        mcfDB = this.getWritableDatabase();
+        String query = "SELECT curRdg, prevRdg " +
+                " FROM " + TABLE_NAME + " WHERE oldAcctNo = '" + gAccountNo + "'";
+        List<Double> reading = new ArrayList<>();
+        try {
+            Cursor cursor = mcfDB.rawQuery(query, null);
+            if (cursor.moveToFirst()) {
+                reading.add(cursor.getDouble(0));
+                reading.add(cursor.getDouble(1));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            mcfDB.close();
+        }
+        return reading;
+    }
+
     public ArrayList<String> getBillAndRemarksByAcct(String oldAcctNo) {
         ArrayList<String> sReturn = new ArrayList<>();
         mcfDB = this.getWritableDatabase();

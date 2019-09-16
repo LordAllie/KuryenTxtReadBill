@@ -74,6 +74,7 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
         tvReading = (TextView) convertView.findViewById(R.id.tvReading);
         tvReports = (TextView) convertView.findViewById(R.id.tvReports);
 
+
         // SET DATA TO THEM
         if (billHeaders.get(position).getIsUploaded() == 1) {
             llAcctBg.setBackgroundColor(Color.DKGRAY);
@@ -94,6 +95,8 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
             tvIsPrinted.setText("NO");
             tvIsPrinted.setTextColor(Color.RED);
         }
+
+
 
         tvAcctNo.setText(billHeaders.get(position).getOldAccountNo());
         tvmeterNo.setText(billHeaders.get(position).getMeterNo());

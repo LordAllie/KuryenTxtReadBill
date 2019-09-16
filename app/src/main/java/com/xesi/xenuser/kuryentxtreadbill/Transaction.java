@@ -10,8 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -226,10 +228,19 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
                 editor.putString("seqNo", String.valueOf(accountModelV2.getSequenceNumber()));
                 editor.commit();
                 boolean isRead = accountDao.getIsread(accountModelV2.getOldAccountNumber(), idRoute);
+                Boolean isReset=false;
+                if(isRead){
+                    List<Double> reading = billHeaderDAO.getRdg(accountModelV2.getOldAccountNumber());
+
+                    if(reading.get(0)<reading.get(1))
+                        isReset=true;
+                    else isReset=false;
+                }
+
                 if (isRead) {
                     int isUploaded = Integer.parseInt(genericDao.getOneField("isUploaded","armBillHeader","WHERE oldAcctNo= ",String.valueOf(accountModelV2.getOldAccountNumber()),"ORDER BY _id DESC","0"));
                     if (isUploaded == 1) msgDialog.showErrDialog("Edit reading not allowed, the reading is already uploaded on the system.");
-                    else showReadMeterWarning();
+                    else showReadMeterWarning(isReset);
                 } else {
                     Intent i = new Intent(getApplicationContext(), ReadMeter.class);
                     i.putExtra("accountModel", accountModelV2);
@@ -286,7 +297,7 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
 
     }
 
-    private void showReadMeterWarning() {
+    private void showReadMeterWarning(Boolean isReset) {
         billGen.instantiateDb();
         LayoutInflater inflate = LayoutInflater.from(this);
         View promptsView = inflate.inflate(R.layout.dialog_read_alert, null);
@@ -326,6 +337,10 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
             btnPrintNotifcation.setVisibility(View.VISIBLE);
             btnEditRemarks.setVisibility(View.VISIBLE);
             txtEditReadingTitle.setVisibility(View.VISIBLE);
+        }
+
+        if(isReset){
+            btnPrintBill.setEnabled(false);
         }
         alert = alertDialog.create();
         alert.show();
@@ -450,12 +465,40 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         metCurrentReading.setText(df.format(readings.get(0)));
         metCurrentReading.setSelection(metCurrentReading.getText().length());
 
+        if(Double.parseDouble(metCurrentReading.getText().toString()) < Double.parseDouble(df.format(readings.get(1)))) {
+            btnPrintReading.setEnabled(false);
+            btnGenerate.setEnabled(false);
+        }
+
+        metCurrentReading.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(Double.parseDouble(metCurrentReading.getText().toString()) < Double.parseDouble(df.format(readings.get(1)))) {
+                    btnPrintReading.setEnabled(false);
+                    btnGenerate.setEnabled(false);
+                }else {
+                    btnPrintReading.setEnabled(true);
+                    btnGenerate.setEnabled(true);
+                }
+            }
+        });
         mbtnCancel.setOnClickListener(v -> {
             Bundle b = new Bundle();
             Intent intent = new Intent();
             intent.putExtras(b);
             alert.dismiss();
         });
+
         mbtnOK.setOnClickListener(v -> processBill("saved"));
         btnPrintReading.setOnClickListener(v -> processBill("print"));
         btnGenerate.setOnClickListener(v -> {
