@@ -64,6 +64,7 @@
                 android:gravity="end"
                 android:text="@string/isactive"
                 android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
                 android:visibility="gone" />
 
         </LinearLayout>
