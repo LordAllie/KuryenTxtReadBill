@@ -28,7 +28,7 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
     //    AcctFilter filter;
     List<BillHeader> filterList;
     LinearLayout llAcctBg;
-    TextView tvAcctNo, tvAcctName, tvmeterNo, tvDate, tvReading, tvReports;
+    TextView tvAcctNo, tvAcctName, tvmeterNo, tvDate, tvReading, tvReports, tvIsPrinted;
     private BillFilter filter;
 
 
@@ -64,7 +64,9 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
             convertView = inflater.inflate(R.layout.list_account_record, null);
         }
 
+
         llAcctBg = (LinearLayout) convertView.findViewById(R.id.llAcctBg);
+        tvIsPrinted = (TextView) convertView.findViewById(R.id.tvIsPrinted);
         tvAcctNo = (TextView) convertView.findViewById(R.id.tvAcctNo);
         tvAcctName = (TextView) convertView.findViewById(R.id.tvAcctName);
         tvmeterNo = (TextView) convertView.findViewById(R.id.tvmeterNo);
@@ -82,12 +84,17 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
             //tvAcctName.setTextColor(Color.BLUE);
             tvAcctName.setTextColor(Color.parseColor("#08639A"));
             tvAcctName.setText(WordUtils.capitalizeFully(billHeaders.get(position).getAcctName()));
+            tvIsPrinted.setText("YES");
+            tvIsPrinted.setTextColor(Color.GREEN);
         } else if (billHeaders.get(position).getIsPrinted() == 0 && billHeaders.get(position).getIsUploaded() == 0) {
             llAcctBg.setBackgroundResource(R.drawable.border_bottom);
             tvAcctName.setTextColor(Color.RED);
             tvAcctName.setTextColor(Color.parseColor("#810c38"));
             tvAcctName.setText(WordUtils.capitalizeFully(billHeaders.get(position).getAcctName()));
+            tvIsPrinted.setText("NO");
+            tvIsPrinted.setTextColor(Color.RED);
         }
+
         tvAcctNo.setText(billHeaders.get(position).getOldAccountNo());
         tvmeterNo.setText(billHeaders.get(position).getMeterNo());
         tvDate.setText(billHeaders.get(position).getRunDate());

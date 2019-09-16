@@ -47,6 +47,36 @@
             android:weightSum="100">
 
             <TextView
+                android:id="@+id/lblIsPrinted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:text="Is Printed"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvIsPrinted"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="70"
+                android:gravity="end"
+                android:text="@string/isactive"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"

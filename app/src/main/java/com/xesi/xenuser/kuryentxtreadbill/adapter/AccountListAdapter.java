@@ -12,6 +12,7 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.xesi.xenuser.kuryentxtreadbill.R;
+import com.xesi.xenuser.kuryentxtreadbill.dao.base.GenericDao;
 import com.xesi.xenuser.kuryentxtreadbill.model.download.AccountModelV2;
 
 import org.apache.commons.lang3.text.WordUtils;
@@ -24,9 +25,10 @@ import java.util.List;
  */
 public class AccountListAdapter extends BaseAdapter implements Filterable {
     List<AccountModelV2> acctsV2s;
+    GenericDao genericDao;
     AcctFilter filter;
     List<AccountModelV2> filterList;
-    TextView tvAddress, tvSeqNo, tvAccountName, tvMeterNo, tvOldAccountNo, tvGreenCheck, tvIsActive;
+    TextView tvAddress, tvSeqNo, tvAccountName, tvMeterNo, tvOldAccountNo, tvGreenCheck, tvIsActive, tvIsPrinted, lblIsPrinted;
     private Context c;
 
 
@@ -56,10 +58,15 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
     public View getView(int position, View convertView, ViewGroup parent) {
 //        Holder holder = new Holder();
         int[] listItemBackground = new int[]{R.drawable.bg_odd, R.drawable.bg_even};
+        genericDao = new GenericDao(c);
+
+
         LayoutInflater inflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.list_accounts, null);
         }
+        lblIsPrinted = (TextView) convertView.findViewById(R.id.lblIsPrinted);
+        tvIsPrinted = (TextView) convertView.findViewById(R.id.tvIsPrinted);
         tvGreenCheck = (TextView) convertView.findViewById(R.id.tvGreenCheck);
         tvSeqNo = (TextView) convertView.findViewById(R.id.seqno);
         tvOldAccountNo = (TextView) convertView.findViewById(R.id.tvOldAccountNo);
@@ -69,6 +76,8 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
         tvIsActive = (TextView) convertView.findViewById(R.id.tvIsActive);
 
         // SET DATA TO THEM
+        String isPrinted = genericDao.getOneField("isPrinted","armBillHeader","WHERE oldAcctNo =",acctsV2s.get(position).getOldAccountNumber(),"ORDER BY _id DESC","");
+
         String acctName = WordUtils.capitalizeFully(acctsV2s.get(position).getAccountName());
         String add2 = WordUtils.capitalizeFully(acctsV2s.get(position).getAddressLn1());
         tvSeqNo.setText(String.valueOf(acctsV2s.get(position).getSequenceNumber()));
@@ -80,7 +89,19 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
         if (acctsV2s.get(position).getIsRead() == 1) {
             tvGreenCheck.setText("YES");
             tvGreenCheck.setTextColor(Color.parseColor("#003300"));
+            lblIsPrinted.setVisibility(View.VISIBLE);
+            tvIsPrinted.setVisibility(View.VISIBLE);
+            if (isPrinted.equals("1")) {
+                tvIsPrinted.setText("YES");
+                tvIsPrinted.setTextColor(Color.GREEN);
+            } else {
+                tvIsPrinted.setText("NO");
+                tvIsPrinted.setTextColor(Color.RED);
+            }
+
         } else {
+            lblIsPrinted.setVisibility(View.GONE);
+            tvIsPrinted.setVisibility(View.GONE);
             tvGreenCheck.setText("NO");
             tvGreenCheck.setTextColor(Color.RED);
         }
