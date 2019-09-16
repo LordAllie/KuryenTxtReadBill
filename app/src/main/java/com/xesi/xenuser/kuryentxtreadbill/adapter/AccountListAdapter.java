@@ -93,7 +93,7 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
             tvIsPrinted.setVisibility(View.VISIBLE);
             if (isPrinted.equals("1")) {
                 tvIsPrinted.setText("YES");
-                tvIsPrinted.setTextColor(Color.GREEN);
+                tvIsPrinted.setTextColor(Color.parseColor("#003300"));
             } else {
                 tvIsPrinted.setText("NO");
                 tvIsPrinted.setTextColor(Color.RED);
