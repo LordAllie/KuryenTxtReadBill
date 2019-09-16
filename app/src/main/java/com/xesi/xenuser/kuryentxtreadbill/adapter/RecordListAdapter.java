@@ -85,7 +85,7 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
             tvAcctName.setTextColor(Color.parseColor("#08639A"));
             tvAcctName.setText(WordUtils.capitalizeFully(billHeaders.get(position).getAcctName()));
             tvIsPrinted.setText("YES");
-            tvIsPrinted.setTextColor(Color.GREEN);
+            tvIsPrinted.setTextColor(Color.parseColor("#003300"));
         } else if (billHeaders.get(position).getIsPrinted() == 0 && billHeaders.get(position).getIsUploaded() == 0) {
             llAcctBg.setBackgroundResource(R.drawable.border_bottom);
             tvAcctName.setTextColor(Color.RED);
