@@ -92,6 +92,8 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
         tvAccountName.setText(acctName);
         tvAddress.setText(add2);
         tvMeterNo.setText(acctsV2s.get(position).getMeterNumber());
+        tvIsReset.setVisibility(View.GONE);
+        lblIsReset.setVisibility(View.GONE);
         int[] check = {R.drawable.greencheck, R.drawable.recross};
         if (acctsV2s.get(position).getIsRead() == 1) {
             tvGreenCheck.setText("YES");

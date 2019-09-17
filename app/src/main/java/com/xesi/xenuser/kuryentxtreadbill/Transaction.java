@@ -473,7 +473,8 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         metCurrentReading.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                if(s.equals(""))
+                    metCurrentReading.setText("0");
             }
 
             @Override
@@ -483,13 +484,19 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(Double.parseDouble(metCurrentReading.getText().toString()) < Double.parseDouble(df.format(readings.get(1)))) {
-                    btnPrintReading.setEnabled(false);
-                    btnGenerate.setEnabled(false);
-                }else {
-                    btnPrintReading.setEnabled(true);
-                    btnGenerate.setEnabled(true);
-                }
+                if(s!=null || !s.equals("")) {
+                    String cur = "0";
+                    if (metCurrentReading.getText().toString().equals(""))
+                        cur="0";
+                    else cur=metCurrentReading.getText().toString();
+                    if (Double.parseDouble(cur) < Double.parseDouble(df.format(readings.get(1)))) {
+                        btnPrintReading.setEnabled(false);
+                        btnGenerate.setEnabled(false);
+                    } else {
+                        btnPrintReading.setEnabled(true);
+                        btnGenerate.setEnabled(true);
+                    }
+                }else metCurrentReading.setText("0");
             }
         });
         mbtnCancel.setOnClickListener(v -> {

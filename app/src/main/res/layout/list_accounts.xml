@@ -92,7 +92,7 @@
                 android:layout_gravity="end"
                 android:layout_weight="70"
                 android:gravity="end"
-                android:text="Yes"
+                android:text="YES"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:textStyle="bold"
                 android:visibility="gone"
