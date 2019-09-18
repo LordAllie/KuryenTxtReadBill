@@ -72,6 +72,7 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
         tvReading = (TextView) convertView.findViewById(R.id.tvReading);
         tvReports = (TextView) convertView.findViewById(R.id.tvReports);
 
+
         // SET DATA TO THEM
         if (billHeaders.get(position).getIsUploaded() == 1) {
             llAcctBg.setBackgroundColor(Color.DKGRAY);

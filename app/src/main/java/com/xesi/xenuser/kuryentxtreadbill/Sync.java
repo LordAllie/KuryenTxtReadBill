@@ -186,7 +186,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                 if(isConnected)
                     isRdmReady(idRDM);
                 else
-                    msgDialog.showDialog("Connection","No Wifi/Intern connection.");
+                    msgDialog.showDialog("Connection","No Wifi/Internet connection.");
             }
         });
         btnUpload.setOnClickListener(new View.OnClickListener() {
@@ -195,7 +195,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                 if(isConnected)
                     uploadData();
                 else
-                    msgDialog.showDialog("Connection","No Wifi/Intern connection.");
+                    msgDialog.showDialog("Connection","No Wifi/Internet connection.");
             }
         });
     }
@@ -478,11 +478,11 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                         Long.parseLong(idRDM));
                 if (s.equals("OK")) {
                     int i=0;
-                    do{
-                        matchBillNo(GlobalVariable.billNolist.get(i));
-                        i++;
-                    }while(i<GlobalVariable.billNolist.size());
-
+//                    do{
+//                        matchBillNo(GlobalVariable.billNolist.get(i));
+//                        i++;
+//                    }while(i<GlobalVariable.billNolist.size());
+                        billHeaderDAO.updateAll();
                     dialog.dismiss();
                     int billLeft = Integer.parseInt(genericDao.getOneField("COUNT(_id)","armBillHeader","WHERE isUploaded =","0","","0"));
                     if(billLeft<billRecordCount){

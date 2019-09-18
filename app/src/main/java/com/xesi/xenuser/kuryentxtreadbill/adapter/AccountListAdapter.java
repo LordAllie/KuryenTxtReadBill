@@ -10,9 +10,12 @@ import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.xesi.xenuser.kuryentxtreadbill.R;
 import com.xesi.xenuser.kuryentxtreadbill.dao.base.GenericDao;
+import com.xesi.xenuser.kuryentxtreadbill.dao.billdao.BillHeaderDAO;
+import com.xesi.xenuser.kuryentxtreadbill.model.bill.BillHeader;
 import com.xesi.xenuser.kuryentxtreadbill.model.download.AccountModelV2;
 
 import org.apache.commons.lang3.text.WordUtils;
@@ -28,14 +31,16 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
     GenericDao genericDao;
     AcctFilter filter;
     List<AccountModelV2> filterList;
-    TextView tvAddress, tvSeqNo, tvAccountName, tvMeterNo, tvOldAccountNo, tvGreenCheck, tvIsActive, tvIsPrinted, lblIsPrinted;
+    TextView tvAddress, tvSeqNo, tvAccountName, tvMeterNo, tvOldAccountNo, tvGreenCheck, tvIsActive, tvIsPrinted, lblIsPrinted, lblIsReset, tvIsReset;
     private Context c;
-
+    private BillHeaderDAO billHeaderDAO;
 
     public AccountListAdapter(Context c, List<AccountModelV2> acctsV2s) {
         this.c = c;
         this.acctsV2s = acctsV2s;
         this.filterList = acctsV2s;
+        billHeaderDAO=new BillHeaderDAO(c);
+        billHeaderDAO.instantiateDb();
     }
 
     @Override
@@ -74,10 +79,12 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
         tvAddress = (TextView) convertView.findViewById(R.id.tvAddress);
         tvMeterNo = (TextView) convertView.findViewById(R.id.tvMeterNo);
         tvIsActive = (TextView) convertView.findViewById(R.id.tvIsActive);
+        lblIsReset = (TextView) convertView.findViewById(R.id.lblIsReset);
+        tvIsReset = (TextView) convertView.findViewById(R.id.tvIsReset);
 
         // SET DATA TO THEM
         String isPrinted = genericDao.getOneField("isPrinted","armBillHeader","WHERE oldAcctNo =",acctsV2s.get(position).getOldAccountNumber(),"ORDER BY _id DESC","");
-
+        List<Double> billHeader1 = billHeaderDAO.getRdg(acctsV2s.get(position).getOldAccountNumber());
         String acctName = WordUtils.capitalizeFully(acctsV2s.get(position).getAccountName());
         String add2 = WordUtils.capitalizeFully(acctsV2s.get(position).getAddressLn1());
         tvSeqNo.setText(String.valueOf(acctsV2s.get(position).getSequenceNumber()));
@@ -85,6 +92,8 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
         tvAccountName.setText(acctName);
         tvAddress.setText(add2);
         tvMeterNo.setText(acctsV2s.get(position).getMeterNumber());
+        tvIsReset.setVisibility(View.GONE);
+        lblIsReset.setVisibility(View.GONE);
         int[] check = {R.drawable.greencheck, R.drawable.recross};
         if (acctsV2s.get(position).getIsRead() == 1) {
             tvGreenCheck.setText("YES");
@@ -97,6 +106,14 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
             } else {
                 tvIsPrinted.setText("NO");
                 tvIsPrinted.setTextColor(Color.RED);
+            }
+
+            if(billHeader1.get(0)<billHeader1.get(1)){
+                tvIsReset.setVisibility(View.VISIBLE);
+                lblIsReset.setVisibility(View.VISIBLE);
+            } else {
+                tvIsReset.setVisibility(View.GONE);
+                lblIsReset.setVisibility(View.GONE);
             }
 
         } else {

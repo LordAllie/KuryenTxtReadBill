@@ -274,6 +274,8 @@ public class MsgDialog {
         else
             llNote.setVisibility(View.GONE);
 
+
+
         Button btnPrintReading = (Button) dialog.findViewById(R.id.btnPrintReading);
         btnPrintReading.setOnClickListener(v -> {
             dialog.dismiss();
@@ -288,6 +290,10 @@ public class MsgDialog {
         Button btnSave = (Button) dialog.findViewById(R.id.btnSave);
         Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
 
+        if(note.equals("This is a meter reset")){
+            btnGenerate.setEnabled(false);
+            btnPrintReading.setEnabled(false);
+        }
 
         btnGenerate.setOnClickListener(v -> {
             dialog.dismiss();
