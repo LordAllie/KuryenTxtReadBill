@@ -63,8 +63,6 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.list_account_record, null);
         }
-
-
         llAcctBg = (LinearLayout) convertView.findViewById(R.id.llAcctBg);
         tvIsPrinted = (TextView) convertView.findViewById(R.id.tvIsPrinted);
         tvAcctNo = (TextView) convertView.findViewById(R.id.tvAcctNo);
@@ -90,7 +88,6 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
             tvAcctName.setTextColor(Color.RED);
             tvAcctName.setTextColor(Color.parseColor("#810c38"));
             tvAcctName.setText(WordUtils.capitalizeFully(billHeaders.get(position).getAcctName()));
-
         }
 
         if (billHeaders.get(position).getIsPrinted() == 1) {
@@ -99,8 +96,8 @@ public class RecordListAdapter extends BaseAdapter implements Filterable {
         } else {
             tvIsPrinted.setText("NO");
             tvIsPrinted.setTextColor(Color.RED);
-            
         }
+
         tvAcctNo.setText(billHeaders.get(position).getOldAccountNo());
         tvmeterNo.setText(billHeaders.get(position).getMeterNo());
         tvDate.setText(billHeaders.get(position).getRunDate());

@@ -214,8 +214,6 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
     }
 
-
-
     private void viewAccount(final AccountListAdapter accountLists, final boolean isChecked, final boolean reOrderSequence,
                              final boolean isAlreadyRead) {
         try {
