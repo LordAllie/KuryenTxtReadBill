@@ -108,12 +108,16 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
                 tvIsPrinted.setTextColor(Color.RED);
             }
 
-            if(billHeader1.get(0)<billHeader1.get(1)){
-                tvIsReset.setVisibility(View.VISIBLE);
-                lblIsReset.setVisibility(View.VISIBLE);
-            } else {
-                tvIsReset.setVisibility(View.GONE);
-                lblIsReset.setVisibility(View.GONE);
+            try {
+                if (billHeader1.get(0) < billHeader1.get(1)) {
+                    tvIsReset.setVisibility(View.VISIBLE);
+                    lblIsReset.setVisibility(View.VISIBLE);
+                } else {
+                    tvIsReset.setVisibility(View.GONE);
+                    lblIsReset.setVisibility(View.GONE);
+                }
+            } catch (Exception e ) {
+
             }
 
         } else {

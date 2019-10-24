@@ -19,6 +19,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by xenuser on 2/14/2017.
@@ -127,14 +128,31 @@ public class BillToDB extends BaseDAO {
         if (billNumber.trim().equals("") && billNumber != null) {
             String billFormat = duPropertyDAO.getPropertyValue("BILL_NUMBER_FORMAT");
             billNumber = !billFormat.equals("-1") ? billFormat : "%DEVICE%YY%MM%DD%CTR" ;
-            int billCode = 1;
-            if (sharedPref.getInt("billCode", 1) > 1)
-                billCode = sharedPref.getInt("billCode", 1);
+            int billCode = checkDate();
+
+
             billNumber = BillNumberFormat.generateBillNo(String.format("%03d", Integer.parseInt(deviceId)),String.format("%03d", billCode),billNumber);
-            editor.putInt("billCode", billCode + 1);
-            editor.commit();
+
         }
         return billNumber;
+    }
+
+
+    public Integer checkDate() {
+        Calendar c1 = Calendar.getInstance();
+        if (sharedPref.getLong("currentDate",  0)  == c1.get(Calendar.DATE)) {
+            System.out.println("Same Time: " + c1.get(Calendar.DATE));
+            editor.putInt("billCode", sharedPref.getInt("billCode", 0) + 1);
+            editor.commit();
+            return sharedPref.getInt("billCode", 0);
+        } else {
+            System.out.println("Diff Time: " +  c1.get(Calendar.DATE));
+            editor.putLong("currentDate",c1.get(Calendar.DATE )).apply();
+            editor.commit();
+            editor.putInt("billCode", 1);
+            editor.commit();
+            return sharedPref.getInt("billCode", 0);
+        }
     }
 
     public void instantiateDb() {
