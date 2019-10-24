@@ -86,7 +86,7 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
         String isPrinted = genericDao.getOneField("isPrinted","armBillHeader","WHERE oldAcctNo =",acctsV2s.get(position).getOldAccountNumber(),"ORDER BY _id DESC","");
         List<Double> billHeader1 = billHeaderDAO.getRdg(acctsV2s.get(position).getOldAccountNumber());
         String acctName = WordUtils.capitalizeFully(acctsV2s.get(position).getAccountName());
-        String add2 = WordUtils.capitalizeFully(acctsV2s.get(position).getAddressLn1());
+        String add2 = WordUtils.capitalizeFully(acctsV2s.get(position).getAddressLn2());
         tvSeqNo.setText(String.valueOf(acctsV2s.get(position).getSequenceNumber()));
         tvOldAccountNo.setText(acctsV2s.get(position).getOldAccountNumber());
         tvAccountName.setText(acctName);

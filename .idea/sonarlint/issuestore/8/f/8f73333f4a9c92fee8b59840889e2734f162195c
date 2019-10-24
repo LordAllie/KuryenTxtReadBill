@@ -1,0 +1,20 @@
+
+ksquid:S00116&"SRename this field "BASE_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß¢Á
+˜squid:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+@squid:S1148‡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+~"squid:ClassVariableVisibilityCheck "QMake prefs a static final constant or non-public and provide accessors if needed.(¶áƒ&
+Isquid:S1444"-Make this "public static DB_PATH" field final(Ü—úÿÿÿÿ
+;squid:S3010+"$Remove this assignment of "DB_PATH".(¬ˆû–
+"squid:ClassVariableVisibilityCheck""TMake mContext a static final constant or non-public and provide accessors if needed.(Ù’ş
+„"squid:ClassVariableVisibilityCheck!"QMake mcfDB a static final constant or non-public and provide accessors if needed.(êØçúÿÿÿÿ
+isquid:S00117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àùøí
+jsquid:S1192O"NDefine a constant instead of duplicating this literal "UPDATECHECKER" 3 times.(Çé×äıÿÿÿÿ
+Dsquid:S1444"-Make this "public static DB_NAME" field final(É£×¸
+isquid:S00117i"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ”±Š
+—squid:S11865"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ã€¡u
+†"squid:ClassVariableVisibilityCheck"SMake DB_PATH a static final constant or non-public and provide accessors if needed.(Ü—úÿÿÿÿ
+nsquid:S3008"RRename this field "DB_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü—úÿÿÿÿ
+Asquid:S1068$"*Remove this unused "editor" private field.(–ñèˆ
+isquid:S3008"RRename this field "DB_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É£×¸
+?squid:S1148r"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+"squid:ClassVariableVisibilityCheck"SMake DB_NAME a static final constant or non-public and provide accessors if needed.(É£×¸

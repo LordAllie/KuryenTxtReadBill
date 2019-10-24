@@ -1,0 +1,97 @@
+
+Csquid:S1659\"'Declare "tvLoading" on a separate line.(°„æßüÿÿÿÿ
+`squid:S1192ê"IDefine a constant instead of duplicating this literal " records" 3 times.(¨ï
+usquid:S1450\"YRemove the "ulDateTime" field and declare it as a local variable in the relevant methods.(°„æßüÿÿÿÿ
+hsquid:S1192“"KDefine a constant instead of duplicating this literal "ulDateTime" 3 times.(Ç¶Ä…üÿÿÿÿ
+™squid:S1186É"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ
+fsquid:S4042Ú"IUse "java.nio.Files#delete" here for better messages on error conditions.(ñ¦Ğéÿÿÿÿÿ
+™squid:S1186Ğ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+@squid:S1148–"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+^squid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+hsquid:CommentedOutCodeLineâ"<This block of commented-out lines of code should be removed.(ÍãµÀøÿÿÿÿ
+Lsquid:S3398Ø"/Move this method into "DownloadAccountDetails".(­ÆÆñùÿÿÿÿ
+]squid:HiddenFieldCheckË";Rename "dialog" which hides the field declared at line 102.(Ø¿‡`
+usquid:S1450Z"^Remove the "btnCancelUpload" field and declare it as a local variable in the relevant methods.(ıôÁ­
+wsquid:UselessImportCheck""SRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.dao.OtherChargesDao'.(ûÎÈ
+lsquid:S00116n"TRename this field "_dbCreate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©üçª
+csquid:UselessImportCheckF"?Remove this unused import 'io.reactivex.plugins.RxJavaPlugins'.(ğ„¾¼
+csquid:CommentedOutCodeLineû"<This block of commented-out lines of code should be removed.(àù°
+Fsquid:S1659Y"*Declare "recordCounts" on a separate line.(úêæğÿÿÿÿÿ
+?squid:S1659Y"#Declare "count" on a separate line.(úêæğÿÿÿÿÿ
+fsquid:S4042Ğ"IUse "java.nio.Files#delete" here for better messages on error conditions.(€†Àüÿÿÿÿ
+@squid:S3398Ê"(Move this method into "UploadNewMeters".(œşÉÊ
+wsquid:S1450Y"[Remove the "recordCounts" field and declare it as a local variable in the relevant methods.(úêæğÿÿÿÿÿ
+osquid:S1450Z"XRemove the "btnUpload" field and declare it as a local variable in the relevant methods.(ıôÁ­
+™squid:S1186É"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+csquid:HiddenFieldCheck­"@Rename "isConnected" which hides the field declared at line 113.(»éÓç
+Dsquid:S1659\"(Declare "ulDateTime" on a separate line.(°„æßüÿÿÿÿ
+vsquid:S1450\"ZRemove the "diagnostics" field and declare it as a local variable in the relevant methods.(°„æßüÿÿÿÿ
+Asquid:S1659\"%Declare "tvTitle" on a separate line.(°„æßüÿÿÿÿ
+asquid:S1192"IDefine a constant instead of duplicating this literal "idRdmOld" 4 times.(ÊõáÂ
+csquid:CommentedOutCodeLine€"<This block of commented-out lines of code should be removed.(Ğ÷¯•
+Esquid:S1659\")Declare "tvSubTitle1" on a separate line.(°„æßüÿÿÿÿ
+ksquid:S1450X"TRemove the "ipAdd" field and declare it as a local variable in the relevant methods.(‚ö€¸
+usquid:S1450\"YRemove the "dlDateTime" field and declare it as a local variable in the relevant methods.(°„æßüÿÿÿÿ
+Fsquid:S1125‡")Remove the literal "false" boolean value.(€½øÿÿÿÿ
+>squid:S1659Z"'Declare "btnUpload" on a separate line.(ıôÁ­
+qsquid:S1450Z"ZRemove the "btnDownload" field and declare it as a local variable in the relevant methods.(ıôÁ­
+™squid:S1186ß"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+csquid:S1192Œ"FDefine a constant instead of duplicating this literal "idRdm" 5 times.(ï÷ò«ùÿÿÿÿ
+{squid:S1157‡"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(›¦ğÄ
+;squid:S1659Z"$Declare "mbtnOK" on a separate line.(ıôÁ­
+Isquid:S1602‰",Remove useless curly braces around statement(Ş˜ÿ×üÿÿÿÿ
+{squid:S1450]"_Remove the "headerFooterInfo" field and declare it as a local variable in the relevant methods.(Ê•Å’ùÿÿÿÿ
+W
+squid:S899Ğ";Do something with the "boolean" value returned by "delete".(€†Àüÿÿÿÿ
+[squid:S1155†">Use isEmpty() to check whether the collection is empty or not.(É€°Îøÿÿÿÿ
+=squid:S1659X"&Declare "imageDIR" on a separate line.(‚ö€¸
+gsquid:HiddenFieldCheck™"DRename "uploadBillMaster" which hides the field declared at line 98.(‚”¬ú
+csquid:CommentedOutCodeLineº"<This block of commented-out lines of code should be removed.(íûá
+tsquid:S1450\"XRemove the "errorlogs" field and declare it as a local variable in the relevant methods.(°„æßüÿÿÿÿ
+lsquid:S1450h"URemove the "helper" field and declare it as a local variable in the relevant methods.(ş¡‘
+bsquid:S1192"JDefine a constant instead of duplicating this literal "COUNT(id)" 3 times.(Ëš¤
+™squid:S1186÷"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ
+@squid:S1148 "#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+isquid:S1450`"RRemove the "sdf" field and declare it as a local variable in the relevant methods.(ˆùÚ¤
+jsquid:S3776ã"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(›ŞÄ
+™squid:S1186Ã"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+_squid:S1192À"HDefine a constant instead of duplicating this literal "SAVELOG" 4 times.(õÎÌl
+W
+squid:S899Ú";Do something with the "boolean" value returned by "delete".(ñ¦Ğéÿÿÿÿÿ
+™squid:S1186²"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+Gsquid:S1659\"+Declare "progress_text" on a separate line.(°„æßüÿÿÿÿ
+Dsquid:S1659Y"(Declare "percentage" on a separate line.(úêæğÿÿÿÿÿ
+Csquid:S1068O"'Remove this unused "TAG" private field.(Éˆ÷ıÿÿÿÿ
+hsquid:S1192¯"KDefine a constant instead of duplicating this literal "Uploading " 3 times.(Ì²¿ğùÿÿÿÿ
+:squid:S1659X"#Declare "idRDM" on a separate line.(‚ö€¸
+Bsquid:S1659Y"&Declare "meterCnt" on a separate line.(úêæğÿÿÿÿÿ
+™squid:S1186å"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ
+™squid:S1186ã"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ
+p
+squid:S135í"YReduce the total number of break and continue statements in this loop to use at most one.(ÀÊú
+?squid:S1659Z"(Declare "mbtnCancel" on a separate line.(ıôÁ­
+Csquid:S1481ø",Remove this unused "message" local variable.(ó—Ø.
+isquid:S00117ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áôù
+@squid:S1148Ÿ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+nsquid:S2159Ø"VRemove this call to "equals"; comparisons between unrelated types always return false.(Ú„’
+jsquid:S3776˜"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(Ûşı
+Csquid:S1659\"'Declare "errorlogs" on a separate line.(°„æßüÿÿÿÿ
+@squid:S3398ÿ"(Move this method into "UploadNewMeters".(ïóŸ‘
+[squid:S1155á">Use isEmpty() to check whether the collection is empty or not.(ä§¿òúÿÿÿÿ
+wsquid:S1450e"[Remove the "billJsonList" field and declare it as a local variable in the relevant methods.(¤äŠ©şÿÿÿÿ
+<squid:S1659X"%Declare "jsonDIR" on a separate line.(‚ö€¸
+osquid:UselessImportCheckE"KRemove this unused import 'io.reactivex.exceptions.UndeliverableException'.(Ş¢ø
+™squid:S1186Ö"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+Nsquid:S2696¡"6Make the enclosing method "static" or remove this set.(°¯ª“
+osquid:S3776í"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(ÄŒ¯…úÿÿÿÿ
+zsquid:UselessImportCheck6"QRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.util.PrintReceipt'.(›ÿ¤Åûÿÿÿÿ
+Fsquid:S1068p"/Remove this unused "uploadedCnt" private field.(‚¨Å¹
+usquid:S00116\"XRename this field "progress_text" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°„æßüÿÿÿÿ
+csquid:S1192Ÿ"KDefine a constant instead of duplicating this literal "COUNT(_id)" 3 times.(Áïì÷
+_squid:S1192’"GDefine a constant instead of duplicating this literal "authID" 7 times.(ª½¦‘
+Dsquid:S1659\"(Declare "dlDateTime" on a separate line.(°„æßüÿÿÿÿ
+Csquid:S1481á"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ
+ƒsquid:UselessImportCheck"ZRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.dao.AccountOtherChargesDao'.(üæĞéûÿÿÿÿ
+wsquid:UselessImportCheck"NRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.dao.AccountDao'.(¨Áéãıÿÿÿÿ
+Dsquid:S1659Z"-Declare "btnCancelUpload" on a separate line.(ıôÁ­
+isquid:S3776¹"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(õ—Ş"

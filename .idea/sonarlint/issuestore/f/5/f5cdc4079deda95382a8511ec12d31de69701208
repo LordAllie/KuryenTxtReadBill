@@ -1,0 +1,61 @@
+
+ssquid:S1192μ"[Define a constant instead of duplicating this literal "Bill Header cannot be null" 3 times.(¦θ€®
+Rsquid:S1141"5Extract this nested try block into a separate method.(΅»Άόωÿÿÿÿ
+Rsquid:S1141Α"5Extract this nested try block into a separate method.(΅»Άόωÿÿÿÿ
+Vsquid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Τ¦Ψ²ψÿÿÿÿ
+@squid:S1148ª"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ
+@squid:S1148Ε"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ
+@squid:S1148Κ"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ
+Vsquid:S1155Ò">Use isEmpty() to check whether the collection is empty or not.(»―–
+Vsquid:S1155Ω">Use isEmpty() to check whether the collection is empty or not.(¶ρ
+Vsquid:S1155α">Use isEmpty() to check whether the collection is empty or not.(ΰ£¨
+=squid:S16595"&Declare "tvBillId" on a separate line.(Τοπέ
+>squid:S16595"'Declare "tvMeterNo" on a separate line.(Τοπέ
+=squid:S16595"&Declare "tvAcctNo" on a separate line.(Τοπέ
+;squid:S16595"$Declare "tvName" on a separate line.(Τοπέ
+=squid:S16595"&Declare "tvCurRdg" on a separate line.(Τοπέ
+Jsquid:S16595"3Declare "tvPreviousConsumption" on a separate line.(Τοπέ
+@squid:S16595")Declare "tvRouteCode" on a separate line.(Τοπέ
+:squid:S16595"#Declare "tvMCE" on a separate line.(Τοπέ
+Csquid:S16596"'Declare "tvPrevRdg" on a separate line.(λΘ”ϊÿÿÿÿ
+Csquid:S16596"'Declare "tvKwhUsed" on a separate line.(λΘ”ϊÿÿÿÿ
+Esquid:S16596")Declare "tvTotalBill" on a separate line.(λΘ”ϊÿÿÿÿ
+Asquid:S16596"%Declare "tvDevId" on a separate line.(λΘ”ϊÿÿÿÿ
+>squid:S16597"'Declare "tvReader1" on a separate line.(‘τ—
+?squid:S16597"(Declare "tvPeriodFr" on a separate line.(‘τ—
+?squid:S16597"(Declare "tvPeriodTo" on a separate line.(‘τ—
+=squid:S16597"&Declare "tvBillMo" on a separate line.(‘τ—
+>squid:S16597"'Declare "tvDueDate" on a separate line.(‘τ—
+?squid:S16597"(Declare "tvDateYear" on a separate line.(‘τ—
+Csquid:S16597",Declare "tvConsumerType" on a separate line.(‘τ—
+?squid:S16597"(Declare "tvCoreloss" on a separate line.(‘τ—
+Asquid:S16598"*Declare "tvMultiplier" on a separate line.(³ξ±’
+Csquid:S16598",Declare "tvTotalKwhUsed" on a separate line.(³ξ±’
+@squid:S16598")Declare "tvDiscoDate" on a separate line.(³ξ±’
+Hsquid:S16598"1Declare "tvTotalBillAfterDue" on a separate line.(³ξ±’
+@squid:S16598")Declare "tvSurcharge" on a separate line.(³ξ±’
+Asquid:S16598"*Declare "tvAddressLn1" on a separate line.(³ξ±’
+Asquid:S16598"*Declare "tvAddressLn2" on a separate line.(³ξ±’
+Asquid:S16598"*Declare "lblRouteCode" on a separate line.(³ξ±’
+;squid:S16598"$Declare "lblMCE" on a separate line.(³ξ±’
+Esquid:S16599")Declare "llKwhAddon2" on a separate line.(·Μ²«ύÿÿÿÿ
+Fsquid:S16599"*Declare "llMultiplier" on a separate line.(·Μ²«ύÿÿÿÿ
+Hsquid:S16599",Declare "llAddonCharges" on a separate line.(·Μ²«ύÿÿÿÿ
+Hsquid:S16599",Declare "llAfterDueDate" on a separate line.(·Μ²«ύÿÿÿÿ
+?squid:S16599"#Declare "llkWh" on a separate line.(·Μ²«ύÿÿÿÿ
+Esquid:S16599")Declare "llSurcharge" on a separate line.(·Μ²«ύÿÿÿÿ
+psquid:S14502"YRemove the "sharedPref" field and declare it as a local variable in the relevant methods.(ζ²Οκ
+lsquid:S14503"URemove the "editor" field and declare it as a local variable in the relevant methods.(–ρθ
+psquid:S14504"TRemove the "print" field and declare it as a local variable in the relevant methods.(ΑΊ‰Ίόÿÿÿÿ
+vsquid:S1450="_Remove the "billAddonCharges" field and declare it as a local variable in the relevant methods.(‚”Έ
+xsquid:S1450>"\Remove the "billAddonKwhs" field and declare it as a local variable in the relevant methods.(Χ±‰όÿÿÿÿ
+{squid:S1450G"_Remove the "headerFooterInfo" field and declare it as a local variable in the relevant methods.(Κ•Ε’ωÿÿÿÿ
+{squid:S1450M"_Remove the "consumptionGraph" field and declare it as a local variable in the relevant methods.(εΒ„¤όÿÿÿÿ
+jsquid:S3776ε"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(εΎΰ
+’squid:S2159λ"zRemove this call to "equals"; comparisons against null always return false; consider using '== null' to check for nullity.(£Χγ
+’squid:S2159λ"zRemove this call to "equals"; comparisons against null always return false; consider using '== null' to check for nullity.(£Χγ
+’squid:S2159"zRemove this call to "equals"; comparisons against null always return false; consider using '== null' to check for nullity.(χκ΅
+Ysquid:HiddenFieldCheckΆ"7Rename "sdf" which hides the field declared at line 76.(¬ό―-
+Asquid:S10683"*Remove this unused "editor" private field.(–ρθ
+csquid:CommentedOutCodeLine΄"<This block of commented-out lines of code should be removed.(Φ­ÿλ
+hsquid:CommentedOutCodeLineΌ"<This block of commented-out lines of code should be removed.(‡σΥΞÿÿÿÿÿ

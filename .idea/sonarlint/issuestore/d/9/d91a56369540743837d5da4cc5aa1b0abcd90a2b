@@ -1,0 +1,17 @@
+
+[
+squid:S106="9Replace this use of System.out or System.err by a logger.(ŠÉ±×ùÿÿÿÿ8ÊÒ›µØ-
+V
+squid:S1064"9Replace this use of System.out or System.err by a logger.(øçžî8±â–µØ-
+V
+squid:S106("9Replace this use of System.out or System.err by a logger.(³¦ûœ8ÖØ’µØ-
+[
+squid:S106<"9Replace this use of System.out or System.err by a logger.(ÿ¬ ßþÿÿÿÿ8ÊæšµØ-
+Ÿsquid:S1186A"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÀÄÞ’8ˆ˜ˆµØ-
+[
+squid:S1061"9Replace this use of System.out or System.err by a logger.(ƒŽè’ùÿÿÿÿ8 ºµØ-
+|squid:S1450"^Remove the "locationManager" field and declare it as a local variable in the relevant methods.(ô­âº8 ºµØ-
+Tsquid:S1153="1Directly append the argument of String.valueOf().(ŠÉ±×ùÿÿÿÿ8ÕŒœµØ-
+Ÿsquid:S1186F"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÅðÙ8ˆ˜ˆµØ-
+Ÿsquid:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÁïÕÒ8ˆ˜ˆµØ-
+Tsquid:S1153<"1Directly append the argument of String.valueOf().(ÿ¬ ßþÿÿÿÿ8ÊÒ›µØ-

@@ -111,6 +111,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     public final int[] checkingError = new int[1];
     private int uploadedCnt=0;
     private boolean isConnected;
+    int cnt=0;
     protected void onCreate(Bundle savedInstanceState) {
 
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -567,14 +568,17 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
         @Override
         protected Integer doInBackground(String... strings) {
             if(!isCancelled()){
+                cnt=0;
                 File[] files = new File(imageDIR + "/RnB").listFiles();
                 MultipartBody.Part part;
                 RequestBody fileReqBody;
+
                 for(int loop= 0; loop < files.length; loop++){
                     if(!isCancelled()) {
                         fileReqBody = RequestBody.create(MediaType.parse("*/*"), files[loop]);
                         part = MultipartBody.Part.createFormData("file", files[loop].getName(), fileReqBody);
                         int countImage = loop;
+                        cnt++;
                         threadSleep(200);
                         observables.uploadFile(part).subscribe(new Observer<String>() {
                             @Override
@@ -583,7 +587,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
 
                             @Override
                             public void onNext(String check) {
-                                publishProgress(countImage + "/" + files.length);
+                                publishProgress(cnt + "/" + files.length);
                                 if (check.equals("OK"))
                                     files[countImage].delete();
                                 else {
@@ -846,6 +850,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                 Date lastMonth = c.getTime();
                 c.add(Calendar.MONTH, -1);
                 Date last2Month = c.getTime();
+
                 File[] files = new File(jsonDIR+ "/RNBFile").listFiles();
                 for(int i =0;i < files.length; i++)
                     if (!yeardateFormat.format(monthToday).equals(yeardateFormat.format(files[i].lastModified()))

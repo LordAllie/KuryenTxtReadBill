@@ -34,6 +34,7 @@ public class BillChargeGroup {
     private BigDecimal totalCharges;
 
     public BillChargeGroup() {
+
     }
 
     public String getBillNumber() {

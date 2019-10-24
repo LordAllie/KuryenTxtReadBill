@@ -175,4 +175,31 @@ public class BillChargeGroupDetailDAO extends BaseDAO {
         return chargeAmount;
     }
 
+    public BillChargeGroupDetail getLLDisc(String billNo) {
+        BillChargeGroupDetail billGroupDetails = new BillChargeGroupDetail();
+        String query = "SELECT *" +
+                " FROM " + TABLE_NAME +
+                " WHERE billNo = '" + billNo +"'"+
+                " ORDER BY _id DESC LIMIT 2";
+        mcfDB = this.getWritableDatabase();
+        BigDecimal chargeTotal;
+        try {
+            Cursor cursor = mcfDB.rawQuery(query, null);
+            if (cursor.moveToLast()) {
+                BigDecimal chargeAmount = new BigDecimal(cursor.getString(5));
+                chargeAmount = chargeAmount.setScale(6, BigDecimal.ROUND_HALF_UP);
+                double dbchargeTotal = cursor.getDouble(6);
+                chargeTotal = new BigDecimal(Double.toString(dbchargeTotal));
+                billGroupDetails.setChargeName(cursor.getString(4));
+                billGroupDetails.setChargeAmount(chargeAmount);
+                billGroupDetails.setChargeTotal(chargeTotal);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            mcfDB.close();
+        }
+        return billGroupDetails;
+    }
+
 }

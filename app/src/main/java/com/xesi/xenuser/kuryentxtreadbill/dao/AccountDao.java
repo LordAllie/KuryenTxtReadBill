@@ -36,15 +36,16 @@ public class AccountDao extends BaseDAO {
                 accountModel = setQueryAccountModels(cursor);
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
+        }finally {
             cursor.close();
             mcfDB.close();
+
         }
         return accountModel;
     }
 
     public List<AccountModelV2> getAllAccount(int idRoute, boolean showAllActive,
-                                              boolean reOrderSequence, boolean isRead) {
+                                              boolean reOrderSequence, boolean isRead, String isBottom) {
         List<AccountModelV2> contactInfoList = new ArrayList<>();
         String orderQuery;
         String addQuery = "";
@@ -65,9 +66,11 @@ public class AccountDao extends BaseDAO {
         if (showAllActive)
             addQuery = " AND isActive = 'Y' ";
 
-        String selectQuery = " SELECT * FROM " + TABLE_NAME +
-                " WHERE `idRoute` = " + idRoute + addQuery + " ORDER BY " + orderQuery;
-
+        String selectQuery;
+        if(isBottom.equals("Y"))
+            selectQuery = " SELECT * FROM " + TABLE_NAME + " WHERE `idRoute` = " + idRoute + addQuery + " ORDER BY " + orderQuery;
+        else
+            selectQuery = " SELECT * FROM " + TABLE_NAME + " WHERE `idRoute` = " + idRoute + addQuery;
         mcfDB = this.getWritableDatabase();
         Cursor cursor = null;
         try {
@@ -358,10 +361,31 @@ public class AccountDao extends BaseDAO {
             }
             cursor.close();
         } catch (Exception e) {
+            //
         } finally {
             mcfDB.close();
         }
         return list;
+    }
+
+    public AccountModelV2 getArrearsByAcctNo(String oldAcctNo) {
+        AccountModelV2 accountModel = new AccountModelV2();
+
+        String selectQuery = " SELECT * FROM " + TABLE_NAME + " WHERE `oldAccountNumber` = '" + oldAcctNo + "'";
+        mcfDB = this.getWritableDatabase();
+        Cursor cursor = null;
+        try {
+            cursor = mcfDB.rawQuery(selectQuery, null);
+            if (cursor.moveToFirst())
+                accountModel = setQueryAccountModels(cursor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            cursor.close();
+            mcfDB.close();
+
+        }
+        return accountModel;
     }
 
 }

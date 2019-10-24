@@ -1,0 +1,53 @@
+
+_squid:HiddenFieldCheckÇ"=Rename "routeCode" which hides the field declared at line 90.(¬Í¾T
+Esquid:S1659L")Declare "btnGenerate" on a separate line.(¿ÚÏ¶ÿÿÿÿÿ
+ysquid:S1450J"]Remove the "currentReading" field and declare it as a local variable in the relevant methods.(‚Þ¾¡ÿÿÿÿÿ
+qsquid:UselessImportCheck"HRemove this unused import 'android.view.inputmethod.InputMethodManager'.(‰­àûÿÿÿÿ
+msquid:S1450V"VRemove the "isCheck" field and declare it as a local variable in the relevant methods.(áþñ³
+Gsquid:S5411Þ"*Use the primitive boolean expression here.(šðúÕøÿÿÿÿ
+Isquid:S1659L"-Declare "btnPrintReading" on a separate line.(¿ÚÏ¶ÿÿÿÿÿ
+qsquid:S1450M"ZRemove the "tvRouteCode" field and declare it as a local variable in the relevant methods.(¨Œ­À
+`squid:HiddenFieldCheck¯"8Rename "list" which hides the field declared at line 85.(ô²±Ðþÿÿÿÿ
+\squid:S2259î"?A "NullPointerException" could be thrown; "s" is nullable here.(äˆÎÉúÿÿÿÿ
+ssquid:S1450W"WRemove the "tvReader" field and declare it as a local variable in the relevant methods.(îÇô®üÿÿÿÿ
+zsquid:S1450K"^Remove the "previousReading" field and declare it as a local variable in the relevant methods.(¬Šá¸úÿÿÿÿ
+Csquid:S1659O"'Declare "chkIsRead" on a separate line.(éÊûâùÿÿÿÿ
+lsquid:S1450G"VRemove the "spinner" field and declare it as a local variable in the relevant methods.(Ï‰¯
+@squid:S1659M")Declare "tvRouteCode" on a separate line.(¨Œ­À
+ssquid:S1450?"WRemove the "imageDIR" field and declare it as a local variable in the relevant methods.(ò»Îüÿÿÿÿÿ
+qsquid:S1450O"URemove the "chkSeq" field and declare it as a local variable in the relevant methods.(éÊûâùÿÿÿÿ
+osquid:S1450U"SRemove the "list" field and declare it as a local variable in the relevant methods.(úžÈµûÿÿÿÿ
+dsquid:S1192Œ"LDefine a constant instead of duplicating this literal "arm_account" 3 times.(â¥‡þ
+@squid:S1148†"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+isquid:UselessImportCheck"@Remove this unused import 'android.view.inputmethod.EditorInfo'.(êÔùíýÿÿÿÿ
+Hsquid:S1659W"%Declare "tvCount" on a separate line.(îÇô®üÿÿÿÿ8Ø¹Ô©Ø-
+;squid:S1659V"$Declare "isRead" on a separate line.(áþñ³
+tsquid:S1450O"XRemove the "chkIsRead" field and declare it as a local variable in the relevant methods.(éÊûâùÿÿÿÿ
+[squid:S1155°">Use isEmpty() to check whether the collection is empty or not.(ÕðÍÈýÿÿÿÿ
+\squid:UselessImportCheck"3Remove this unused import 'android.text.TextUtils'.(û˜½Õøÿÿÿÿ
+Dsquid:S1659L"(Declare "mbtnCancel" on a separate line.(¿ÚÏ¶ÿÿÿÿÿ
+@squid:S1659O"$Declare "chkSeq" on a separate line.(éÊûâùÿÿÿÿ
+Dsquid:S1659V"-Declare "reOrderSequence" on a separate line.(áþñ³
+Usquid:S1858³"="get" returns a string, there's no need to call "toString()".(ä–‰Ï
+dsquid:S1192È"GDefine a constant instead of duplicating this literal "isVoid" 3 times.(ÂÎðÆÿÿÿÿÿ
+usquid:S1450L"YRemove the "mbtnCancel" field and declare it as a local variable in the relevant methods.(¿ÚÏ¶ÿÿÿÿÿ
+Gsquid:S1659W"+Declare "tvRecordCount" on a separate line.(îÇô®üÿÿÿÿ
+ssquid:S3923±"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ÛÖ²Í
+bsquid:HiddenFieldCheckë":Rename "isRead" which hides the field declared at line 86.(®ÁÓ©ÿÿÿÿÿ
+ssquid:S1450V"URemove the "isRead" field and declare it as a local variable in the relevant methods.(áþñ³8„Ÿ¹ªØ-
+^
+squid:S899Ý"BDo something with the "boolean" value returned by "createNewFile".(—¯ÅÜþÿÿÿÿ
+qsquid:S1450L"URemove the "mbtnOK" field and declare it as a local variable in the relevant methods.(¿ÚÏ¶ÿÿÿÿÿ
+osquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(Áâ÷îþÿÿÿÿ8¹¡Ê¢Ù-
+_squid:S1192‹"HDefine a constant instead of duplicating this literal "idRoute" 3 times.(¹À¾U
+wsquid:S00116>"ZRename this field "TAKE_PHOTO_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ËÈòþÿÿÿÿ
+esquid:S1192¾"HDefine a constant instead of duplicating this literal "remarks" 3 times.(Ü®÷Ûùÿÿÿÿ
+psquid:S1450E"TRemove the "print" field and declare it as a local variable in the relevant methods.(Áº‰ºüÿÿÿÿ
+{squid:S1450S"_Remove the "headerFooterInfo" field and declare it as a local variable in the relevant methods.(Ê•Å’ùÿÿÿÿ
+tsquid:S1450Z"XRemove the "routeCode" field and declare it as a local variable in the relevant methods.(£®üÇýÿÿÿÿ
+ksquid:S1192ö"NDefine a constant instead of duplicating this literal "armBillHeader" 3 times.(ƒéú÷úÿÿÿÿ
+Ksquid:S1659Y"(Declare "unreadAcct" on a separate line.(¤ø¯Áüÿÿÿÿ8ƒßâ©Ø-
+[squid:UselessImportCheck"2Remove this unused import 'android.view.KeyEvent'.(ôÊÃ–úÿÿÿÿ
+usquid:S1450V"^Remove the "reOrderSequence" field and declare it as a local variable in the relevant methods.(áþñ³
+@squid:S1148Ú"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+tsquid:S1450O"XRemove the "chkActive" field and declare it as a local variable in the relevant methods.(éÊûâùÿÿÿÿ

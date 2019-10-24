@@ -74,7 +74,7 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
     private String currentReading;
     private double previousReading;
     private Button mbtnOK, mbtnCancel, btnPrintReading, btnGenerate;
-    private TextView metPreviousReading, tvRouteCode,lblPreviousReading;
+    private TextView metPreviousReading, tvRouteCode;
     private EditText metCurrentReading;
     private CheckBox chkActive, chkSeq, chkIsRead;
     private int idRoute;
@@ -84,8 +84,9 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
     private String billNumber = "";
     private List<String> list;
     private boolean isCheck, isRead, reOrderSequence;
-    private TextView tvReader, tvRecordCount;
+    private TextView tvReader, tvRecordCount,tvCount;
     private int recordCount = 0;
+    private String readAcct, unreadAcct;
     private String routeCode;
     private AlertDialog alert;
     private DUPropertyDAO duPropertyDAO;
@@ -99,6 +100,7 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
     private void setFooter() {
         tvReader = (TextView) findViewById(R.id.tvReader);
         tvRecordCount = (TextView) findViewById(R.id.tvRecordCount);
+        tvCount = (TextView) findViewById(R.id.tvCount);
         String reader = sharedPref.getString("assignedTo", "");
         if (reader.length() > 12)
             reader = reader.substring(0, 11) + "..";
@@ -124,7 +126,6 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         headerFooterInfo = new HeaderFooterInfo(this);
         headerFooterInfo.setHeaderInfo();
         setFooter();
-        //headerFooterInfo.setFooterInfo();
         lvAccount = (ListView) findViewById(R.id.lvAccount);
         searchView = (SearchView) findViewById(R.id.searchView);
         spinner = (Spinner) findViewById(R.id.spRouteList);
@@ -149,7 +150,10 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         spinner.setAdapter(adapter);
         isCheck = false;
         reOrderSequence = false;
-        isRead = false;
+//        if(getProperty(duPropertyDAO.getPropertyValue("IS_READ_TRANSACTION_TO_BOTTOM"), "Y").equals("N"))
+//            isRead = true;
+//        else
+            isRead = false;
         Log.d("IDROUTE", String.valueOf(idRoute));
         accountListAdapter = new AccountListAdapter(Transaction.this, displayAccts(idRoute, isCheck, reOrderSequence, isRead));
         viewAccount(accountListAdapter, isCheck, reOrderSequence, isRead);
@@ -215,6 +219,10 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         }
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
     }
+    private String getProperty(String val, String defVal) {
+        return val == null ? defVal : val;
+    }
+
 
     private void viewAccount(final AccountListAdapter accountLists, final boolean isChecked, final boolean reOrderSequence,
                              final boolean isAlreadyRead) {
@@ -256,15 +264,18 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
             Toast.makeText(getApplicationContext(), "Please Download Account First", Toast.LENGTH_SHORT).show();
         }
         tvRecordCount.setText("Total Accounts: " + recordCount + "");
+        tvCount.setText("Unread: "+unreadAcct+"     Read: "+readAcct);
     }
 
     public List<AccountModelV2> displayAccts(int idRoute, boolean showAll, boolean reOrderSequence, boolean isRead) {
-        List<AccountModelV2> queryResult = accountDao.getAllAccount(idRoute, showAll, reOrderSequence, isRead);
+        List<AccountModelV2> queryResult = accountDao.getAllAccount(idRoute, showAll, reOrderSequence, isRead, getProperty(duPropertyDAO.getPropertyValue("IS_READ_TRANSACTION_TO_BOTTOM"), "Y"));
         String addQuery = "";
         if (showAll)
             addQuery = "isActive = 'Y' AND ";
         String recordCountQuery = genericDao.getOneField("COUNT(id)","arm_account","WHERE " + addQuery +" idRoute=", String.valueOf(idRoute),"","");
         recordCount = Integer.parseInt(recordCountQuery.equals("") ? "0" : recordCountQuery);
+        readAcct = genericDao.getOneField("SELECT COUNT(id) FROM arm_account where isRead=1","0");
+        unreadAcct = genericDao.getOneField("SELECT COUNT(id) FROM arm_account where isRead=0","0");
         closeDB();
         return queryResult;
     }
@@ -383,11 +394,11 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         try {
             List<Double> readings = billHeaderDAO.getCurAndPrevRdg(accountModelV2.getOldAccountNumber());
             billNumber = updateAcctBill(readings.get(0), readings.get(1));
-            if (billNumber == "-1") {
+            if (billNumber.equals("-1")) {
                 catchErr("Bill not save");
-            } else if (billNumber == "-2") {
+            } else if (billNumber.equals("-2")) {
                 catchErr("Bill Header not save");
-            } else if (billNumber == "-3") {
+            } else if (billNumber.equals("-3")) {
                 catchErr("Failed to generate bill json");
             } else if (billNumber.substring(0, 12).equals("SQLException")) {
                 catchErr(billNumber);
@@ -456,7 +467,6 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
         mbtnOK = (Button) promptsView.findViewById(R.id.btnOK);
         mbtnCancel = (Button) promptsView.findViewById(R.id.btnCancel);
         metPreviousReading = (TextView) promptsView.findViewById(R.id.etPreviousReading);
-        lblPreviousReading = (TextView) promptsView.findViewById(R.id.lblPreviousReading);
         metCurrentReading = (EditText) promptsView.findViewById(R.id.etCurrentReading);
         List<Double> readings = billHeaderDAO.getCurAndPrevRdg(accountModelV2.getOldAccountNumber());
         metPreviousReading.setText(df.format(readings.get(1)));
@@ -477,13 +487,13 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                //onTextChange
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 if(s!=null || !s.equals("")) {
-                    String cur = "0";
+                    String cur;
                     if (metCurrentReading.getText().toString().equals(""))
                         cur="0";
                     else cur=metCurrentReading.getText().toString();
@@ -536,6 +546,7 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
                     break;
                 case "saved":
                     Toast.makeText(getApplication(), "Successfully Updated.", Toast.LENGTH_SHORT).show();
+                    break;
                 default:
                     break;
             }
@@ -612,5 +623,7 @@ public class Transaction extends BaseActivity implements AdapterView.OnItemSelec
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {}
+    public void onNothingSelected(AdapterView<?> parent) {
+        //
+    }
 }

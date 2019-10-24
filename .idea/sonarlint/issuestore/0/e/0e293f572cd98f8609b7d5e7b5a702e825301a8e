@@ -1,0 +1,18 @@
+
+Fsquid:S1481a"*Remove this unused "check" local variable.(°ÇÂäÿÿÿÿÿ
+Dsquid:S1659""(Declare "tvIsActive" on a separate line.(©«×’ùÿÿÿÿ
+Csquid:S1659""'Declare "tvIsReset" on a separate line.(©«×’ùÿÿÿÿ
+Fsquid:S1659""*Declare "tvGreenCheck" on a separate line.(©«×’ùÿÿÿÿ
+›%squid:RedundantThrowsDeclarationCheckÑ"iRemove the declaration of thrown exception 'java.lang.NullPointerException' which is a runtime exception.(šôòŒ
+Dsquid:S1659""(Declare "lblIsReset" on a separate line.(©«×’ùÿÿÿÿ
+ysquid:UselessImportCheck"URemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.bill.BillHeader'.(ÂçÒ­
+bsquid:CommentedOutCodeLine@"<This block of commented-out lines of code should be removed.(±ÈÃ
+Fsquid:S1659""*Declare "lblIsPrinted" on a separate line.(©«×’ùÿÿÿÿ
+_squid:S1192d"HDefine a constant instead of duplicating this literal "#003300" 3 times.(§ú‚µ
+Hsquid:S1659"",Declare "tvOldAccountNo" on a separate line.(©«×’ùÿÿÿÿ
+Esquid:S1659"")Declare "tvIsPrinted" on a separate line.(©«×’ùÿÿÿÿ
+Usquid:S1854a"9Remove this useless assignment to local variable "check".(°ÇÂäÿÿÿÿÿ
+Asquid:S1659""%Declare "tvSeqNo" on a separate line.(©«×’ùÿÿÿÿ
+Gsquid:S1659""+Declare "tvAccountName" on a separate line.(©«×’ùÿÿÿÿ
+Csquid:S1659""'Declare "tvMeterNo" on a separate line.(©«×’ùÿÿÿÿ
+Zsquid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ
