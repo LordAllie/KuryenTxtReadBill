@@ -37,6 +37,7 @@ import com.xesi.xenuser.kuryentxtreadbill.dao.LogDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.NewMeterDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.RateMasterDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.base.DbCreate;
+import com.xesi.xenuser.kuryentxtreadbill.dao.base.DeleteTableData;
 import com.xesi.xenuser.kuryentxtreadbill.dao.base.GenericDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.billdao.BillHeaderDAO;
 import com.xesi.xenuser.kuryentxtreadbill.global.GlobalVariable;
@@ -241,6 +242,11 @@ public class Tools extends BaseActivity {
         }else{
             msgDialog.showErrDialog("RDM and downloads are needed before backup");
         }
+    }
+
+    public void btnArchive(View view){
+        finish();
+        startActivity(new Intent(getApplicationContext(),Archive.class));
     }
 
     public void masterKey(String methodName, String title){
@@ -611,9 +617,19 @@ public class Tools extends BaseActivity {
     }
 
     public void clearData(){
-        Toast.makeText(getApplication(), getResources().getString(R.string.clearDataSuccessMsg), Toast.LENGTH_SHORT).show();
-        _dbCreate.deleteDatabase();
-        _dbCreate.createDatabase();
+        Toast.makeText(getApplication(), "All Transaction archived", Toast.LENGTH_SHORT).show();
+//        _dbCreate.deleteDatabase();
+//        _dbCreate.createDatabase();
+        String[] tableList={"armChargeType","armDuAreaRate","armDuProperties","armNewMeter","armRoute","arm_account","arm_account_bill_aux","arm_account_other_charges","arm_coreloss_tran","arm_kwhaddontran","arm_lifelinedetails","arm_other_charges","arm_rate_detail","arm_rateaddontran","arm_rateaddontran_special","arm_ratemaster","arm_remarks","arm_route_definition","arm_surcharge","db_log","sqlite_sequence"};
+        int i = 0;
+        while (tableList.length > i) {
+            genericDao.deleteTable(tableList[i]);
+            i++;
+        }
+        genericDao.updateIsArchive("armBillHeader");
+        finish();
+        startActivity(new Intent(getApplicationContext(),Homepage.class));
+
     }
 
     public void dialogViewRateMaster() {

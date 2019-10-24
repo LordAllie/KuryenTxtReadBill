@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.xesi.xenuser.kuryentxtreadbill.Archive;
 import com.xesi.xenuser.kuryentxtreadbill.Diagnostics;
 import com.xesi.xenuser.kuryentxtreadbill.Homepage;
 import com.xesi.xenuser.kuryentxtreadbill.R;
@@ -160,6 +161,26 @@ public class MsgDialog {
         okBtn.setOnClickListener(v -> {
             dialog.dismiss();
             Intent intent = new Intent(context.getApplicationContext(), Reports.class);
+            context.startActivity(intent);
+            ((Activity)context).finish();
+        });
+        dialog.show();
+    }
+
+    public void showArchiveSuccessDialog(String msg) {
+        dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.dialog_callstatus_popup);
+        TextView status = (TextView) dialog.findViewById(R.id.tvStatus);
+        ImageView image = (ImageView) dialog.findViewById(R.id.imageView);
+        status.setText(msg);
+        image.setImageResource(R.drawable.success);
+        Button okBtn = (Button) dialog.findViewById(R.id.btnOK);
+
+        okBtn.setOnClickListener(v -> {
+            dialog.dismiss();
+            Intent intent = new Intent(context.getApplicationContext(), Archive.class);
             context.startActivity(intent);
             ((Activity)context).finish();
         });

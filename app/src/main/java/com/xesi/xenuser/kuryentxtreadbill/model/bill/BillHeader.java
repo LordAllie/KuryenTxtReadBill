@@ -129,10 +129,14 @@ public class BillHeader {
     @SerializedName("apkVersion")
     @Expose
     private String apkVersion;
+    @SerializedName("isArchive")
+    @Expose
+    private String isArchive;
+
     public BillHeader() {
     }
 
-    public BillHeader(int idBh, String runDate, String billNo, String oldAccountNo, String routeCode, int sequenceNo, String acctName, String meterNo, String acctNo, String consumerType, double curReading, double prevReading, double meterMultiplier, double coreloss, double consumption, double addonKwhTotal, double totalConsumption, String periodFrom, String periodTo, String billingMonth, String curBill, String totalAmountDue, String totalBillAfterDueDate, String reader, int deviceId, String dueDate, String remarks, int isUploaded, int idRoute, String discoDate, int isPrinted, double minimumContractedEnergy, double minimumContractedDemand, double previousConsumption, double accountArrears, String arrearsAsOf, int editCount, String isVoid, String apkVersion) {
+    public BillHeader(int idBh, String runDate, String billNo, String oldAccountNo, String routeCode, int sequenceNo, String acctName, String meterNo, String acctNo, String consumerType, double curReading, double prevReading, double meterMultiplier, double coreloss, double consumption, double addonKwhTotal, double totalConsumption, String periodFrom, String periodTo, String billingMonth, String curBill, String totalAmountDue, String totalBillAfterDueDate, String reader, int deviceId, String dueDate, String remarks, int isUploaded, int idRoute, String discoDate, int isPrinted, double minimumContractedEnergy, double minimumContractedDemand, double previousConsumption, double accountArrears, String arrearsAsOf, int editCount, String isVoid, String apkVersion, String isArchive) {
         this.idBh = idBh;
         this.runDate = runDate;
         this.billNo = billNo;
@@ -172,6 +176,7 @@ public class BillHeader {
         this.editCount = editCount;
         this.isVoid = isVoid;
         this.apkVersion=apkVersion;
+        this.isArchive=isArchive;
     }
 
     public BillHeader(String runDate, String billNo, String oldAccountNo, int sequenceNo, String acctName,
@@ -507,5 +512,13 @@ public class BillHeader {
 
     public void setApkVersion(String apkVersion) {
         this.apkVersion = apkVersion;
+    }
+
+    public String getIsArchive() {
+        return isArchive;
+    }
+
+    public void setIsArchive(String isArchive) {
+        this.isArchive = isArchive;
     }
 }

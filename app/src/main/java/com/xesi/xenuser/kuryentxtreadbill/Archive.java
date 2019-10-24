@@ -6,34 +6,35 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.support.annotation.Nullable;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.nbbse.mobiprint3.Printer;
 import com.xesi.xenuser.kuryentxtreadbill.adapter.BaseActivity;
 import com.xesi.xenuser.kuryentxtreadbill.adapter.RecordListAdapter;
 import com.xesi.xenuser.kuryentxtreadbill.dao.DUPropertyDAO;
 import com.xesi.xenuser.kuryentxtreadbill.dao.base.GenericDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.billdao.BillHeaderDAO;
-import com.nbbse.mobiprint3.Printer;
 import com.xesi.xenuser.kuryentxtreadbill.helper.HeaderFooterInfo;
 import com.xesi.xenuser.kuryentxtreadbill.helper.MsgDialog;
-import com.xesi.xenuser.kuryentxtreadbill.util.PrintReceipt;
 import com.xesi.xenuser.kuryentxtreadbill.model.bill.BillHeader;
+import com.xesi.xenuser.kuryentxtreadbill.util.PrintReceipt;
 
 import java.util.List;
 
 /**
- * Created by Raymond P. Barrinuveo on 9/18/2016.
- * Enhanced and modify by Daryll Sabate 02/15/2017
+ * Created by Daryll-POGI on 24/10/2019.
  */
-public class Reports extends BaseActivity {
+
+public class Archive extends BaseActivity{
+
     private SharedPreferences sharedPref;
     private TextView totalBillsCount;
     private PowerManager.WakeLock wakelock;
@@ -55,7 +56,7 @@ public class Reports extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_reports);
+        setContentView(R.layout.layout_archive);
         sharedPref = getSharedPreferences(APP_PROPERTY_SETTING, Context.MODE_PRIVATE);
         this.context = this.getApplicationContext();
         headerFooterInfo = new HeaderFooterInfo(this);
@@ -74,8 +75,8 @@ public class Reports extends BaseActivity {
         duPropertyDAO = new DUPropertyDAO(getApplication());
         if (duPropertyDAO.getPropertyValue("IS_SEARCH_KEYPAD_NUMERIC").equals("Y"))
             searchView.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED);
-        billsCount = Integer.parseInt(genericDao.getOneField("COUNT(_id)","armBillHeader","where isArchive = ","N","","0"));
-        totalBillsCount.setText("Total Bills: " + billsCount);
+        billsCount = Integer.parseInt(genericDao.getOneField("COUNT(_id)","armBillHeader","where isArchive = ","Y","","0"));
+        totalBillsCount.setText("Total Archives: " + billsCount);
         recordListAdapter = new RecordListAdapter(this, displayRecords());
         lvReports.setOnItemClickListener((parent, view, position, id) -> {
             view.setSelected(true);
@@ -115,7 +116,7 @@ public class Reports extends BaseActivity {
     }
 
     public List<BillHeader> displayRecords() {
-        List<BillHeader> billHeaders = billHeaderDAO.getAllBillList("*","where isArchive = ","N","ORDER BY isUploaded ASC, _id DESC");
+        List<BillHeader> billHeaders = billHeaderDAO.getAllBillList("*","where isArchive = ","Y","ORDER BY isUploaded ASC, _id DESC");
         return billHeaders;
     }
 
@@ -134,7 +135,7 @@ public class Reports extends BaseActivity {
 
     public void btnPrintAllBill(View view) {
         if(billsCount>0) {
-            receipt.callClusterPrintBackground();
+            receipt.callClusterArchivePrintBackground();
             receipt.close();
         }
     }
@@ -167,7 +168,7 @@ public class Reports extends BaseActivity {
                                         } else {
                                             if (masterPass.equals(unlocker)) {
                                                 alert.dismiss();
-                                                receipt.callPrintSummaryBackground();
+                                                receipt.callPrintArchiveSummaryBackground();
                                                 receipt.close();
                                             } else {
                                                 etMasterPass.setError("Invalid Master key");
@@ -179,10 +180,9 @@ public class Reports extends BaseActivity {
                                 }
                         );
             } else {
-                receipt.callPrintSummaryBackground();
+                receipt.callPrintArchiveSummaryBackground();
                 receipt.close();
             }
         }
     }
-
 }

@@ -97,6 +97,10 @@
             android:name=".Logs"
             android:configChanges="orientation|screenSize"
             android:label="KuryenTxt" />
+        <activity
+            android:name=".Archive"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
 
         <receiver
             android:name=".network.NetworkReceiver"

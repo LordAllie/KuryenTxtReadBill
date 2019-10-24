@@ -56,6 +56,7 @@ import com.xesi.xenuser.kuryentxtreadbill.util.UniversalHelper;
 
 
 import java.io.File;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -156,7 +157,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
         ServiceGenerator.changeApiBaseUrl(helper.setUpBaseURL(ipAdd, port));
         observables = new MyObservables(ServiceGenerator.createService(APIHandler.class), this);
         retrofitHandler = new RetrofitHandler(this);
-        billRecordCount = Integer.parseInt(genericDao.getOneField("COUNT(_id)","armBillHeader","WHERE isUploaded =","0","","0"));
+        billRecordCount = Integer.parseInt(genericDao.getOneField("SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded = 0 AND isArchive = 'N'","0"));
         totalAccounts = Integer.parseInt(genericDao.getOneField("COUNT(_id)","arm_account","","","","0"));
         GlobalVariable.billNolist=billHeaderDAO.getAllBillNo();
         if(UniversalHelper.externalMemoryAvailable()) {
@@ -311,9 +312,20 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     }
 
     public void clearData(){
-        Toast.makeText(getApplication(), getResources().getString(R.string.clearDataSuccessMsg), Toast.LENGTH_SHORT).show();
-        _dbCreate.deleteDatabase();
-        _dbCreate.createDatabase();
+        Toast.makeText(getApplication(), "All Transaction archived", Toast.LENGTH_SHORT).show();
+//        _dbCreate.deleteDatabase();
+//        _dbCreate.createDatabase();
+        String[] tableList={"armChargeType","armDuAreaRate","armDuProperties","armNewMeter","armRoute","arm_account","arm_account_bill_aux","arm_account_other_charges","arm_coreloss_tran","arm_kwhaddontran","arm_lifelinedetails","arm_other_charges","arm_rate_detail","arm_rateaddontran","arm_rateaddontran_special","arm_ratemaster","arm_remarks","arm_route_definition","arm_surcharge","db_log","sqlite_sequence"};
+        int i = 0;
+        while (tableList.length > i) {
+            genericDao.deleteTable(tableList[i]);
+            i++;
+        }
+        try{
+            genericDao.updateIsArchive("armBillHeader");
+        }catch (Exception e){
+            genericDao.onUpgrade(genericDao.mcfDB,23,25);
+        }
     }
 
     private void saveLogsToDB(String url, long devID, long idRdm) {

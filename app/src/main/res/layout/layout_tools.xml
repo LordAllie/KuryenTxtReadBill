@@ -386,18 +386,18 @@
                                 android:layout_marginRight="10dp"
                                 android:background="@drawable/btn_change_pass"
                                 android:clickable="true"
-                                android:onClick="btnGenerateTransactions"
-                                android:visibility="gone" />
+                                android:onClick="btnArchive"
+                                android:visibility="visible" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/generateTransact"
+                                android:text="Archive"
                                 android:textAppearance="?android:textAppearanceMedium"
                                 android:textColor="@color/text_gray"
                                 android:textStyle="bold"
-                                android:visibility="gone" />
+                                android:visibility="visible" />
 
 
                         </LinearLayout>

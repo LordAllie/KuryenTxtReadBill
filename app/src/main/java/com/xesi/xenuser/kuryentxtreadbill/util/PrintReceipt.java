@@ -762,6 +762,378 @@ public class PrintReceipt {
         status = checkPaperStatus();
         return status;
     }
+
+    private int printBillArchive(String billNo) {
+        gson = new Gson();
+        int status = checkPaperStatus();
+        if (status == 1) {
+            BigDecimal pleasePayTotal = new BigDecimal(0);
+            billSurchargesList = billSurchargeDao.getSurchargeByBillNo(billNo);
+            String billJson = genericDao.getOneField("billJson","armBillHeader","WHERE isArchive = 'Y' AND billNo =",billNo,"ORDER BY _id DESC","");
+            BillModel billModel = gson.fromJson(billJson, BillModel.class);
+            header = billModel.getBillHeaders();
+            billHeader = header;
+            billAddonKwhs = billModel.getBillAddonKwh();
+            billAddonCharges = billModel.getBillAddonCharge();
+            billChargeGroups = billModel.getBillChargeGroups();
+            billGroupCategories = billModel.getBillGroupCategories();
+            properties = duPropertyDAO.getProperties();
+            accountBillAuxList = accountBillAuxDao.getAccBillAux(header.getAcctNo());
+            map = new HashMap<>();
+            for (DUProperty i : properties)
+                map.put(i.getPropertyName(), i.getPropertyValue());
+
+            account = accountDao.getAccountByAcctNo(header.getOldAccountNo());
+
+            if (getProperty(map.get("IS_PRINT_LOGO"), "Y").equals("Y")) {
+                printBitMapWithDelay(logoPath, Printer.BMP_PRINT_FAST);
+                printTextWithDelay(formatHelper.padLeftDynamic(".", 32));
+            }
+            printTextWithDelay(formatHelper.padLeftDynamic(getProperty(map.get("DU_CODE").trim(), "DU CODE"), 16), 2);
+            printTextWithDelay(formatHelper.padLeftDynamic(getProperty(map.get("DU_ADDRESSLN1"), "Addrln1"), 32));
+            printTextWithDelay(formatHelper.padLeftDynamic(getProperty(map.get("DU_ADDRESSLN2"), "Addrln2"), 32));
+            printTextWithDelay(formatHelper.padLeftDynamic(getProperty(map.get("DU_CONTACT_NO"), "ContactNumber"), 32));
+            printTextWithDelay(formatHelper.padLeftDynamic(getProperty(map.get("DU_VAT_NO"), "VAT_NO"), 32));
+            if (!getProperty(map.get("HEADER_LINE_1"), "-1").equals("-1"))
+                printTextWithDelay(formatHelper.padLeftDynamic(map.get("HEADER_LINE_1"),32), Integer.parseInt(getProperty(map.get("FS_HEADERLN1"), "1")));
+            printTextWithDelay(" ");
+            String soaLabel = getProperty(map.get("LABELED_SOA"),"").equals("") ? "STATEMENT OF ACCOUNT" : getProperty(map.get("LABELED_SOA"),"");
+
+            if(getProperty(map.get("IS_SOA_FONT_BIG"), "N").equals("N"))
+                printLabelSOA(soaLabel.split("%").length,soaLabel,1,32);
+            else
+                printLabelSOA(soaLabel.split("%").length,soaLabel,2,16);
+
+            printTextWithDelay("--------------------------------");
+            printTextWithDelay(formatHelper.padRight("Rundatetime", 11) + formatHelper.padLeft(header.getRunDate(), 21));
+            printTextWithDelay(formatHelper.padRight("Bill No", 12) + formatHelper.padLeft(header.getBillNo(), 20));
+            printTextWithDelay("--------------------------------");
+            String acctNumLabel;
+            int acctNumLength=0;
+            if(getProperty(map.get("ACCT_NO_LABEL"), "Acct No").toLowerCase().equals("null"))
+                acctNumLabel="";
+            else acctNumLabel=getProperty(map.get("ACCT_NO_LABEL"), "Acct No");
+
+            //Accout number property is on top(Y)
+            if(getProperty(map.get("IS_ACCT_NO_TOP_OF_NAME"), "N").equals("Y")) {
+                if (getProperty(map.get("IS_HIGHLIGHT_ACCT_NO"), "N").equals("Y"))
+                    printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                else if (getProperty(map.get("IS_ACCT_NO_FONT_BIG"), "N").equals("Y"))
+                    if (header.getOldAccountNo().length() > 9) {
+                        if (acctNumLabel.equals(""))
+                            printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                        else {
+                            printTextWithDelay(formatHelper.padRight(acctNumLabel, 12), 2);
+                            printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                        }
+                    } else {
+                        if (acctNumLabel.equals(""))
+                            printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                        else
+                            printTextWithDelay(formatHelper.padRight(acctNumLabel, 7) + formatHelper.padLeft(header.getOldAccountNo(), 9), 2);
+                    }
+                else{
+                    if(acctNumLabel.equals(""))
+                        printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 32));
+                    else
+                        printTextWithDelay(formatHelper.padRight(acctNumLabel, 12) + formatHelper.padLeft(header.getOldAccountNo(), 20));
+                }
+
+            }
+
+            List<String> nameList = formatHelper.formatStringByMaxLength(header.getAcctName(), 32);
+            for (String name : nameList)
+                if(getProperty(map.get("IS_ACCOUNT_NAME_FONT_BIG"), "N").equals("Y"))
+                    printTextWithDelay(formatHelper.padRightEllipses(name, 16),2);
+                else
+                    printTextWithDelay(formatHelper.padLeftDynamic(name, 32));
+
+
+            if(getProperty(map.get("IS_ADDRESS_BOTTOM_OF_NAME"), "N").equals("Y")){
+                if(getProperty(map.get("ADDRESS_LABEL"), "Address").equals("null")) {
+                    printTextWithDelay(formatHelper.padLeftDynamic(WordUtils.capitalizeFully(account.getAddressLn1()), 32));
+                    printTextWithDelay(formatHelper.padLeftDynamic(WordUtils.capitalizeFully(account.getAddressLn2()), 32));
+                }else {
+                    printTextWithDelay(formatHelper.padRight("Address", 9) + formatHelper.padLeft(WordUtils.capitalizeFully(account.getAddressLn1()), 23));
+                    printTextWithDelay(formatHelper.padRight(" ", 2) + formatHelper.padLeft(WordUtils.capitalizeFully(account.getAddressLn2()), 30));
+                }
+            }
+
+            //Accout number property is on top(N)
+            if(getProperty(map.get("IS_ACCT_NO_TOP_OF_NAME"), "N").equals("N")) {
+                if (getProperty(map.get("IS_HIGHLIGHT_ACCT_NO"), "N").equals("Y"))
+                    printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                else if (getProperty(map.get("IS_ACCT_NO_FONT_BIG"), "N").equals("Y"))
+                    if (header.getOldAccountNo().length() > 9) {
+                        if (acctNumLabel.equals(""))
+                            printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                        else {
+                            printTextWithDelay(formatHelper.padRight(acctNumLabel, 12), 2);
+                            printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                        }
+                    } else {
+                        if (acctNumLabel.equals(""))
+                            printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 16), 2);
+                        else
+                            printTextWithDelay(formatHelper.padRight(acctNumLabel, 7) + formatHelper.padLeft(header.getOldAccountNo(), 9), 2);
+                    }
+                else{
+                    if(acctNumLabel.equals(""))
+                        printTextWithDelay(formatHelper.padLeftDynamic(header.getOldAccountNo(), 32));
+                    else
+                        printTextWithDelay(formatHelper.padRight(acctNumLabel, 12) + formatHelper.padLeft(header.getOldAccountNo(), 20));
+                }
+            }
+
+            if (account.getSin() != null && !account.getSin().equals(""))
+                if(getProperty(map.get("IS_SIN_FONT_BIG"), "N").equals("Y"))
+                    if(account.getSin().length()>13){
+                        printTextWithDelay(formatHelper.padRight("SIN ", 16),2);
+                        printTextWithDelay(formatHelper.padLeftDynamic(account.getSin(), 16),2);
+                    }else {
+                        printTextWithDelay(formatHelper.padRight("SIN", 3)+formatHelper.padLeft(account.getSin(), 13),2);
+                    }
+                else
+                    printTextWithDelay(formatHelper.padRight("SIN", 12) + formatHelper.padLeft(account.getSin(), 20));
+
+            if (getProperty(map.get("IS_METER_NO_TOP_OF_ROUTE"), "N").equals("Y"))
+                printTextWithDelay(formatHelper.padRight("Meter No", 12) + formatHelper.padLeft(header.getMeterNo(), 20));
+            if (getProperty(map.get("IS_PRINT_ROUTE_CODE"), "N").equals("Y"))
+                printTextWithDelay(formatHelper.padRight("Route Code", 12) + formatHelper.padLeft(header.getRouteCode(), 20));
+            if (getProperty(map.get("IS_PRINT_SEQUENCE_NUMBER"), "N").equals("Y"))
+                printTextWithDelay(formatHelper.padRight("Seq#", 12) + formatHelper.padLeft(String.valueOf(header.getSequenceNo()), 20));
+            if (getProperty(map.get("IS_METER_NO_TOP_OF_ROUTE"), "N").equals("N"))
+                printTextWithDelay(formatHelper.padRight("Meter No", 12) + formatHelper.padLeft(header.getMeterNo(), 20));
+            if(getProperty(map.get("IS_ADDRESS_BOTTOM_OF_NAME"), "N").equals("N")){
+                if(getProperty(map.get("ADDRESS_LABEL"), "Address").equals("null")) {
+                    printTextWithDelay(formatHelper.padLeftDynamic(WordUtils.capitalizeFully(account.getAddressLn1()), 32));
+                    printTextWithDelay(formatHelper.padLeftDynamic(WordUtils.capitalizeFully(account.getAddressLn2()), 32));
+                }else {
+                    printTextWithDelay(formatHelper.padRight("Address", 9) + formatHelper.padLeft(WordUtils.capitalizeFully(account.getAddressLn1()), 23));
+                    printTextWithDelay(formatHelper.padRight(" ", 2) + formatHelper.padLeft(WordUtils.capitalizeFully(account.getAddressLn2()), 30));
+                }
+            }
+
+
+            if (header.getConsumerType().length() < 11)
+                conType = header.getConsumerType();
+            else
+                conType = header.getConsumerType().substring(0, 11) + "...";
+            if(account.getMinimumContractedEnergy() > 0)
+                printTextWithDelay(formatHelper.padRight("MCE", 12) + formatHelper.padLeft(UniversalHelper.df.format(account.getMinimumContractedEnergy()), 20));
+            printTextWithDelay(formatHelper.padRight("Type", 5) + formatHelper.padLeft(conType, 27));
+
+            printTextWithDelay("--------------------------------");
+            if(getProperty(map.get("IS_PRINT_PREVIOUS_CONSUMPTION"), "N").equals("Y"))
+                printTextWithDelay(formatHelper.padRight("Previous kWh Used", 17) + formatHelper.padLeft(UniversalHelper.df.format(account.getCurrentConsumption()), 15));
+            printTextWithDelay(formatHelper.padRight("Current Reading", 17) + formatHelper.padLeft(UniversalHelper.df.format(header.getCurReading()), 15));
+            printTextWithDelay(formatHelper.padRight("Previous Reading", 17) + formatHelper.padLeft(UniversalHelper.df.format(header.getPrevReading()), 15));
+            if (header.getCoreloss() == 0) {
+                if (header.getConsumption() == header.getTotalConsumption()) {
+                    printMultiplier(header.getMeterMultiplier());
+                } else {
+                    printTextWithDelay(formatHelper.padRight("Current kWh", 17) + formatHelper.padLeft(UniversalHelper.df.format(header.getConsumption()).toString(), 15));
+                    printMultiplier(header.getMeterMultiplier());
+                }
+            } else {
+                printTextWithDelay(formatHelper.padRight("Current kWh", 17) + formatHelper.padLeft(UniversalHelper.df.format(header.getConsumption()).toString(), 15));
+                printMultiplier(header.getMeterMultiplier());
+                printTextWithDelay(formatHelper.padRight("Coreloss", 17) + formatHelper.padLeft(UniversalHelper.df.format(header.getCoreloss()).toString(), 15));
+            }
+            // Print Addon Kwh
+            if (billAddonKwhs != null && billAddonKwhs.size() > 0) {
+                for (BillAddonKwh kwAddon : billAddonKwhs) {
+                    String formattedData = WordUtils.capitalizeFully(kwAddon.getAddonKwh());
+                    printTextWithDelay(formatHelper.padRight(formattedData, 24) + formatHelper.padLeft(UniversalHelper.df.format(kwAddon.getValue()), 8));
+                }
+                synchronized (this) {
+                    try {
+                        this.wait(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        Toast.makeText(context, "Error in printing bill add-on kWh. please try again", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            printTextWithDelay(formatHelper.padRight("kWh Used", 17) + formatHelper.padLeft(UniversalHelper.df.format(header.getTotalConsumption()).toString(), 15));
+            printTextWithDelay("--------------------------------");
+            printTextWithDelay(formatHelper.padRight("Period from", 17) + formatHelper.padLeft(header.getPeriodFrom(), 15));
+            printTextWithDelay(formatHelper.padRight("Period to", 17) + formatHelper.padLeft(header.getPeriodTo(), 15));
+            printTextWithDelay(formatHelper.padRight("Billing Mo", 17) + formatHelper.padLeft(header.getBillingMonth(), 15));
+            printTextWithDelay("--------------------------------");
+            printGroup(billChargeGroups, billGroupCategories, map);
+            if (getProperty(map.get("IS_CURRENT_BILL_FONT_BIG"), "N").equals("Y"))
+                printTextWithDelay(formatHelper.padRight("Current Bill", 12) + formatHelper.padLeft("Php " + dformatter.format(Double.parseDouble(header.getCurBill())), 20),2);
+            else
+                printTextWithDelay(formatHelper.padRight("Current Bill", 12) + formatHelper.padLeft("Php " + dformatter.format(Double.parseDouble(header.getCurBill())), 20));
+
+            if (billAddonCharges != null && billAddonCharges.size() > 0) {
+                printTextWithDelay("--------------------------------");
+                if (billAddonCharges != null && billAddonCharges.size() > 0) {
+                    for (BillAddonCharge billAddonCharge : billAddonCharges)
+                        printTextWithDelay(formatHelper.padRight(billAddonCharge.getAddonCharge(), 17) + formatHelper.padLeft("Php " + dformatter.format(billAddonCharge.getValue()), 15));
+                    synchronized (this) {
+                        try {
+                            this.wait(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            Toast.makeText(context, "Error in printing add-on charges please try again", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+
+            if(header.getAccountArrears() != 0 ){
+                printTextWithDelay("--------------------------------");
+                printTextWithDelay(formatHelper.padRight("Balance ", 16) +
+                        formatHelper.padLeft("Php " + dformatter.format(header.getAccountArrears()), 16));
+                if(header.getArrearsAsOf() != null && !header.getArrearsAsOf().equals("")){
+                    try {
+                        printTextWithDelay(formatHelper.padRight("Balance as of ", 16) +
+                                formatHelper.padLeft(dueDateFormat.format(sdf.parse(header.getArrearsAsOf())), 16));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            printTextWithDelay("--------------------------------");
+            if (getProperty(map.get("IS_TOTAL_AMOUNT_DUE_FONT_BIG"), "N").equals("Y"))
+                printTextWithDelay(formatHelper.padRight("Total Amount Due", 16) + formatHelper.padLeft("Php " + dformatter.format(Double.parseDouble(header.getTotalAmountDue())), 16), 2);
+            else
+                printTextWithDelay(formatHelper.padRight("Total Amount Due", 16) + formatHelper.padLeft("Php " + dformatter.format(Double.parseDouble(header.getTotalAmountDue())), 16));
+
+
+            if (getProperty(map.get("IS_PRINT_BILL_AFTER_DUE"), "N").equals("Y")) {
+                printTextWithDelay("--------------------------------");
+                if (getProperty(map.get("IS_PRINT_SURCHARGE"), "N").equals("Y")) {
+                      /* Temporary - setup for FLECO */
+                    BigDecimal totalAmountDue = new BigDecimal(header.getTotalAmountDue()).setScale(2, BigDecimal.ROUND_HALF_UP);
+                    BigDecimal totalAmountAfterDue = new BigDecimal(header.getTotalBillAfterDueDate()).setScale(2, BigDecimal.ROUND_HALF_UP);
+                    BigDecimal surcharge = totalAmountAfterDue.subtract(totalAmountDue);
+                    if (totalAmountDue.compareTo(BigDecimal.ZERO) > 0) {
+                        printTextWithDelay(formatHelper.padRight("Surcharge", 10) + formatHelper.padLeft(dformatter.format(surcharge), 22));
+                        printTextWithDelay("--------------------------------");
+                    }
+                }
+                printTextWithDelay(formatHelper.padRight("After Due Date", 16) + formatHelper.padLeft("Php " + dformatter.format(Double.parseDouble(header.getTotalBillAfterDueDate())), 16), 2);
+            }
+
+            if(accountBillAuxList != null && accountBillAuxList.size() > 0){
+                printTextWithDelay("--------------------------------");
+                printTextWithDelay(formatHelper.padRight("On Or Before Due Date", 32));
+                printTextWithDelay("--------------------------------");
+                pleasePayTotal = printAccountBillAux(accountBillAuxList).add(new BigDecimal(header.getTotalAmountDue()));
+                printTextWithDelay(formatHelper.padRight("Total Amount Due", 16) + formatHelper.padLeft("Php " + dformatter.format(Double.parseDouble(header.getTotalAmountDue())), 16));
+                printTextWithDelay(formatHelper.padRight("Please Pay", 16) + formatHelper.padLeft("Php " + dformatter.format(pleasePayTotal.setScale(2,BigDecimal.ROUND_HALF_UP)), 16));
+            }else
+                pleasePayTotal = pleasePayTotal.add(new BigDecimal(header.getTotalAmountDue()));
+            BigDecimal percent = new BigDecimal(0);
+            if(billSurchargesList != null && billSurchargesList.size() > 0){
+                for(BillSurcharge billSurcharge : billSurchargesList){
+                    printTextWithDelay("--------------------------------");
+                    printTextWithDelay(formatHelper.padRight("W/in " + billSurcharge.getDays() + " Day(s) After Due Date", 32));
+                    printTextWithDelay("--------------------------------");
+                    if(accountBillAuxList != null && accountBillAuxList.size() > 0)
+                        printAccountBillAux(accountBillAuxList);
+                    pleasePayTotal = pleasePayTotal.add(billSurcharge.getSurcharge()).setScale(2,BigDecimal.ROUND_HALF_UP);
+                    percent = new BigDecimal(100).multiply(billSurcharge.getSurchargeRate()).setScale(0,BigDecimal.ROUND_DOWN);
+                    printTextWithDelay(formatHelper.padRight("Surcharge(" + percent +"%)", 16) + formatHelper.padLeft("Php " + dformatter.format(billSurcharge.getSurcharge()), 16));
+                    printTextWithDelay(formatHelper.padRight("Total Amount Due", 16) + formatHelper.padLeft("Php " + dformatter.format(Double.parseDouble(header.getTotalAmountDue())), 16));
+                    printTextWithDelay(formatHelper.padRight("Please Pay", 16) + formatHelper.padLeft("Php " + dformatter.format(pleasePayTotal), 16));
+                    pleasePayTotal = pleasePayTotal.subtract(billSurcharge.getSurcharge());
+                }
+                synchronized (this) {
+                    try {
+                        this.wait(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        Toast.makeText(context, "Error in printing bill surcharge. please try again", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            printTextWithDelay("--------------------------------");
+            printTextWithDelay(formatHelper.padRight("Reader", 12) + formatHelper.padLeft(header.getReader(), 20));
+            printTextWithDelay(formatHelper.padRight("Device ID", 12) + formatHelper.padLeft(Integer.toString(header.getDeviceId()), 20));
+            try {
+                if (getProperty(map.get("IS_DUE_DATE_FONT_BIG"), "N").equals("Y"))
+                    printTextWithDelay(formatHelper.padRight("Due Date", 12) + formatHelper.padLeft(dueDateFormat.format(sdf.parse(header.getDueDate())), 20),2);
+                else
+                    printTextWithDelay(formatHelper.padRight("Due Date", 12) + formatHelper.padLeft(dueDateFormat.format(sdf.parse(header.getDueDate())), 20));
+
+                if (getProperty(map.get("IS_PRINT_DISCONNECTION_DATE"), "N").equals("Y"))
+                    printTextWithDelay(formatHelper.padRight("Disconnection Date", 20) + formatHelper.padLeft(dueDateFormat.format(sdf.parse(header.getDiscoDate())), 12));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            printTextWithDelay("--------------------------------");
+            if (getProperty(map.get("IS_DISCONNECTION_NOTICE_ALWAYS_ON"), "Y").equals("Y")){
+                if (!getProperty(map.get("FOOTER_LINE_1"), "-1").equals("-1"))
+                    printTextWithDelay(formatHelper.padLeftDynamic(map.get("FOOTER_LINE_1"),32), Integer.parseInt(getProperty(map.get("FS_FOOTERLN1"), "1")));
+
+
+                if (!getProperty(map.get("FOOTER_LINE_2"), "-1").equals("-1"))
+                    printTextWithDelay(formatHelper.padLeftDynamic(map.get("FOOTER_LINE_2"),32), Integer.parseInt(getProperty(map.get("FS_FOOTERLN2"), "1")));
+
+                if (!getProperty(map.get("FOOTER_LINE_3"), "-1").equals("-1"))
+                    printTextWithDelay(formatHelper.padLeftDynamic(map.get("FOOTER_LINE_3"),32), Integer.parseInt(getProperty(map.get("FS_FOOTERLN3"), "1")));
+            }
+
+
+
+            if (getProperty(map.get("IS_PRINT_BAR_CODE"), "N").equals("Y")) {
+                printTextWithDelay(formatHelper.padLeftDynamic(" "  , 32));
+                generateBarcode(header.getOldAccountNo());
+                printBitMapWithDelay(barCodePath, Printer.BMP_PRINT_FAST);
+                printTextWithDelay(formatHelper.padLeftDynamic(" "  , 32));
+                printTextWithDelay(formatHelper.padRight("Acct Name", 12) + formatHelper.padLeft(header.getAcctName(), 20));
+                printTextWithDelay(formatHelper.padRight("Amount", 12) + formatHelper.padLeft(dformatter.format(Double.parseDouble(header.getTotalAmountDue())), 20));
+            }
+            if (getProperty(map.get("IS_PRINT_QR_CODE"), "N").equals("Y")) {
+                generateQRCode(header);
+                printBitMapWithDelay(qrPath, Printer.BMP_PRINT_FAST);
+
+            }
+            printTextWithDelay("--------------------------------");
+            printTextWithDelay(formatHelper.padLeftDynamic("This is NOT an official receipt", 32));
+            printTextWithDelay(formatHelper.padLeftDynamic("Please pay at any " + getProperty(map.get("DU_CODE").trim(), "DU CODE") , 32));
+            printTextWithDelay(formatHelper.padLeftDynamic("Business Center", 32));
+            printTextWithDelay(formatHelper.padLeftDynamic("Powered by: XESI", 32));
+            printTextWithDelay(formatHelper.padLeftDynamic("Version: " + sharedPref.getString("version", " "), 32));
+            printTextWithDelay(formatHelper.padLeftDynamic("www.xenenergy.com.ph", 32));
+
+            if (getProperty(map.get("IS_ARREARS_DISCONNECTION_NOTICE"), "N").equals("Y")){
+                if(accountDao.getArrearsByAcctNo(account.getOldAccountNumber()).getArrears()>0) {
+
+                    printTextWithDelay("");
+                    printTextWithDelay("");
+                    printTextWithDelay("--------------------------------");
+                    printTextWithDelay(formatHelper.padLeftDynamic("DISCONNECTION", 16),2);
+                    printTextWithDelay(formatHelper.padLeftDynamic("NOTICE", 16),2);
+                    printTextWithDelay("");
+                    printTextWithDelay(formatHelper.padRight("Acct No", 7)+formatHelper.padLeft(header.getOldAccountNo(), 25));
+                    printTextWithDelay(formatHelper.padRight("Balance", 7)+formatHelper.padLeft("Php "+dformatter.format(header.getAccountArrears()), 25));
+                    printTextWithDelay("");
+                    if(!getProperty(map.get("ARREARS_DISCONNECTION_MESSAGE1"), "").equals(""))
+                        printTextWithDelay(formatHelper.padLeftDynamic(map.get("ARREARS_DISCONNECTION_MESSAGE1"), 32));
+                    if(!getProperty(map.get("ARREARS_DISCONNECTION_MESSAGE2"), "").equals(""))
+                        printTextWithDelay(formatHelper.padLeftDynamic(map.get("ARREARS_DISCONNECTION_MESSAGE2"), 32));
+                    if(!getProperty(map.get("ARREARS_DISCONNECTION_MESSAGE3"), "").equals(""))
+                        printTextWithDelay(formatHelper.padLeftDynamic(map.get("ARREARS_DISCONNECTION_MESSAGE3"), 32));
+                    if(!getProperty(map.get("ARREARS_DISCONNECTION_MESSAGE4"), "").equals(""))
+                        printTextWithDelay(formatHelper.padLeftDynamic(map.get("ARREARS_DISCONNECTION_MESSAGE4"), 32));
+                    if(!getProperty(map.get("ARREARS_DISCONNECTION_MESSAGE5"), "").equals(""))
+                        printTextWithDelay(formatHelper.padLeftDynamic(map.get("ARREARS_DISCONNECTION_MESSAGE5"), 32));
+                }
+            }
+            print.printEndLine();
+        }
+        status = checkPaperStatus();
+        return status;
+    }
+
     private void printLabelSOA(int count,String soaLabel, int fontSize, int lengthParam){
         int start = 0;
         int percentChecker =0;
@@ -959,7 +1331,70 @@ public class PrintReceipt {
         Double totKwh=0.00, totBill=0.00;
         String reader="";
         if (status == 1) {
-            List<BillHeader> bills = billHeaderDAO.getAllBillList("*","","","ORDER BY isUploaded ASC, _id DESC");
+            List<BillHeader> bills = billHeaderDAO.getAllBillList("*","where isArchive = ","N","ORDER BY isUploaded ASC, _id DESC");
+            for (BillHeader billHeader : bills) {
+                printTextWithDelay(UniversalHelper.padRight("Reading Date.", 14)
+                        + UniversalHelper.padLeft(billHeader.getRunDate(), 18));
+                printTextWithDelay(UniversalHelper.padRight("Bill No.", 15)
+                        + UniversalHelper.padLeft(billHeader.getBillNo(), 17));
+                printTextWithDelay(UniversalHelper.padRight("Acct No.", 15)
+                        + UniversalHelper.padLeft(billHeader.getOldAccountNo(), 17));
+                printTextWithDelay(UniversalHelper.padRight("Meter No.", 15)
+                        + UniversalHelper.padLeft(billHeader.getMeterNo(), 17));
+                printTextWithDelay(UniversalHelper.padRight("Acct Name", 11)
+                        + UniversalHelper.padLeft(billHeader.getAcctName(), 21));
+                printTextWithDelay(UniversalHelper.padRight("Previous Reading.", 18)
+                        + UniversalHelper.padLeft(UniversalHelper.df.format(billHeader.getPrevReading()), 14));
+                printTextWithDelay(UniversalHelper.padRight("Current Reading.", 17)
+                        + UniversalHelper.padLeft(UniversalHelper.df.format(billHeader.getCurReading()), 15));
+                printTextWithDelay(UniversalHelper.padRight("kWh Used.", 19)
+                        + UniversalHelper.padLeft(UniversalHelper.df.format(billHeader.getTotalConsumption()), 13));
+                printTextWithDelay(UniversalHelper.padRight("Total Bill", 16)
+                        + UniversalHelper.padLeft(  "Php " + dformatter.format(Double.parseDouble(billHeader.getTotalAmountDue())), 16));
+                printTextWithDelay(UniversalHelper.padRight("Remarks.", 15)
+                        + UniversalHelper.padLeft(billHeader.getRemarks(), 17));
+                printTextWithDelay("------------------------------");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Log.d("LOOPDELAY", "Delaying 2 Seconds");
+                totKwh=totKwh+billHeader.getTotalConsumption();
+                totBill=totBill+Double.parseDouble(billHeader.getTotalAmountDue());
+                reader=billHeader.getReader();
+            }
+            printTextWithDelay(UniversalHelper.padRight("Total Number Of Bills.", 22)
+                    + UniversalHelper.padLeft(String.valueOf(bills.size()), 10));
+            printTextWithDelay("------------------------------");
+            List<String> routes = accountDao.getRouteList();
+            String bookNo="";
+            for (int i=0; i<routes.size();i++){
+                bookNo=bookNo+","+routes.get(i);
+            }
+            String recordCountQuery = genericDao.getOneField("SELECT COUNT(id) FROM arm_account","0");
+            String readAcct = genericDao.getOneField("SELECT COUNT(id) FROM arm_account where isRead=1","0");
+            String unreadAcct = genericDao.getOneField("SELECT COUNT(id) FROM arm_account where isRead=0","0");
+
+            printTextWithDelay(UniversalHelper.padRight("Book# ",16) + UniversalHelper.padLeft(bookNo.substring(1),16));
+            printTextWithDelay(UniversalHelper.padRight("Total Read ",16) + UniversalHelper.padLeft(readAcct,16));
+            printTextWithDelay(UniversalHelper.padRight("Total Unread ",16) + UniversalHelper.padLeft(unreadAcct,16));
+            printTextWithDelay(UniversalHelper.padRight("Total Records ",16) + UniversalHelper.padLeft(recordCountQuery,16));
+            printTextWithDelay(UniversalHelper.padRight("Total kwh ",16) + UniversalHelper.padLeft(String.valueOf(totKwh),16));
+            printTextWithDelay(UniversalHelper.padRight("Total Amount ",16) +UniversalHelper.padLeft("Php " + dformatter.format(totBill),16));
+            printTextWithDelay(UniversalHelper.padRight("Meter Reader ",16) + UniversalHelper.padLeft(reader,16));
+            print.printEndLine();
+        }
+        status = checkPaperStatus();
+        return status;
+    }
+
+    private int printArchiveSummary() {
+        int status = checkPaperStatus();
+        Double totKwh=0.00, totBill=0.00;
+        String reader="";
+        if (status == 1) {
+            List<BillHeader> bills = billHeaderDAO.getAllBillList("*","where isArchive = ","Y","ORDER BY isUploaded ASC, _id DESC");
             for (BillHeader billHeader : bills) {
                 printTextWithDelay(UniversalHelper.padRight("Reading Date.", 14)
                         + UniversalHelper.padLeft(billHeader.getRunDate(), 18));
@@ -1138,6 +1573,81 @@ public class PrintReceipt {
         }
     }
 
+    private class ClusterArchivePrintOnBackground extends AsyncTask<Void, String, Integer> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar.setTitle("Printing");
+            progressBar.setMessage("Please wait...");
+            progressBar.setCancelable(false);
+            progressBar.show();
+        }
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            super.onPostExecute(integer);
+            String message;
+            if (progressBar != null) {
+                progressBar.dismiss();
+            }
+            if (integer == 1)
+                msgDialog.showArchiveSuccessDialog("Printing finished");
+            else if (integer == -2)
+                msgDialog.showArchiveSuccessDialog("All bills are already printed.");
+            else {
+                message = UniversalHelper.checkPaperStatus(integer);
+                if (!message.equals("OK"))
+                    msgDialog.showErrDialog("Printer error encounter\nError Code: " + integer + "\nMessage: " + message);
+            }
+
+        }
+
+        @Override
+        protected Integer doInBackground(Void... aVoid) {
+            List<String> billNoList = billHeaderDAO.printAllBills();
+            int status = -3;
+            if (billNoList.size() == 0) {
+                status = -2;
+            } else {
+                for (String billNo : billNoList) {
+                    try {
+                        Log.d("PRINT", "Start Printing " + billNo);
+                        if (print.voltageCheck()) {
+                            //  status = printCluster(billNo);
+                            status = printBillArchive(billNo);
+                            if (status == 1) {
+                                updateIsPrinted(billNo);
+                            } else {
+                                Log.d("PRINT", "Error Status " + status);
+                                break;
+                            }
+                            for (int x = 5; x >= 1; x--) {
+                                publishProgress("Cooling Down, will resume " +
+                                        "\nin " + x + " seconds");
+                                Thread.sleep(1000);
+                            }
+                            publishProgress("Printing continue");
+                        } else {
+                            status = -4;
+                            break;
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            return status;
+        }
+
+        @Override
+        protected void onProgressUpdate(String... values) {
+            super.onProgressUpdate(values);
+            progressBar.setMessage(values[0]);
+        }
+    }
+
     private class PrintOnBackground extends AsyncTask<String, String, Integer> {
         @Override
         protected void onPreExecute() {
@@ -1251,6 +1761,49 @@ public class PrintReceipt {
                 status = printSummaryInTabular();
             } else {
                 status = printSummary();
+            }
+            return status;
+        }
+    }
+
+    private class PrintArchiveSummaryOnBackground extends AsyncTask<Void, Void, Integer> {
+        ProgressDialog progressBar;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar = new ProgressDialog(context);
+            progressBar.setTitle("Printing");
+            progressBar.setMessage("Please wait...");
+            progressBar.setCancelable(false);
+            progressBar.show();
+        }
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            super.onPostExecute(integer);
+            String message;
+            if (progressBar != null) {
+                progressBar.dismiss();
+            }
+            if (integer == 1)
+                msgDialog.showArchiveSuccessDialog("Printing finished");
+            else if (integer == -2)
+                msgDialog.showArchiveSuccessDialog("All bills are already printed.");
+            else {
+                message = UniversalHelper.checkPaperStatus(integer);
+                if (!message.equals("OK"))
+                    msgDialog.showErrDialog("Printer error encounter\nError Code: " + integer + "\nMessage: " + message);
+            }
+        }
+
+        @Override
+        protected Integer doInBackground(Void... aVoid) {
+            int status;
+            if (duPropertyDAO.getPropertyValue("IS_PRINT_IN_TABULAR_FORM").equals("Y")) {
+                status = printSummaryInTabular();
+            } else {
+                status = printArchiveSummary();
             }
             return status;
         }
@@ -1429,6 +1982,11 @@ public class PrintReceipt {
         printOnBackground.execute();
     }
 
+    public void callClusterArchivePrintBackground() {
+        ClusterArchivePrintOnBackground printOnBackground = new ClusterArchivePrintOnBackground();
+        printOnBackground.execute();
+    }
+
     public void callPrintBackground(String billNo,boolean lastSeq,String spike) {
         isLastSeq = lastSeq;
         isSpikeDrop = spike;
@@ -1438,6 +1996,11 @@ public class PrintReceipt {
 
     public void callPrintSummaryBackground() {
         PrintSummaryOnBackground printOnBackground = new PrintSummaryOnBackground();
+        printOnBackground.execute();
+    }
+
+    public void callPrintArchiveSummaryBackground() {
+        PrintArchiveSummaryOnBackground printOnBackground = new PrintArchiveSummaryOnBackground();
         printOnBackground.execute();
     }
 

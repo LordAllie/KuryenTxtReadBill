@@ -26,7 +26,7 @@ public class BaseDAO extends SQLiteOpenHelper {
 
     public static final String APP_PROPERTY_SETTING = "app_config";
     public static final String SP_KEY_DB_VER = "db_ver";
-    public static final int DB_VERSION = 23; //20 lastVersion 2018-08-13 updated version 2019-06-14 //18 to prod 20 updated 08/13/18
+    public static final int DB_VERSION = 25; //20 lastVersion 2018-08-13 updated version 2019-06-14 //18 to prod 20 updated 08/13/18
     public static String DB_PATH = "";
     public static String DB_NAME = "read&bill.db";
     public SharedPreferences prefs;
@@ -138,4 +138,7 @@ public class BaseDAO extends SQLiteOpenHelper {
         }
         return isUploaded;
     }
+
+
+
 }

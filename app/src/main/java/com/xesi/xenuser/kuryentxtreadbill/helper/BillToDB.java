@@ -119,17 +119,17 @@ public class BillToDB extends BaseDAO {
         bill.setArrearsAsOf(accounts.getArrearsAsOf());
         bill.setEditCount(0);
         bill.setIsVoid("N");
+        bill.setIsArchive("N");
         return billHeaderDAO.insertRecord(bill);
     }
 
     /* FOR BILL NO GENERATION */
     public String generateBillNo(String deviceId, String oldAcctNo) {
-        String billNumber = genericDao.getOneField("billNo","armBillHeader","WHERE isUploaded = 0 AND oldAcctNo = ",oldAcctNo,"ORDER BY _id DESC LIMIT 1","");
+        String billNumber = genericDao.getOneField("billNo","armBillHeader","WHERE isArchive='N' AND isUploaded = 0 AND oldAcctNo = ",oldAcctNo,"ORDER BY _id DESC LIMIT 1","");
         if (billNumber.trim().equals("") && billNumber != null) {
             String billFormat = duPropertyDAO.getPropertyValue("BILL_NUMBER_FORMAT");
             billNumber = !billFormat.equals("-1") ? billFormat : "%DEVICE%YY%MM%DD%CTR" ;
             int billCode = checkDate();
-
 
             billNumber = BillNumberFormat.generateBillNo(String.format("%03d", Integer.parseInt(deviceId)),String.format("%03d", billCode),billNumber);
 

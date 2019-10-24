@@ -85,6 +85,7 @@ public class BillHeaderDAO extends BaseDAO {
             contentValues.put("arrearsAsOf", bill.getArrearsAsOf());
             contentValues.put("editCount",bill.getEditCount());
             contentValues.put("isVoid",bill.getIsVoid());
+            contentValues.put("isArchive",bill.getIsArchive());
             if (mcfDB.insertOrThrow(TABLE_NAME, null, contentValues) == -1) {
                 isInserted = "-2";
             } else {
@@ -340,6 +341,7 @@ public class BillHeaderDAO extends BaseDAO {
         billHeader.setDiscoDate(cursor.getString(cursor.getColumnIndex("discoDate")));
         billHeader.setIsUploaded(cursor.getInt(cursor.getColumnIndex("isUploaded")));
         billHeader.setIsPrinted(cursor.getInt(cursor.getColumnIndex("isPrinted")));
+        billHeader.setIsArchive(cursor.getString(cursor.getColumnIndex("isArchive")));
         return billHeader;
     }
 

@@ -93,4 +93,17 @@ public class GenericDao extends BaseDAO {
         return dataInner;
     }
 
+    public void updateIsArchive(String TABLE_NAME){
+        mcfDB = this.getWritableDatabase();
+        try {
+            ContentValues values = new ContentValues();
+            values.put("isArchive", "Y");
+            mcfDB.update(TABLE_NAME, values, null, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            mcfDB.close();
+        }
+    }
+
 }

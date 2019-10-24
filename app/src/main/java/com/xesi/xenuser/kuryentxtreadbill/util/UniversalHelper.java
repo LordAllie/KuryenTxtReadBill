@@ -61,6 +61,8 @@ public class UniversalHelper {
         String padCharacter = " ";
         String space = "";
         int counter = 0;
+        if(originalString==null)
+            originalString="";
         int len = originalString.length();
         if (len < lengthParam) {
             int numOfSpace = (lengthParam - len) / 2;

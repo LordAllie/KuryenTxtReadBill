@@ -533,7 +533,7 @@ public class ReadMeterFragment extends Fragment implements View.OnClickListener 
 
         billNo = genericDao.getOneField("billNo","armBillHeader","","","ORDER BY _id DESC LIMIT 1","");
         if (!result.equals(billNo)) {
-            msgDialog.showErrDialog(result);
+            msgDialog.showErrDialog("error: "+result+"//"+billNo);
         } else {
             accountDao.updateReadingAndIsRead(curRdg, accountModelV2.getSequenceNumber(), accountModelV2.getIdRoute(), accountModelV2.getId());
             etCurRdg.setText("");
