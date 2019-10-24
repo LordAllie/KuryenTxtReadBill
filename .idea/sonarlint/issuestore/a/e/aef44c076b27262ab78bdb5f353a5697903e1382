@@ -1,0 +1,6 @@
+
+[squid:S2259/"DA "NullPointerException" could be thrown; "cursor" is nullable here.(®¶ëü
+?squid:S1148-"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+‹squid:UselessImportCheck	"bRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.download.AccountOtherCharges'.(òØãÔıÿÿÿÿ
+Vsquid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ
+rsquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ñ»ÿÿÿÿÿ

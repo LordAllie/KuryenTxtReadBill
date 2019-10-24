@@ -1,0 +1,4 @@
+
+[squid:S2259-"DA "NullPointerException" could be thrown; "cursor" is nullable here.(®¶λό
+?squid:S1148+"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ
+rsquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ώ΄ωÿÿÿÿ

@@ -1,0 +1,110 @@
+
+ysquid:UselessImportCheck4"URemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.bill.BillHeader'.(ÂçÒ­
+€squid:S1450p"dRemove the "rateMasterListAdapter" field and declare it as a local variable in the relevant methods.(«ã¨ùûÿÿÿÿ
+Nsquid:S1659m"7Declare "tvIsSuppressedPrintBuffer" on a separate line.(Ü’£
+fsquid:S1192é"IDefine a constant instead of duplicating this literal "idReader" 3 times.(õğŸŠùÿÿÿÿ
+Osquid:S1481À"7Remove this unused "accountModelV2List" local variable.(ÌÁÕÏ
+^squid:S1854À"FRemove this useless assignment to local variable "accountModelV2List".(ÌÁÕÏ
+Fsquid:S1659“")Declare "newPassword" on a separate line.(¦Æÿÿÿÿÿÿ
+Zsquid:UselessImportCheckE"1Remove this unused import 'java.io.OutputStream'.(Ó ³ÿÿÿÿÿ
+?squid:S1068~"(Remove this unused "sdf1" private field.(ëõ¾ 
+Asquid:S1659l"%Declare "etInput" on a separate line.(Ûô‹éşÿÿÿÿ
+vsquid:S1450b"ZRemove the "dateHandler" field and declare it as a local variable in the relevant methods.(Ì‹Şûÿÿÿÿ
+ssquid:S1450n"WRemove the "tvReader" field and declare it as a local variable in the relevant methods.(œêæĞúÿÿÿÿ
+>squid:S1659m"'Declare "tvRelDate" on a separate line.(Ü’£
+rsquid:S1450y"[Remove the "cbNewShowPwd" field and declare it as a local variable in the relevant methods.(±ûĞü
+Dsquid:S1659l"(Declare "metNewPort" on a separate line.(Ûô‹éşÿÿÿÿ
+osquid:S1450m"XRemove the "tvRelDate" field and declare it as a local variable in the relevant methods.(Ü’£
+Ksquid:S1659z"/Declare "isCheckConfirmPwd" on a separate line.(À¬½øÿÿÿÿ
+psquid:S1450m"YRemove the "tvIdDevice" field and declare it as a local variable in the relevant methods.(Ü’£
+usquid:S1450m"^Remove the "tvPrintingDelay" field and declare it as a local variable in the relevant methods.(Ü’£
+7squid:S1170a"!Make this final field static too.(ËòŠD
+Ksquid:S1068"/Remove this unused "recordCount" private field.(“ªïŸøÿÿÿÿ
+fsquid:UselessImportCheck="=Remove this unused import 'org.bouncycastle.util.StringList'.(È¼Ìğüÿÿÿÿ
+Usquid:UselessImportCheckU"1Remove this unused import 'okhttp3.ResponseBody'.(Õ«ø
+msquid:S1450}"WRemove the "calendar" field and declare it as a local variable in the relevant methods.(½™ÿf
+Ssquid:UselessImportCheckM"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ
+~squid:UselessImportCheck*"URemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.global.GlobalVariable'.(îö¤ûÿÿÿÿ
+msquid:S1450m"VRemove the "tvTitle" field and declare it as a local variable in the relevant methods.(Ü’£
+xsquid:S1192Ñ"`Define a constant instead of duplicating this literal "IS_SETTING_MASTER_KEY_PROTECTED" 3 times.(«ú¿Ğ
+Psquid:S1068‘"3Remove this unused "retrofitHandler" private field.(¯Î‰»ıÿÿÿÿ
+csquid:CommentedOutCodeLineĞ"<This block of commented-out lines of code should be removed.(êÒ³ã
+]squid:HiddenFieldCheck÷":Rename "idRDM" which hides the field declared at line 132.(ÿ‘–İ
+Esquid:S1659y".Declare "cbConfirmShowPwd" on a separate line.(±ûĞü
+osquid:S1450"RRemove the "bar" field and declare it as a local variable in the relevant methods.(ìİ¨÷ùÿÿÿÿ
+Ksquid:S1659l"/Declare "etConfirmPassword" on a separate line.(Ûô‹éşÿÿÿÿ
+™squid:S1186¸"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ
+Bsquid:S1659ë"%Declare "newPort" on a separate line.(ÏÿÌîÿÿÿÿÿ
+`squid:S1192ì"IDefine a constant instead of duplicating this literal "/RNBFile" 3 times.(ÖÏ>
+™squid:S1186¤"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+isquid:S3776»"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(õ—Ş"
+=squid:S1659m"&Declare "tvAppVer" on a separate line.(Ü’£
+Xsquid:UselessImportCheckB"5Remove this unused import 'java.io.FileOutputStream'.(˜«ªg
+Wsquid:UselessImportCheck"3Remove this unused import 'android.text.InputType'.(€¨“§
+csquid:CommentedOutCodeLine¶"<This block of commented-out lines of code should be removed.(âÔûÅ
+Ysquid:UselessImportCheckC"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+Tsquid:UselessImportCheckD"0Remove this unused import 'java.io.InputStream'.(¹»º
+osquid:S00117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã¤®øÿÿÿÿ
+rsquid:S1450y"[Remove the "cbOldShowPwd" field and declare it as a local variable in the relevant methods.(±ûĞü
+osquid:S3776â"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ßÀáèşÿÿÿÿ
+@squid:S1148¤"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+wsquid:S00116a"`Rename this field "DEFAULT_READING_VALUE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËòŠD
+Gsquid:S1659l"+Declare "etNewPassword" on a separate line.(Ûô‹éşÿÿÿÿ
+^squid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+ƒsquid:S1488‡"fImmediately return this expression instead of assigning it to the temporary variable "duPropertyList".(øõì®øÿÿÿÿ
+nsquid:S1450m"WRemove the "tvAppVer" field and declare it as a local variable in the relevant methods.(Ü’£
+_squid:S1192ë"HDefine a constant instead of duplicating this literal "SAVELOG" 4 times.(õÎÌl
+@squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+csquid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(‘œ¢ä
+{squid:S1488‚"cImmediately return this expression instead of assigning it to the temporary variable "queryResult".(‚åØõ
+hsquid:HiddenFieldCheck›"ERename "uploadBillMaster" which hides the field declared at line 130.(‚”¬ú
+Jsquid:S1659“"-Declare "confirmPassword" on a separate line.(¦Æÿÿÿÿÿÿ
+@squid:S1659m")Declare "tvSubTitle1" on a separate line.(Ü’£
+Gsquid:S1659z"+Declare "isCheckNewPwd" on a separate line.(À¬½øÿÿÿÿ
+asquid:UnusedPrivateMethodš";Remove this unused private "insertBillUploadMaster" method.(Ûşı
+_squid:S1126Ğ"BReplace this if-then-else statement by a single method invocation.(¸Ä×£ıÿÿÿÿ
+™squid:S1186Õ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ
+™squid:S1186«"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+osquid:S00117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áÑ÷úÿÿÿÿ
+jsquid:S1450‹"RRemove the "sdf" field and declare it as a local variable in the relevant methods.(ˆùÚ¤
+]squid:S2147•"ECombine this catch with the one at line 275, which has the same body.(åşáÿ
+ysquid:S1450q"bRemove the "duPropertiesAdapter" field and declare it as a local variable in the relevant methods.(Õ¹³ó
+osquid:S3776¹"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ê²ßµüÿÿÿÿ
+™squid:S1186Ä"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+{squid:S1450‘"^Remove the "retrofitHandler" field and declare it as a local variable in the relevant methods.(¯Î‰»ıÿÿÿÿ
+Gsquid:S1659l"+Declare "etOldPassword" on a separate line.(Ûô‹éşÿÿÿÿ
+rsquid:S1450|"[Remove the "consumerType" field and declare it as a local variable in the relevant methods.(Éğ
+xsquid:UselessImportCheck%"ORemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.dao.NewMeterDao'.(Çû³ªşÿÿÿÿ
+?squid:S1659k"(Declare "mbtnCancel" on a separate line.(³§Ô¹
+wsquid:S1450o"[Remove the "lvRateMaster" field and declare it as a local variable in the relevant methods.(Ó¦•®ùÿÿÿÿ
+csquid:UselessImportCheckA":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ
+hsquid:CommentedOutCodeLineğ"<This block of commented-out lines of code should be removed.(ç¢†€ùÿÿÿÿ
+esquid:S1192¦"HDefine a constant instead of duplicating this literal "authID" 10 times.(Õ¸—ïùÿÿÿÿ
+{squid:S1450s"_Remove the "headerFooterInfo" field and declare it as a local variable in the relevant methods.(Ê•Å’ùÿÿÿÿ
+osquid:S00117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã¤®øÿÿÿÿ
+@squid:S1659ë"#Declare "newIP" on a separate line.(ÏÿÌîÿÿÿÿÿ
+isquid:S3776ö"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¯ÓÌX
+]squid:UselessImportCheck"4Remove this unused import 'android.database.Cursor'.(Ôäåúÿÿÿÿ
+csquid:S1192¼"FDefine a constant instead of duplicating this literal "idRDM" 6 times.(¦™ÄÉüÿÿÿÿ
+usquid:S1192—"XDefine a constant instead of duplicating this literal "isSuppressedPrintBuffer" 3 times.(ÄŞÇ•ûÿÿÿÿ
+™squid:S1186É"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+Bsquid:S1068}",Remove this unused "calendar" private field.(½™ÿf
+vsquid:S1450y"_Remove the "cbConfirmShowPwd" field and declare it as a local variable in the relevant methods.(±ûĞü
+Xsquid:UselessImportCheck@"4Remove this unused import 'java.io.FileInputStream'.(˜³ÉÓ
+squid:S1450m"hRemove the "tvIsSuppressedPrintBuffer" field and declare it as a local variable in the relevant methods.(Ü’£
+Asquid:S1659y"*Declare "cbNewShowPwd" on a separate line.(±ûĞü
+Dsquid:S1659m"-Declare "tvPrintingDelay" on a separate line.(Ü’£
+Ksquid:S1068b"/Remove this unused "dateHandler" private field.(Ì‹Şûÿÿÿÿ
+Isquid:S1602‚",Remove useless curly braces around statement(‡Úğ€ûÿÿÿÿ
+Csquid:S1068e"-Remove this unused "routeList" private field.(Å¡–3
+qsquid:S1450m"ZRemove the "tvSubTitle1" field and declare it as a local variable in the relevant methods.(Ü’£
+™squid:S1186Å"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+vsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(îßÅôøÿÿÿÿ
+lsquid:S00116i"TRename this field "_dbCreate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©üçª
+Dsquid:S1068"'Remove this unused "bar" private field.(ìİ¨÷ùÿÿÿÿ
+@squid:S1148”"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+™squid:S1186¼"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×İŠÎ
+™squid:S1186î"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+<squid:S1659m"%Declare "tvTitle" on a separate line.(Ü’£
+@squid:S1148–"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Isquid:S1135©"2Complete the task associated to this TODO comment.(ôëí

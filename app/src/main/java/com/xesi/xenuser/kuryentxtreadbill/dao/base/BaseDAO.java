@@ -21,6 +21,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * Created by Daryll Sabate on 6/20/2017.
  */
+
 public class BaseDAO extends SQLiteOpenHelper {
 
     public static final String APP_PROPERTY_SETTING = "app_config";

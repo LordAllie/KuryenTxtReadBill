@@ -1,0 +1,6 @@
+
+Psquid:S1444_"9Make this "public static SORT_BY_PRINT_ORDER" field final(È“‡Ù
+"squid:ClassVariableVisibilityCheck_"_Make SORT_BY_PRINT_ORDER a static final constant or non-public and provide accessors if needed.(È“‡Ù
+usquid:S3008_"^Rename this field "SORT_BY_PRINT_ORDER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È“‡Ù
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆ‡¾õûÿÿÿÿ
+[squid:S3358_"DExtract this nested ternary operation into an independent statement.(È“‡Ù

@@ -1,0 +1,37 @@
+
+asquid:CommentedOutCodeLineç"<This block of commented-out lines of code should be removed.(‚Š*
+™squid:S1186ž"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+~squid:S1450O"bRemove the "missingDuProperties" field and declare it as a local variable in the relevant methods.(óÔÿÜýÿÿÿÿ
+@squid:S1148™"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+hsquid:CommentedOutCodeLineñ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+usquid:S1450P"^Remove the "propertyChecker" field and declare it as a local variable in the relevant methods.(‰ É
+@squid:S1148œ"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+gsquid:CommentedOutCodeLineE"<This block of commented-out lines of code should be removed.(´‹Ø£ùÿÿÿÿ
+Usquid:UselessImportCheck"1Remove this unused import 'android.app.Fragment'.(ÆÅÇ°
+Jsquid:S1068B".Remove this unused "accountDao" private field.(››¡îýÿÿÿÿ
+hsquid:CommentedOutCodeLineû"<This block of commented-out lines of code should be removed.(’ÀñËýÿÿÿÿ
+hsquid:CommentedOutCodeLine¬"<This block of commented-out lines of code should be removed.(Ï»—íøÿÿÿÿ
+_squid:S1126°"BReplace this if-then-else statement by a single method invocation.(Ò¬¶Ûûÿÿÿÿ
+Usquid:S1155k">Use isEmpty() to check whether the collection is empty or not.(ð‘¸’
+Xsquid:HiddenFieldCheckî"5Rename "i" which hides the field declared at line 81.(ÐÌ‘®
+Isquid:S1153†"1Directly append the argument of String.valueOf().(ï€Î·
+hsquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(ŒïŸÆúÿÿÿÿ
+jsquid:S00117ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì‹û‘
+lsquid:S1450M"URemove the "helper" field and declare it as a local variable in the relevant methods.(þ¡‘
+csquid:CommentedOutCodeLineõ"<This block of commented-out lines of code should be removed.(®ïßú
+Bsquid:S5411è"*Use the primitive boolean expression here.(€‘¨Ä
+usquid:S1450B"YRemove the "accountDao" field and declare it as a local variable in the relevant methods.(››¡îýÿÿÿÿ
+Nsquid:S1153"1Directly append the argument of String.valueOf().(éîÿùÿÿÿÿ
+hsquid:CommentedOutCodeLineë"<This block of commented-out lines of code should be removed.(„óÆüÿÿÿÿ
+isquid:CommentedOutCodeLinet"<This block of commented-out lines of code should be removed.(¡¶„õ8“þ¢Ù-
+ksquid:HiddenFieldCheck"CRename "propertyChecker" which hides the field declared at line 80.(‹¼’¹øÿÿÿÿ
+zsquid:S1450H"^Remove the "mProgressDialog" field and declare it as a local variable in the relevant methods.(¹£½­úÿÿÿÿ
+^squid:UselessImportCheck/"5Remove this unused import 'java.net.SocketException'.(¼„™€ûÿÿÿÿ
+fsquid:S1192£"NDefine a constant instead of duplicating this literal "UPDATECHECKER" 3 times.(íð•Ä
+ksquid:S2095ƒ"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(œÍåýÿÿÿÿ
+osquid:S1450F"SRemove the "port" field and declare it as a local variable in the relevant methods.(º€ïãüÿÿÿÿ
+Osquid:S1135å"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+nsquid:CommentedOutCodeLineq"<This block of commented-out lines of code should be removed.(¹ú¹«ùÿÿÿÿ8“þ¢Ù-
+R
+squid:S899‚";Do something with the "boolean" value returned by "delete".(ù¿¤·
+asquid:S4042‚"IUse "java.nio.Files#delete" here for better messages on error conditions.(ù¿¤·

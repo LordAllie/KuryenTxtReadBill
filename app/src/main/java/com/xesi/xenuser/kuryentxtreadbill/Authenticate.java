@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -29,6 +30,7 @@ import com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen;
 import com.xesi.xenuser.kuryentxtreadbill.network.Kuryentxt;
 import com.xesi.xenuser.kuryentxtreadbill.network.NetworkReceiver;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -61,6 +63,7 @@ public class Authenticate extends BaseActivity implements NetworkReceiver.Connec
     private String BASE_URL, server, ipAdd, port, activationCode;
     private MyObservables observables;
     private HeaderFooterInfo headerFooterInfo;
+    private String jsonDIR;
 
     private void setFooterInfo() {
         tvDate = (TextView) findViewById(R.id.tvDate);
@@ -86,6 +89,7 @@ public class Authenticate extends BaseActivity implements NetworkReceiver.Connec
                 editor.commit();
                 Toast.makeText(this, "Password is empty", Toast.LENGTH_LONG).show();
                 i = new Intent(getApplicationContext(), PasswordCreation.class);
+                createDirectory();
                 startActivity(i);
                 finish();
             } else {
@@ -256,11 +260,38 @@ public class Authenticate extends BaseActivity implements NetworkReceiver.Connec
                     dialog.dismiss();
                     downloadLogo();
                     startActivity(new Intent(Authenticate.this, PasswordCreation.class));
+                    createDirectory();
                     finish();
                 }
             }
         });
 
+    }
+
+    public static boolean externalMemoryAvailable() {
+        if (Environment.isExternalStorageRemovable()) {
+            //device support sd card. We need to check sd card availability.
+            String state = Environment.getExternalStorageState();
+            return state.equals(Environment.MEDIA_MOUNTED) || state.equals(
+                    Environment.MEDIA_MOUNTED_READ_ONLY);
+        } else {
+            //device not support sd card.
+            return false;
+        }
+    }
+
+    private void createDirectory(){
+        if(externalMemoryAvailable())
+            jsonDIR= "/sdcard";
+        else
+            jsonDIR= String.valueOf(Environment.getExternalStorageDirectory());
+
+        File fileDir = new File(jsonDIR, "RNBFile");
+        if (!fileDir.exists()) {
+            fileDir.mkdir();
+            Log.d("RNB", "Directory Created");
+        } else
+            Log.d("RNB", "Directory Found");
     }
 
     private void downloadLogo() {

@@ -33,6 +33,7 @@ import com.xesi.xenuser.kuryentxtreadbill.helper.MsgDialog;
 import com.xesi.xenuser.kuryentxtreadbill.interfaces.APIHandler;
 import com.xesi.xenuser.kuryentxtreadbill.model.ConChecker;
 import com.xesi.xenuser.kuryentxtreadbill.model.UpdateChecker;
+import com.xesi.xenuser.kuryentxtreadbill.network.GPSTracker;
 import com.xesi.xenuser.kuryentxtreadbill.network.Kuryentxt;
 import com.xesi.xenuser.kuryentxtreadbill.network.NetworkReceiver;
 import com.xesi.xenuser.kuryentxtreadbill.util.PropertyChecker;
@@ -79,6 +80,7 @@ public class Homepage extends BaseActivity implements NetworkReceiver.Connectivi
     private PropertyChecker propertyChecker;
     private Intent i;
     boolean isConnected;
+    GPSTracker gpsTracker;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_homepage);
@@ -107,6 +109,19 @@ public class Homepage extends BaseActivity implements NetworkReceiver.Connectivi
         checkConnection();
         if(isConnected)
             checkForUpdates();
+
+//        gpsTracker=new GPSTracker(Homepage.this);
+//        gpsTracker.getLocation();
+//
+//        if(gpsTracker.canGetLocation()){
+//            String uri = "https://www.google.com.ph/maps/place/"+String.valueOf(gpsTracker.getLatitude())+","+String.valueOf(gpsTracker.getLongitude());
+//            gpsTracker.getLocation();
+//            System.out.println(uri);
+////                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+////                    startActivity(intent);
+//        }else{
+//            gpsTracker.showSettingsAlert();
+//        }
     }
 
     private void displayMissingProperties(List<String> missingProp) {

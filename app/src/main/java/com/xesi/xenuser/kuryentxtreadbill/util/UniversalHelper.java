@@ -408,4 +408,25 @@ public class UniversalHelper {
         } catch (Exception e) {}
     }
 
+    public static String padRightEllipses(String originalString, int lengthParam) {
+        String padCharacter = " ";
+        String space = "";
+        int counter = 0;
+        int len = originalString.length();
+        if (len < lengthParam) {
+            int numOfSpace = (lengthParam - len) / 2;
+            while (counter <= numOfSpace) {
+                space = space + padCharacter;
+                counter++;
+            }
+            originalString = space + originalString;
+
+        }
+        if (originalString.length() > lengthParam) {
+            String newStr=originalString.substring(0,14);
+            originalString=newStr+"..";
+        }
+        return originalString;
+    }
+
 }

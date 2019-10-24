@@ -1,0 +1,81 @@
+
+gsquid:S1192À"ODefine a constant instead of duplicating this literal "sequenceNumber" 3 times.(ŒÈÆş
+Asquid:S1659O"%Declare "btnSave" on a separate line.(‡áØşøÿÿÿÿ
+`squid:S1192Ä"HDefine a constant instead of duplicating this literal "remarks" 5 times.(ñÌ¼ 
+Csquid:S1659P"-Declare "btnShowOtherBtn" on a separate line.(ÒÖ‰_
+nsquid:S1450d"WRemove the "imageDIR" field and declare it as a local variable in the relevant methods.( Úü¿
+{squid:S1450o"_Remove the "consumptionGraph" field and declare it as a local variable in the relevant methods.(åÂ„¤üÿÿÿÿ
+isquid:S3776´"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(´ÈÉH
+hsquid:CommentedOutCodeLineù"<This block of commented-out lines of code should be removed.(õëÚæúÿÿÿÿ
+Dsquid:S1602",Remove useless curly braces around statement(İ’¾ª
+_squid:S1126ÿ"BReplace this if-then-else statement by a single method invocation.(Ôÿ«úÿÿÿÿ
+@squid:S1659e"$Declare "isRead" on a separate line.(£¡ËĞüÿÿÿÿ
+Tsquid:S1659N"8Declare "llPrintNotificationRemarks" on a separate line.(¸ÊĞøùÿÿÿÿ
+Isquid:S1659]"-Declare "lastRecordSeqNo" on a separate line.(˜»¬€ıÿÿÿÿ
+csquid:S3027¢"FPut single-quotes around '.' to use the faster "indexOf(char)" method.(Å¢íúÿÿÿÿ
+Fsquid:S1068e"*Remove this unused "isRead" private field.(£¡ËĞüÿÿÿÿ
+>squid:S1659Q"'Declare "etRemarks" on a separate line.(Ş¢ ú
+Asquid:S1659e"%Declare "reOrder" on a separate line.(£¡ËĞüÿÿÿÿ
+dsquid:S1858¢"G"temp" is already a string, there's no need to call "toString()" on it.(Å¢íúÿÿÿÿ
+Dsquid:S1659P".Declare "btnCopyLastMonth" on a separate line.(ÒÖ‰_
+vsquid:S1450V"`Remove the "getReadingCountNo" field and declare it as a local variable in the relevant methods.(• t
+Qsquid:S4973³"9Use the "equals" method if value comparison was intended.(©Ë÷å
+^squid:S3027¨"FPut single-quotes around '.' to use the faster "indexOf(char)" method.(œ¼ã
+Dsquid:S1659N"(Declare "llSaveMore" on a separate line.(¸ÊĞøùÿÿÿÿ
+Vsquid:S4973¹"9Use the "equals" method if value comparison was intended.(šÉ£ûÿÿÿÿ
+Asquid:S1659L"%Declare "tvRoute" on a separate line.(ä®Çßÿÿÿÿÿ
+=squid:S1659d"&Declare "btnValue" on a separate line.( Úü¿
+Asquid:S1659d"*Declare "consumerType" on a separate line.( Úü¿
+;squid:S1659d"$Declare "result" on a separate line.( Úü¿
+rsquid:S1192À"ZDefine a constant instead of duplicating this literal "isRead = 0 AND routeCode=" 3 times.(ŒÈÆş
+msquid:S1192‰"UDefine a constant instead of duplicating this literal "getReadMeterDataNext" 3 times.(Í¥©Š
+Osquid:S1135¹"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Csquid:S1659L"'Declare "tvMeterNo" on a separate line.(ä®Çßÿÿÿÿÿ
+Dsquid:S1659L"(Declare "tvOldSeqNo" on a separate line.(ä®Çßÿÿÿÿÿ
+Zsquid:S1126ú"BReplace this if-then-else statement by a single method invocation.(Ï¢¾ğ
+@squid:S1659P"*Declare "btnPrintBill" on a separate line.(ÒÖ‰_
+qsquid:S1450e"URemove the "isRead" field and declare it as a local variable in the relevant methods.(£¡ËĞüÿÿÿÿ
+dsquid:S1192À"LDefine a constant instead of duplicating this literal "arm_account" 5 times.(ŒÈÆş
+rsquid:S1450m"VRemove the "idRoute" field and declare it as a local variable in the relevant methods.(Ú¹‰èúÿÿÿÿ
+=squid:S1659d"&Declare "imageDIR" on a separate line.( Úü¿
+psquid:S1450Z"TRemove the "print" field and declare it as a local variable in the relevant methods.(Áº‰ºüÿÿÿÿ
+Dsquid:S1659K"(Declare "tvRateCode" on a separate line.(ÈÉ½¿üÿÿÿÿ
+rsquid:S1450e"VRemove the "reOrder" field and declare it as a local variable in the relevant methods.(£¡ËĞüÿÿÿÿ
+=squid:S1659P"'Declare "btnAddAvg" on a separate line.(ÒÖ‰_
+Csquid:S1659d",Declare "showAvgWarning" on a separate line.( Úü¿
+wsquid:S00116G"ZRename this field "TAKE_PHOTO_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ËÈòşÿÿÿÿ
+Vsquid:S4973·"9Use the "equals" method if value comparison was intended.(„é—ûşÿÿÿÿ
+Hsquid:S1659P"2Declare "btnPrintNotification" on a separate line.(ÒÖ‰_
+"squid:ClassVariableVisibilityCheckF"NMake df a static final constant or non-public and provide accessors if needed.(‰ÖÆŠşÿÿÿÿ
+Nsquid:S1153É"1Directly append the argument of String.valueOf().(¤òÓ˜ûÿÿÿÿ
+qsquid:S1192¿"TDefine a constant instead of duplicating this literal "isActive = 'Y' AND " 3 times.(ª÷È³ÿÿÿÿÿ
+@squid:S1148°"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Asquid:S1659L"%Declare "tvSeqNo" on a separate line.(ä®Çßÿÿÿÿÿ
+@squid:S1659d")Declare "isSpikeDrop" on a separate line.( Úü¿
+tsquid:S1450d"]Remove the "showAvgWarning" field and declare it as a local variable in the relevant methods.( Úü¿
+_squid:S1192À"GDefine a constant instead of duplicating this literal "WHERE " 5 times.(ŒÈÆş
+Dsquid:S1444F"(Make this "public static df" field final(‰ÖÆŠşÿÿÿÿ
+Esquid:S1659N")Declare "llPrintBill" on a separate line.(¸ÊĞøùÿÿÿÿ
+;squid:S1659d"$Declare "billNo" on a separate line.( Úü¿
+osquid:S3776Ë"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¾ÉÏ¯şÿÿÿÿ
+Dsquid:S1659K"(Declare "tvAcctName" on a separate line.(ÈÉ½¿üÿÿÿÿ
+Csquid:S1659P"-Declare "btnHideOtherBtn" on a separate line.(ÒÖ‰_
+Gsquid:S1068m"+Remove this unused "idRoute" private field.(Ú¹‰èúÿÿÿÿ
+jsquid:S3776È"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¡é††
+Csquid:S1659K"'Declare "tvPrevRdg" on a separate line.(ÈÉ½¿üÿÿÿÿ
+Gsquid:S1659™"*Declare "afterDecimal" on a separate line.(ÃµÈ»üÿÿÿÿ
+csquid:CommentedOutCodeLineñ"<This block of commented-out lines of code should be removed.(Ûş¡µ
+Hsquid:S1659N",Declare "llShowOtherBtn" on a separate line.(¸ÊĞøùÿÿÿÿ
+Bsquid:S1659P",Declare "btnHideRemarks" on a separate line.(ÒÖ‰_
+Gsquid:S1068e"+Remove this unused "reOrder" private field.(£¡ËĞüÿÿÿÿ
+Asquid:S1659O"%Declare "btnNext" on a separate line.(‡áØşøÿÿÿÿ
+Hsquid:S1659O",Declare "btnShowRemarks" on a separate line.(‡áØşøÿÿÿÿ
+Csquid:S1659d",Declare "currentReading" on a separate line.( Úü¿
+osquid:S1450Y"YRemove the "billHeader" field and declare it as a local variable in the relevant methods.(à–‡*
+^
+squid:S899Ï"BDo something with the "boolean" value returned by "createNewFile".(—¯ÅÜşÿÿÿÿ
+xsquid:S1450U"aRemove the "getReadingCountYes" field and declare it as a local variable in the relevant methods.(ÁÚ—ì
+asquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(·ü¶;
+5squid:S2119ã"Save and re-use this "Random".(¼İÅf
+Esquid:S1659L")Declare "readCounter" on a separate line.(ä®Çßÿÿÿÿÿ
+jsquid:S1450d"SRemove the "name" field and declare it as a local variable in the relevant methods.( Úü¿
