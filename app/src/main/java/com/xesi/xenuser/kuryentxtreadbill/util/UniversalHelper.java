@@ -80,6 +80,8 @@ public class UniversalHelper {
         String padCharacter = " ";
         String space = "";
         int length = lengthParam;
+        if(originalString==null)
+            originalString="";
         String paddedString = originalString;
         int counter = paddedString.length();
 
@@ -101,6 +103,8 @@ public class UniversalHelper {
         String padCharacter = " ";
         String space = "";
         int length = lengthParam;
+        if(originalString==null)
+            originalString="";
         String paddedString = originalString;
         int counter = paddedString.length();
 

@@ -16,6 +16,7 @@ public class GenericDao extends BaseDAO {
     public GenericDao(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.mContext = context;
+        getWritableDatabase();
         Log.i("sqlite", mContext.toString());
     }
 

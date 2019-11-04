@@ -32,6 +32,9 @@ public class BillChargeGroup {
     @SerializedName("total")
     @Expose
     private BigDecimal totalCharges;
+    @SerializedName("subtotalName")
+    @Expose
+    private String subtotalName;
 
     public BillChargeGroup() {
 
@@ -84,5 +87,13 @@ public class BillChargeGroup {
 
     public void setTotalCharges(BigDecimal totalCharges) {
         this.totalCharges = totalCharges;
+    }
+
+    public String getSubtotalName() {
+        return subtotalName;
+    }
+
+    public void setSubtotalName(String subtotalName) {
+        this.subtotalName = subtotalName;
     }
 }

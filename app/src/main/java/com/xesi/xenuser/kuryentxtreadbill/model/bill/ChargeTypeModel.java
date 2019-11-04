@@ -20,6 +20,9 @@ public class ChargeTypeModel {
     @SerializedName("chargeTypeName")
     @Expose
     private String chargeTypeName;
+    @SerializedName("subtotalName")
+    @Expose
+    private String subtotalName;
 
     public ChargeTypeModel() {
     }
@@ -54,5 +57,13 @@ public class ChargeTypeModel {
 
     public void setChargeTypeName(String chargeTypeName) {
         this.chargeTypeName = chargeTypeName;
+    }
+
+    public String getSubtotalName() {
+        return subtotalName;
+    }
+
+    public void setSubtotalName(String subtotalName) {
+        this.subtotalName = subtotalName;
     }
 }

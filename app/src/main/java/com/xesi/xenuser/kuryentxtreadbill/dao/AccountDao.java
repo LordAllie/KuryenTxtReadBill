@@ -56,6 +56,8 @@ public class AccountDao extends BaseDAO {
         else
             orderQuery = " isRead ";
 
+
+
         // order by SeqNo
         if (reOrderSequence)
             orderQuery = orderQuery + ", sequenceNumber DESC, id DESC ";
@@ -67,10 +69,14 @@ public class AccountDao extends BaseDAO {
             addQuery = " AND isActive = 'Y' ";
 
         String selectQuery;
-        if(isBottom.equals("Y"))
-            selectQuery = " SELECT * FROM " + TABLE_NAME + " WHERE `idRoute` = " + idRoute + addQuery + " ORDER BY " + orderQuery;
-        else
-            selectQuery = " SELECT * FROM " + TABLE_NAME + " WHERE `idRoute` = " + idRoute + addQuery;
+        if(isBottom.equals("N")){
+            selectQuery = " SELECT * FROM " + TABLE_NAME +
+                    " WHERE `idRoute` = " + idRoute + addQuery;
+        }else {
+            selectQuery = " SELECT * FROM " + TABLE_NAME +
+                    " WHERE `idRoute` = " + idRoute + addQuery + " ORDER BY " + orderQuery;
+        }
+
         mcfDB = this.getWritableDatabase();
         Cursor cursor = null;
         try {

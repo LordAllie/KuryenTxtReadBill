@@ -35,6 +35,7 @@ public class BillChargeGroupDAO extends BaseDAO {
             contentValues.put("billNo", billgroup.getBillNumber());
             contentValues.put("printOrder", billgroup.getPrintOrder());
             contentValues.put("chargeGroupName", billgroup.getChargeTypeName());
+            contentValues.put("subtotalName", billgroup.getSubtotalName());
             mcfDB.insert(TABLE_NAME, null, contentValues);
             isInserted = true;
         } catch (Exception e) {
@@ -67,7 +68,7 @@ public class BillChargeGroupDAO extends BaseDAO {
 
     public List<BillChargeGroup> getAllChargeGroups(String billNo) {
         List<BillChargeGroup> billHeaderLists = new ArrayList<>();
-        String query = "SELECT billNo, printOrder, chargeGroupName, chargeSubTotal, chargeTotal" +
+        String query = "SELECT billNo, printOrder, chargeGroupName, chargeSubTotal, chargeTotal, subtotalName" +
                 " FROM " + TABLE_NAME +
                 " WHERE billNo = '" + billNo + "' ORDER BY printOrder";
         mcfDB = this.getWritableDatabase();
@@ -80,6 +81,7 @@ public class BillChargeGroupDAO extends BaseDAO {
                     billChargeGroup.setPrintOrder(cursor.getInt(1));
                     billChargeGroup.setChargeTypeName(cursor.getString(2));
                     BigDecimal subtotal = new BigDecimal(cursor.getString(3));
+                    billChargeGroup.setSubtotalName(cursor.getString(5));
                     billChargeGroup.setSubtotalCharges(subtotal);
                     double dbTotal = cursor.getDouble(4);
                     BigDecimal total = new BigDecimal(Double.toString(dbTotal));

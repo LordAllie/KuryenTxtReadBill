@@ -188,7 +188,7 @@ public class Tools extends BaseActivity {
         uploadData = new UploadData();
         idRDM = sharedPref.getString("idRDM", "");
         uploadBillMaster = new UploadBillMaster();
-        totalAccounts = Integer.parseInt(genericDao.getOneField("COUNT(_id)","arm_account","","","","0"));
+        totalAccounts = Integer.parseInt(genericDao.getOneField("COUNT(id)","arm_account","","","","0"));
         retrofitHandler = new RetrofitHandler(this);
         List<AccountModelV2> accountModelV2List = displayAccts(false, false, false);
     }

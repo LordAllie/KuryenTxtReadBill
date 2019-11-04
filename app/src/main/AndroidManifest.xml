@@ -101,6 +101,10 @@
             android:name=".Archive"
             android:configChanges="orientation|screenSize"
             android:label="KuryenTxt" />
+        <activity
+            android:name=".ArchiveDetailedBill"
+            android:configChanges="orientation|screenSize"
+            android:label="KuryenTxt" />
 
         <receiver
             android:name=".network.NetworkReceiver"

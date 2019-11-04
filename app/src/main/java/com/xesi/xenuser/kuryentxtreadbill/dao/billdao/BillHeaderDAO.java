@@ -20,7 +20,10 @@ import com.xesi.xenuser.kuryentxtreadbill.model.bill.UploadBillMaster;
 import com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import io.reactivex.Observer;
@@ -442,6 +445,30 @@ public class BillHeaderDAO extends BaseDAO {
         return billJsonList;
     }
 
+    public List<String> getAllArchiveBillNo() {
+        List<String> billJsonList = new ArrayList<>();
+        mcfDB = this.getWritableDatabase();
+
+        String query = "SELECT billNo " +
+                " FROM " + TABLE_NAME +
+                " WHERE isUploaded = 0 AND isArchive='Y'";
+        try {
+            Cursor cursor = mcfDB.rawQuery(query, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    String bill;
+                    bill=cursor.getString(0);
+                    billJsonList.add(bill);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            mcfDB.close();
+        }
+        return billJsonList;
+    }
+
     public boolean checkBillNoIfExist(String newBillNumber) {
         boolean acctBillNoExist = false;
         mcfDB = this.getWritableDatabase();
@@ -532,6 +559,20 @@ public class BillHeaderDAO extends BaseDAO {
     public synchronized void close() {
         genericDao.close();
         super.close();
+    }
+
+    public void deleteOldRecord() {
+        try {
+            Calendar calNow = Calendar.getInstance();
+            calNow.add(Calendar.MONTH, -2);
+            Date dateBefore2Month = calNow.getTime();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmm");
+            String date2Months=dateFormat.format(dateBefore2Month);
+            mcfDB = this.getWritableDatabase();
+            mcfDB.execSQL("DELETE FROM " + TABLE_NAME + " WHERE (substr(runDate,0,5)||''||substr(runDate,6,2)||''||substr(runDate,9,2)||''||substr(runDate,12,2)||''||substr(runDate,15,2)) < '"+date2Months+"' AND isArchive='Y'");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

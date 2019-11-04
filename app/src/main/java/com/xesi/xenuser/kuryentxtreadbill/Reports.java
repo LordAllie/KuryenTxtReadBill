@@ -156,8 +156,7 @@ public class Reports extends BaseActivity {
                 });
                 EditText etMasterPass = (EditText) promptsView.findViewById(R.id.etMasterPass);
                 promptsView.findViewById(R.id.btnOK)
-                        .setOnClickListener(
-                                new View.OnClickListener() {
+                        .setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
                                         String unlocker = sharedPref.getString("unlockerCode", "");

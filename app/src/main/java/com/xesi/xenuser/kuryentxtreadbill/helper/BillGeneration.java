@@ -776,6 +776,7 @@ public class BillGeneration extends BaseDAO {
                 billChargeGroup.setChargeTypeCode(chargeType.getChargeTypeCode());
                 billChargeGroup.setChargeTypeName(chargeType.getChargeTypeName());
                 billChargeGroup.setPrintOrder(chargeType.getPrintOrder());
+                billChargeGroup.setSubtotalName(chargeType.getSubtotalName());
                 billChargeGroupList.add(billChargeGroup);
             }
         }

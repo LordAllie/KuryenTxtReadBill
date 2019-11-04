@@ -158,7 +158,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
         observables = new MyObservables(ServiceGenerator.createService(APIHandler.class), this);
         retrofitHandler = new RetrofitHandler(this);
         billRecordCount = Integer.parseInt(genericDao.getOneField("SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded = 0 AND isArchive = 'N'","0"));
-        totalAccounts = Integer.parseInt(genericDao.getOneField("COUNT(_id)","arm_account","","","","0"));
+        totalAccounts = Integer.parseInt(genericDao.getOneField("COUNT(id)","arm_account","","","","0"));
         GlobalVariable.billNolist=billHeaderDAO.getAllBillNo();
         if(UniversalHelper.externalMemoryAvailable()) {
             imageDIR= "/sdcard";
@@ -289,6 +289,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                 msgDialog.showConfirmDialog("Records found, this will overwrite all the existing data.\n Do you want to proceed?"
                         , value -> {
                             if (value.equals("Yes")) {
+//                                clearData();
                                 int newIdRdm = sharedPref.getInt("idRdm", 0);
                                 int oldIdRdm = sharedPref.getInt("idRdmOld", 0);
                                 if (newIdRdm != oldIdRdm) {
@@ -305,6 +306,8 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
             } else {
                 saveLogsToDB("dls", Long.parseLong(sharedPref.getString("authID", "0")),
                         Long.parseLong(idRDM));
+//                clearData();
+
                 DownloadAccountDetails = new DownloadAccountDetails();
                 DownloadAccountDetails.execute();
             }
@@ -312,7 +315,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     }
 
     public void clearData(){
-        Toast.makeText(getApplication(), "All Transaction archived", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplication(), "All Transaction archived", Toast.LENGTH_SHORT).show();
 //        _dbCreate.deleteDatabase();
 //        _dbCreate.createDatabase();
         String[] tableList={"armChargeType","armDuAreaRate","armDuProperties","armNewMeter","armRoute","arm_account","arm_account_bill_aux","arm_account_other_charges","arm_coreloss_tran","arm_kwhaddontran","arm_lifelinedetails","arm_other_charges","arm_rate_detail","arm_rateaddontran","arm_rateaddontran_special","arm_ratemaster","arm_remarks","arm_route_definition","arm_surcharge","db_log","sqlite_sequence"};
@@ -321,11 +324,8 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
             genericDao.deleteTable(tableList[i]);
             i++;
         }
-        try{
-            genericDao.updateIsArchive("armBillHeader");
-        }catch (Exception e){
-            genericDao.onUpgrade(genericDao.mcfDB,23,25);
-        }
+        billHeaderDAO.deleteOldRecord();
+        genericDao.updateIsArchive("armBillHeader");
     }
 
     private void saveLogsToDB(String url, long devID, long idRdm) {
@@ -869,6 +869,9 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                             && !yeardateFormat.format(lastMonth).equals(files[i].lastModified())
                             &&  !yeardateFormat.format(last2Month).equals(yeardateFormat.format(files[i].lastModified())))
                         files[i].delete();
+
+
+                billHeaderDAO.deleteOldRecord();
                 editor.putString("dlDateTime", df.format(new Date()));
                 editor.commit();
                 observables.updateRDM(idRDM).subscribe(new Observer<String>() {

@@ -26,7 +26,7 @@ public class BaseDAO extends SQLiteOpenHelper {
 
     public static final String APP_PROPERTY_SETTING = "app_config";
     public static final String SP_KEY_DB_VER = "db_ver";
-    public static final int DB_VERSION = 25; //20 lastVersion 2018-08-13 updated version 2019-06-14 //18 to prod 20 updated 08/13/18
+    public static final int DB_VERSION = 24; //20 lastVersion 2018-08-13 updated version 2019-06-14 //18 to prod 20 updated 08/13/18
     public static String DB_PATH = "";
     public static String DB_NAME = "read&bill.db";
     public SharedPreferences prefs;
@@ -47,6 +47,7 @@ public class BaseDAO extends SQLiteOpenHelper {
         ServiceGenerator.changeApiBaseUrl(BASE_URL);
         observables = new MyObservables(ServiceGenerator.createService(APIHandler.class), mContext);
         editor = sharedPref.edit();
+
     }
 
     @Override
@@ -66,23 +67,29 @@ public class BaseDAO extends SQLiteOpenHelper {
 
             @Override
             public void onNext(List<DatabaseChecker> databaseCheckerList) {
-                if (newVersion != oldVersion) {
-                    dbCon[0] = SQLiteDatabase.openDatabase(DB_PATH, null, db.OPEN_READWRITE);
-                    for (DatabaseChecker databaseChecker : databaseCheckerList){
-                        if(databaseChecker.getDatabaseVersion() > oldVersion){
-                            dbCon[0].beginTransaction();
-                            dbCon[0].execSQL("PRAGMA foreign_keys=OFF;");
-                            dbCon[0].execSQL(databaseChecker.getUpdateQuery());
-                            dbCon[0].setTransactionSuccessful();
-                            dbCon[0].endTransaction();
+                try {
+                    if (newVersion != oldVersion) {
+                        dbCon[0] = SQLiteDatabase.openDatabase(DB_PATH, null, db.OPEN_READWRITE);
+                        for (DatabaseChecker databaseChecker : databaseCheckerList){
+                            if(databaseChecker.getDatabaseVersion() > oldVersion){
+                                dbCon[0].beginTransaction();
+                                dbCon[0].execSQL("PRAGMA foreign_keys=OFF;");
+                                dbCon[0].execSQL(databaseChecker.getUpdateQuery());
+                                dbCon[0].setTransactionSuccessful();
+                                dbCon[0].endTransaction();
+                            }
+                            Log.d("UPDATECHECKER" ,databaseChecker.getUpdateQuery());
                         }
-                        Log.d("UPDATECHECKER" ,databaseChecker.getUpdateQuery());
                     }
+                }catch (Exception e){
+
                 }
+
             }
             @Override
             public void onError(Throwable e) {
                 Log.d("UPDATECHECKER", e.getMessage());
+                dbCon[0].close();
             }
 
             @Override
@@ -107,6 +114,20 @@ public class BaseDAO extends SQLiteOpenHelper {
         try {
             SQLiteDatabase db = this.getWritableDatabase();
             int returnRows = db.delete(TABLE_NAME, null, null);
+            if (returnRows > 0) {
+                isDeleted = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return isDeleted;
+    }
+
+    public boolean deleteTable(String TABLE_NAME, String where) {
+        boolean isDeleted = false;
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            int returnRows = db.delete(TABLE_NAME, where, null);
             if (returnRows > 0) {
                 isDeleted = true;
             }
