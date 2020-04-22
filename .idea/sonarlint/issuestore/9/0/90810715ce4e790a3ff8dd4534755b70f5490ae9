@@ -1,5 +1,5 @@
 
 [squid:S2259)"DA "NullPointerException" could be thrown; "cursor" is nullable here.(®¶ëü
 Tsquid:UselessImportCheck	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-?squid:S1148'"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
 msquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¯ÿ¥
+?squid:S1148'"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

@@ -3,6 +3,7 @@ package com.xesi.xenuser.kuryentxtreadbill.helper;
 import android.util.Log;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 
 /**
  * Created by xenuser on 1/13/2017.
@@ -13,7 +14,12 @@ public class ComputeConsumption {
     }
 
     public double computeInitialConsumption(double consumption, double meterMultiplier, double totalKwhAddOn) {
-        return (consumption * meterMultiplier) + totalKwhAddOn;
+        NumberFormat nf = NumberFormat.getInstance();
+        nf.setMaximumFractionDigits(2);
+        nf.setMinimumFractionDigits(2);
+        double value = (consumption * meterMultiplier) + totalKwhAddOn;
+//        return Double.parseDouble(nf.format(value));
+        return value;
     }
 
     public double computeCoreloss(double consumption, double coreLossKWH) {

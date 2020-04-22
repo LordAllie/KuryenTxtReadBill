@@ -1,0 +1,14 @@
+
+?squid:S11480"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+:squid:S1659"#Declare "tvVer" on a separate line.(™‰Ì
+lsquid:S1450"URemove the "tvDate" field and declare it as a local variable in the relevant methods.(™‰Ì
+ksquid:S1450"TRemove the "tvVer" field and declare it as a local variable in the relevant methods.(™‰Ì
+msquid:S1450"WRemove the "launcher" field and declare it as a local variable in the relevant methods.(›®W
+osquid:S1450"XRemove the "_dbCreate" field and declare it as a local variable in the relevant methods.(©üçª
+vsquid:S1450"ZRemove the "versionName" field and declare it as a local variable in the relevant methods.(ù˜‡ şÿÿÿÿ
+qsquid:S1450 "ZRemove the "versionCode" field and declare it as a local variable in the relevant methods.(ïóÀñ
+lsquid:S1450!"PRemove the "i" field and declare it as a local variable in the relevant methods.(³ÿÿÏÿÿÿÿÿ
+lsquid:S00116"TRename this field "_dbCreate" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©üçª
+ksquid:S00100N"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆÌ…‰üÿÿÿÿ
+]squid:S2142g"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+Asquid:S00108g")Either remove or fill this block of code.(ä ¹€

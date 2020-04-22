@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.xesi.xenuser.kuryentxtreadbill.dao.AccountOtherChargesDao;
+import com.xesi.xenuser.kuryentxtreadbill.dao.BillJsonDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.DUPropertyDAO;
 import com.xesi.xenuser.kuryentxtreadbill.dao.KwhAddOnTranDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.OtherChargesDao;
@@ -66,6 +67,7 @@ public class BillGeneration extends BaseDAO {
     private DUPropertyDAO duPropertyDAO;
     private RatePerKwChargeDao ratePerKwChargeDao;
     private BillHeaderDAO billHeaderDAO;
+    private BillJsonDao billJsonDao;
     private ChargeTypeDAO chargeTypeDAO;
     private BillChargeGroupDAO billChargeGroupDAO;
     private BillChargeGroupDetailDAO billChargeGroupDetailDAO;
@@ -153,6 +155,7 @@ public class BillGeneration extends BaseDAO {
         kwhAddOnTranDao.close();
         rateAddOnTranDao.close();
         billHeaderDAO.close();
+        billJsonDao.close();
         chargeTypeDAO.close();
         billChargeGroupDAO.close();
         billChargeGroupDetailDAO.close();
@@ -179,6 +182,7 @@ public class BillGeneration extends BaseDAO {
         rateMasterDao = new RateMasterDao(mContext);
         ratePerKwChargeDao = new RatePerKwChargeDao(mContext);
         billHeaderDAO = new BillHeaderDAO(mContext);
+        billJsonDao = new BillJsonDao(mContext);
         billHeaderDAO.instantiateDb();
         chargeTypeDAO = new ChargeTypeDAO(mContext);
         billChargeGroupDAO = new BillChargeGroupDAO(mContext);
@@ -207,12 +211,18 @@ public class BillGeneration extends BaseDAO {
         effectivityDate = genericDao.getOneField("effectivityDate","arm_ratemaster","WHERE rateMasterID = ", String.valueOf(account.getIdRateMaster()),"","");
         isSaved = false;
         consumption = dKwhConsumption;
+        System.out.println("totalConsumtion:"+consumption);
+        consumption=Double.parseDouble(df.format(consumption));
+        System.out.println("totalConsumtion:"+consumption);
+        System.out.println("totalConsumtion:"+df.format(consumption));
         stopMeterFixedConsumption = account.getStopMeterFixedConsumption();
         iTotalKwhAddOnTran = Double.parseDouble(genericDao.getOneField("SUM(kwh)","arm_kwhaddontran","WHERE accountNumber = ",account.getOldAccountNumber(),"","0"));
+
         if (consumption == 0)
             iTotalKwhAddOnTran += stopMeterFixedConsumption;
         totalConsumption = computeConsumption.computeInitialConsumption(consumption,
                 multiplier, iTotalKwhAddOnTran);
+        totalConsumption = Double.parseDouble(df.format(totalConsumption));
         if (Integer.parseInt(genericDao.getOneField("COUNT(accountNumber)","arm_coreloss_tran","WHERE accountNumber = ",account.getOldAccountNumber(),"","0")) >= 1) {
             double coreLossLimitKWH = Double.parseDouble(genericDao.getOneField("coreLossLimitKWH","arm_coreloss_tran","","","LIMIT 1","0.00"));
             coreLossKWH = Double.parseDouble(genericDao.getOneField("coreLossKWH","arm_coreloss_tran","WHERE accountNumber = ",account.getOldAccountNumber(),"","0.00"));
@@ -249,10 +259,17 @@ public class BillGeneration extends BaseDAO {
                     addOnCharge(newBillNumber);
                     for (BillChargeGroup chargeGroup : billChargeGroupList) {
                         isSaved = billChargeGroupDAO.insertRecord(chargeGroup);
+                        int detailCnt = Integer.parseInt(genericDao.getOneField("SELECT COUNT(id) FROM arm_rate_detail WHERE idChargeType = "+chargeGroup.getIdChargeType(),"0"));
+                        int chargeTypeID=0;
+                        if(detailCnt>0) {
+                            chargeTypeID=chargeGroup.getIdChargeType();
+                        }
+                        System.out.println("ID: "+chargeTypeID);
                         billChargeGroupDetails = ratePerKwChargeDao.getChargesGroupDetail(chargeGroup.getBillNumber(), account.getIdRateMaster(),
-                                totalConsumption, chargeGroup.getChargeTypeCode().trim(), chargeGroup.getPrintOrder(), isLifeliner, isForTrancated,isSenior);
+                                totalConsumption, chargeGroup.getChargeTypeCode().trim(), chargeTypeID, chargeGroup.getPrintOrder(), isLifeliner, isForTrancated,isSenior);
                         billChargeGroupSize = billChargeGroupDetails.size();
                             for (BillChargeGroupDetail chargeGroupDetail : billChargeGroupDetails) {
+                                System.out.println("chargeGroupDetail: "+chargeGroupDetail.getChargeName());
                                 BigDecimal rateAddonTotal = new BigDecimal(genericDao.getOneField("select IFNULL(SUM(amount), 0) from arm_rateaddontran_special" +
                                         " where accountNumber = '" + account.getOldAccountNumber() + "' and chargeName = '" + chargeGroupDetail.getChargeName() + "'","0"));
                                 chargeGroupDetail.setChargeTotal(chargeGroupDetail.getChargeTotal().add(rateAddonTotal));
@@ -283,7 +300,7 @@ public class BillGeneration extends BaseDAO {
                 for (BillChargeGroup chargeGroup : billChargeGroupList) {
                     isSaved = billChargeGroupDAO.updateRecord(chargeGroup);
                     billChargeGroupDetails = ratePerKwChargeDao.getChargesGroupDetail(chargeGroup.getBillNumber(), account.getIdRateMaster(),
-                            totalConsumption, chargeGroup.getChargeTypeCode().trim(), chargeGroup.getPrintOrder(), isLifeliner, isForTrancated,isSenior);
+                            totalConsumption, chargeGroup.getChargeTypeCode().trim(), chargeGroup.getIdChargeType(), chargeGroup.getPrintOrder(), isLifeliner, isForTrancated,isSenior);
                     billChargeGroupSize = billChargeGroupDetails.size();
                         for (BillChargeGroupDetail chargeGroupDetail : billChargeGroupDetails) {
                             BigDecimal rateAddonTotal = new BigDecimal(genericDao.getOneField("select IFNULL(SUM(amount), 0) from arm_rateaddontran_special" +
@@ -432,6 +449,7 @@ public class BillGeneration extends BaseDAO {
             retValue = "-3";
         else {
             billHeaderDAO.updateOneFieldByBillNo(billJson, newBillNumber,"billJson");
+//            billJsonDao.insert(newBillNumber,billJson);
             helper.saveBackup(billJson, newBillNumber);
             retValue = newBillNumber;
         }
@@ -485,7 +503,7 @@ public class BillGeneration extends BaseDAO {
         subsidyRates = generateSC(billNo, lastChargeTypePrintOrder, lastPrintOrders, lifeRateSub, isLLSInclToSCD);
         scSubDisc = subsidyRates.getChargeTotal();
         //HARDCODED ALECO FOR Other Vat Total
-        if(duCode.equals(apec) || duCode.equals(aleco))
+        if(subsidyRates.getChargeTotal()!=null && (duCode.equals(apec) || duCode.equals(aleco)))
                  forVatOtherVal = forVatOtherVal.add(subsidyRates.getChargeTotal());
         billChargeGroupDetails.add(subsidyRates);
         saveAdditionalRates(billChargeGroupDetails, isForUpdate);
@@ -771,13 +789,15 @@ public class BillGeneration extends BaseDAO {
         List<BillChargeGroup> billChargeGroupList = new ArrayList<>();
         if (chargeTypeObj.size() > 0) {
             for (ChargeTypeModel chargeType : chargeTypeObj) {
-                BillChargeGroup billChargeGroup = new BillChargeGroup();
-                billChargeGroup.setBillNumber(newBillNumber);
-                billChargeGroup.setChargeTypeCode(chargeType.getChargeTypeCode());
-                billChargeGroup.setChargeTypeName(chargeType.getChargeTypeName());
-                billChargeGroup.setPrintOrder(chargeType.getPrintOrder());
-                billChargeGroup.setSubtotalName(chargeType.getSubtotalName());
-                billChargeGroupList.add(billChargeGroup);
+                    BillChargeGroup billChargeGroup = new BillChargeGroup();
+                    billChargeGroup.setBillNumber(newBillNumber);
+                    billChargeGroup.setChargeTypeCode(chargeType.getChargeTypeCode());
+                    billChargeGroup.setIdChargeType(chargeType.getIdChargeType());
+                    billChargeGroup.setChargeTypeName(chargeType.getChargeTypeName());
+                    billChargeGroup.setPrintOrder(chargeType.getPrintOrder());
+                    billChargeGroup.setSubtotalName(chargeType.getSubtotalName());
+                    billChargeGroupList.add(billChargeGroup);
+//                }
             }
         }
         return billChargeGroupList;
@@ -791,6 +811,5 @@ public class BillGeneration extends BaseDAO {
         if (!billNumber.equals(""))
             billHeaderDAO.updateOneFieldByBillNo(billNumber, remarks,"remarks");
     }
-
 
 }

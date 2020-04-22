@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">KuryenTxt</string>
-    <string name="app_released_date">11/01/2019</string>
+    <string name="app_released_date">12/12/2019</string>
     <!-- Homepage Text -->
     <string name="transact">Transact</string>
     <string name="reports">Reports</string>
@@ -160,7 +160,7 @@
     <string name="http">http://</string>
     <string name="base_url">/KuryentxtAPI/</string>
     <string name="acct_url">accounts</string>
-    <string name="acct_version">1.6</string>
+    <string name="acct_version">1.7</string>
     <string name="no_dl_account_err_msg">No downloaded accounts \nPlease contact your administrator</string>
     <string name="rate_master_url">ratemaster</string>
     <string name="rate_master_status">ratemaster/check-rate-status</string>

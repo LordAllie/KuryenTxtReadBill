@@ -35,6 +35,9 @@ public class BillChargeGroup {
     @SerializedName("subtotalName")
     @Expose
     private String subtotalName;
+    @SerializedName("idChargeType")
+    @Expose
+    private int idChargeType;
 
     public BillChargeGroup() {
 
@@ -95,5 +98,13 @@ public class BillChargeGroup {
 
     public void setSubtotalName(String subtotalName) {
         this.subtotalName = subtotalName;
+    }
+
+    public int getIdChargeType() {
+        return idChargeType;
+    }
+
+    public void setIdChargeType(int idChargeType) {
+        this.idChargeType = idChargeType;
     }
 }

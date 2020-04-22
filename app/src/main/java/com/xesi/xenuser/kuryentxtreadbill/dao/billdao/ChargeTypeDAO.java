@@ -28,7 +28,7 @@ public class ChargeTypeDAO extends BaseDAO {
     public List<ChargeTypeModel> getChargeType(int idRateMaster) {
         List<ChargeTypeModel> chargeTypeList = new ArrayList<>();
 
-        String query = "SELECT idRateMaster, printOrder, chargeTypeCode, chargeTypeName, subtotalName " +
+        String query = "SELECT id, idRateMaster, printOrder, chargeTypeCode, chargeTypeName, subtotalName " +
                 "FROM " + TABLE_NAME + " WHERE idRateMaster = " + idRateMaster + " ORDER BY printOrder";
         mcfDB = this.getWritableDatabase();
 
@@ -37,14 +37,14 @@ public class ChargeTypeDAO extends BaseDAO {
             if (cursor.moveToFirst()) {
                 do {
                     ChargeTypeModel chargeType = new ChargeTypeModel();
-                    chargeType.setIdRateMaster(cursor.getInt(0));
-                    chargeType.setPrintOrder(cursor.getInt(1));
-                    chargeType.setChargeTypeCode(cursor.getString(2));
-                    chargeType.setChargeTypeName(cursor.getString(3));
-                    chargeType.setSubtotalName(cursor.getString(4));
+                    chargeType.setIdRateMaster(cursor.getInt(1));
+                    chargeType.setPrintOrder(cursor.getInt(2));
+                    chargeType.setChargeTypeCode(cursor.getString(3));
+                    chargeType.setChargeTypeName(cursor.getString(4));
+                    chargeType.setSubtotalName(cursor.getString(5));
+                    chargeType.setIdChargeType(cursor.getInt(0));
                     chargeTypeList.add(chargeType);
                 } while (cursor.moveToNext());
-
             }
         } catch (Exception e) {
             e.printStackTrace();

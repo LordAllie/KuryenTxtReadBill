@@ -184,12 +184,15 @@ public class AccountModelV2 implements Parcelable {
     @SerializedName("autoComputeMode")
     @Expose
     private int autoComputeMode;
+    @SerializedName("soaFooter")
+    @Expose
+    private String soaFooter;
 
     public AccountModelV2() {
 
     }
 
-    public AccountModelV2(int id, int idRateMaster, int idRoute, int idRDM, long idArea, int sequenceNumber, int oldSequenceNumber, String oldAccountNumber, String accountNumber, String meterNumber, String accountName, String addressLn1, String addressLn2, String mobileNo, String emailAdd, String sin, String serialNo, String routeCode, BigDecimal previousBill, String lastPaymentDate, BigDecimal lastPaymentAmt, BigDecimal lastDepositPayment, String lastDepositPaymentDate, BigDecimal billDepositInterest, BigDecimal billDeposit, BigDecimal totalBillDeposit, BigDecimal c01, BigDecimal c02, BigDecimal c03, BigDecimal c04, BigDecimal c05, BigDecimal c06, BigDecimal c07, BigDecimal c08, BigDecimal c09, BigDecimal c10, BigDecimal c11, BigDecimal c12, double currentReading, double currentConsumption, double moAvgConsumption, double stopMeterFixedConsumption, double meterMultiplier, String isSeniorCitizen, String isActive, int isRead, String remarks, double minimumContractedEnergy, double minimumContractedDemand, double arrears, String arrearsAsOf, String isForAverage, int autoComputeMode) {
+    public AccountModelV2(int id, int idRateMaster, int idRoute, int idRDM, long idArea, int sequenceNumber, int oldSequenceNumber, String oldAccountNumber, String accountNumber, String meterNumber, String accountName, String addressLn1, String addressLn2, String mobileNo, String emailAdd, String sin, String serialNo, String routeCode, BigDecimal previousBill, String lastPaymentDate, BigDecimal lastPaymentAmt, BigDecimal lastDepositPayment, String lastDepositPaymentDate, BigDecimal billDepositInterest, BigDecimal billDeposit, BigDecimal totalBillDeposit, BigDecimal c01, BigDecimal c02, BigDecimal c03, BigDecimal c04, BigDecimal c05, BigDecimal c06, BigDecimal c07, BigDecimal c08, BigDecimal c09, BigDecimal c10, BigDecimal c11, BigDecimal c12, double currentReading, double currentConsumption, double moAvgConsumption, double stopMeterFixedConsumption, double meterMultiplier, String isSeniorCitizen, String isActive, int isRead, String remarks, double minimumContractedEnergy, double minimumContractedDemand, double arrears, String arrearsAsOf, String isForAverage, int autoComputeMode, String soaFooter) {
         this.id = id;
         this.idRateMaster = idRateMaster;
         this.idRoute = idRoute;
@@ -243,6 +246,7 @@ public class AccountModelV2 implements Parcelable {
         this.arrearsAsOf = arrearsAsOf;
         this.isForAverage = isForAverage;
         this.autoComputeMode = autoComputeMode;
+        this.soaFooter = soaFooter;
     }
 
     protected AccountModelV2(Parcel in) {
@@ -806,5 +810,12 @@ public class AccountModelV2 implements Parcelable {
         return 0;
     }
 
+    public String getSoaFooter() {
+        return soaFooter;
+    }
+
+    public void setSoaFooter(String soaFooter) {
+        this.soaFooter = soaFooter;
+    }
 }
 

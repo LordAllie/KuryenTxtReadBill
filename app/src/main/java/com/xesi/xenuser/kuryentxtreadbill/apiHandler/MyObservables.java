@@ -232,4 +232,5 @@ public class MyObservables {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread());
     }
+
 }

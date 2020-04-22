@@ -297,6 +297,7 @@ public class AccountDao extends BaseDAO {
         accountDetails.setArrearsAsOf(cursor.getString(cursor.getColumnIndex("arrearsAsOf")));
         accountDetails.setIsForAverage(cursor.getString(cursor.getColumnIndex("isForAverage")));
         accountDetails.setAutoComputeMode(cursor.getInt(cursor.getColumnIndex("autoComputeMode")));
+        accountDetails.setSoaFooter(cursor.getString(cursor.getColumnIndex("soaFooter")));
         return accountDetails;
     }
 

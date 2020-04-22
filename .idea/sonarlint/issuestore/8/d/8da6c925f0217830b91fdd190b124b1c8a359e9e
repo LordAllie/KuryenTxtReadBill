@@ -1,0 +1,65 @@
+
+Osquid:S1068G"3Remove this unused "btnPrintReading" private field.(«¾¦žýÿÿÿÿ
+csquid:CommentedOutCodeLineõ"<This block of commented-out lines of code should be removed.(Ú¹áó
+\squid:UselessImportCheck"8Remove this unused import 'android.view.LayoutInflater'.(À¯ÑÇ
+Asquid:S1068c"*Remove this unused "editor" private field.(–ñèˆ
+bsquid:HiddenFieldCheck­":Rename "dialog" which hides the field declared at line 95.(å”ù¤ýÿÿÿÿ
+gsquid:HiddenFieldCheck"DRename "uploadBillMaster" which hides the field declared at line 90.(‚”¬ú
+Isquid:S1659G"-Declare "btnPrintReading" on a separate line.(«¾¦žýÿÿÿÿ
+isquid:S1450a"RRemove the "sdf" field and declare it as a local variable in the relevant methods.(ˆùÚ¤
+™squid:S1186†"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+hsquid:CommentedOutCodeLine”"<This block of commented-out lines of code should be removed.(×À§šûÿÿÿÿ
+zsquid:S1450W"^Remove the "btnCancelUpload" field and declare it as a local variable in the relevant methods.(ö‹ ¢øÿÿÿÿ
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+msquid:S1450d"QRemove the "df" field and declare it as a local variable in the relevant methods.(÷»üÿøÿÿÿÿ
+™squid:S1186©"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+wsquid:S1450]"[Remove the "billJsonList" field and declare it as a local variable in the relevant methods.(¤äŠ©þÿÿÿÿ
+zsquid:S1450G"^Remove the "btnPrintReading" field and declare it as a local variable in the relevant methods.(«¾¦žýÿÿÿÿ
+@squid:S3398Æ"(Move this method into "UploadNewMeters".(ïóŸ‘
+Msquid:S2696Š"6Make the enclosing method "static" or remove this set.(¸ÏðE
+_squid:S1192”"HDefine a constant instead of duplicating this literal "SAVELOG" 4 times.(õÎÌl
+]squid:UselessImportCheck"4Remove this unused import 'android.app.AlertDialog'.(ª½øþüÿÿÿÿ
+Csquid:S1659V"'Declare "tvLoading" on a separate line.(³Ì“Øùÿÿÿÿ
+Dsquid:S1659X"(Declare "percentage" on a separate line.(ÂÜÙ‘üÿÿÿÿ
+:squid:S1659b"#Declare "idRDM" on a separate line.(îþ‡·
+lsquid:S1450K"VRemove the "context" field and declare it as a local variable in the relevant methods.(êÝç
+Isquid:S1659X"-Declare "billRecordCount" on a separate line.(ÂÜÙ‘üÿÿÿÿ
+csquid:CommentedOutCodeLineË"<This block of commented-out lines of code should be removed.(Ú¹áó
+Bsquid:S1068L"+Remove this unused "receipt" private field.(«Úþ
+@squid:S1148§"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+msquid:S1450L"VRemove the "receipt" field and declare it as a local variable in the relevant methods.(«Úþ
+jsquid:S3776¿"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(¼÷É¹
+Bsquid:S1068d"&Remove this unused "df" private field.(÷»üÿøÿÿÿÿ
+{squid:S1450O"_Remove the "headerFooterInfo" field and declare it as a local variable in the relevant methods.(Ê•Å’ùÿÿÿÿ
+@squid:S1148å"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+isquid:UselessImportCheck"@Remove this unused import 'android.support.annotation.Nullable'.(Ö‹øïüÿÿÿÿ
+Gsquid:S1659X"+Declare "totalAccounts" on a separate line.(ÂÜÙ‘üÿÿÿÿ
+csquid:CommentedOutCodeLineý"<This block of commented-out lines of code should be removed.(°¹ÎÃ
+ssquid:S1450J"\Remove the "duPropertyDAO" field and declare it as a local variable in the relevant methods.(ÉÄ€Ê
+?squid:S1659X"#Declare "count" on a separate line.(ÂÜÙ‘üÿÿÿÿ
+Isquid:S1602Ð",Remove useless curly braces around statement(Þ˜ÿ×üÿÿÿÿ
+Ksquid:S1068X"/Remove this unused "uploadedCnt" private field.(ÂÜÙ‘üÿÿÿÿ
+usquid:UselessImportCheck0"QRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.network.Kuryentxt'.(‚ÝÀË
+{squid:S1488³"cImmediately return this expression instead of assigning it to the temporary variable "billHeaders".(É³½
+Asquid:S1068K"+Remove this unused "context" private field.(êÝç
+psquid:S1450Q"YRemove the "searchView" field and declare it as a local variable in the relevant methods.(‰Ôô¦
+™squid:S1186—"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+hsquid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(œÓÀìüÿÿÿÿ
+@squid:S3398¬"(Move this method into "UploadNewMeters".(œþÉÊ
+usquid:S00116V"XRename this field "progress_text" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Ì“Øùÿÿÿÿ
+dsquid:S1192÷"GDefine a constant instead of duplicating this literal "authID" 3 times.(¤ž´­ùÿÿÿÿ
+asquid:S1192Ù"IDefine a constant instead of duplicating this literal " records" 3 times.(³á¦É
+psquid:S1450S"YRemove the "billsCount" field and declare it as a local variable in the relevant methods.(êû¢’
+hsquid:CommentedOutCodeLineä"<This block of commented-out lines of code should be removed.(×À§šûÿÿÿÿ
+™squid:S1186À"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ
+™squid:S1186™"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ÝŠÎ
+Osquid:S1068G"3Remove this unused "btnPrintAllBill" private field.(«¾¦žýÿÿÿÿ
+¬squid:S1192ˆ"ŽDefine a constant instead of duplicating this literal "SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded = 0 AND isArchive = 'Y'" 3 times.(ØÐÝ´ûÿÿÿÿ
+Xsquid:UselessImportCheck"4Remove this unused import 'android.widget.EditText'.(†Å›Ú
+™squid:S1186Å"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(úÑ¯¤
+Esquid:S1659X")Declare "uploadedCnt" on a separate line.(ÂÜÙ‘üÿÿÿÿ
+zsquid:S1450G"^Remove the "btnPrintAllBill" field and declare it as a local variable in the relevant methods.(«¾¦žýÿÿÿÿ
+csquid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(Žíûá
+psquid:S1450M"TRemove the "print" field and declare it as a local variable in the relevant methods.(Áº‰ºüÿÿÿÿ
+lsquid:S1450c"URemove the "editor" field and declare it as a local variable in the relevant methods.(–ñèˆ
+Fsquid:S1125Ù")Remove the literal "false" boolean value.(€½øÿÿÿÿ

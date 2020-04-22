@@ -29,14 +29,20 @@ public class RatePerKwChargeDao extends BaseDAO {
         Log.i("sqlite", mContext.toString());
     }
 
-    public List<BillChargeGroupDetail> getChargesGroupDetail(String billNo, int rateId, double consumption, String changeType,
+    public List<BillChargeGroupDetail> getChargesGroupDetail(String billNo, int rateId, double consumption, String chargeType, int idChargeType,
                                                              int cgPrintOrder, boolean isLL, String isTrancated, String ifSenior) {
         String addedQuery="";
+        String chargeTypeQuery="";
         if(ifSenior.equals("Y"))
             addedQuery =  " AND isOffIfSenior ='N'";
         if(isLL)
             addedQuery = addedQuery + " AND isOffIfLifeliner ='N'";
-        query = "SELECT * from " + TABLE_NAME + " WHERE chargeType = '" + changeType + "' " +
+        if(idChargeType==0)
+            chargeTypeQuery="chargeType = '"+chargeType+"'";
+        else
+            chargeTypeQuery="idChargeType = " + idChargeType;
+
+        query = "SELECT * from " + TABLE_NAME + " WHERE " + chargeTypeQuery +
                 " AND rateId = " + rateId + addedQuery +" ORDER BY printOrder";
         db = this.getWritableDatabase();
         List<BillChargeGroupDetail> initialBillDetailsList = new ArrayList<>();
@@ -66,6 +72,9 @@ public class RatePerKwChargeDao extends BaseDAO {
                     billChargeGroupDetail.setChargeAmount(chargeAmount);
                     billChargeGroupDetail.setChargeTotal(computedRates);
                     initialBillDetailsList.add(billChargeGroupDetail);
+                    System.out.println("idchargetype: "+cursor.getInt(cursor.getColumnIndex("id")));
+                    System.out.println("idchargetype: "+cursor.getString(cursor.getColumnIndex("perKwRateName")));
+                    System.out.println("idchargetype: "+cursor.getInt(cursor.getColumnIndex("idChargeType")));
                 } while (cursor.moveToNext());
             }
         } catch (Exception e) {

@@ -6,10 +6,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+import android.text.Html;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +32,7 @@ import com.xesi.xenuser.kuryentxtreadbill.apiHandler.RetrofitHandler;
 import com.xesi.xenuser.kuryentxtreadbill.apiHandler.ServiceGenerator;
 import com.xesi.xenuser.kuryentxtreadbill.dao.AccountDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.AccountOtherChargesDao;
+import com.xesi.xenuser.kuryentxtreadbill.dao.BillJsonDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.LogDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.NewMeterDao;
 import com.xesi.xenuser.kuryentxtreadbill.dao.OtherChargesDao;
@@ -55,7 +59,11 @@ import com.xesi.xenuser.kuryentxtreadbill.util.PrintReceipt;
 import com.xesi.xenuser.kuryentxtreadbill.util.UniversalHelper;
 
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import java.io.File;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -104,6 +112,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
     private GenericDao genericDao;
     private UniversalHelper helper;
     private BillHeaderDAO billHeaderDAO;
+    private BillJsonDao billJsonDao;
     private NewMeterDao newMeterDao;
     private LogDao logDao;
     private List<Diagnostic> diagnosticList;
@@ -123,6 +132,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
         _dbCreate = new DbCreate(this);
         genericDao = new GenericDao(this);
         billHeaderDAO = new BillHeaderDAO(this);
+        billJsonDao = new BillJsonDao(this);
         billHeaderDAO.instantiateDb();
         newMeterDao = new NewMeterDao(this);
         logDao = new LogDao(this);
@@ -158,7 +168,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
         observables = new MyObservables(ServiceGenerator.createService(APIHandler.class), this);
         retrofitHandler = new RetrofitHandler(this);
         billRecordCount = Integer.parseInt(genericDao.getOneField("SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded = 0 AND isArchive = 'N'","0"));
-        totalAccounts = Integer.parseInt(genericDao.getOneField("COUNT(id)","arm_account","","","","0"));
+        totalAccounts = Integer.parseInt(genericDao.getOneField("SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded = 0 AND isArchive = 'N'","0"));
         GlobalVariable.billNolist=billHeaderDAO.getAllBillNo();
         if(UniversalHelper.externalMemoryAvailable()) {
             imageDIR= "/sdcard";
@@ -172,6 +182,7 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
             startActivityForResult(launcher, 2);
             finish();
         });
+
         errorlogs.setOnClickListener(v -> {
             Intent launcher = new Intent(getApplicationContext(), Logs.class);
             startActivityForResult(launcher, 2);
@@ -481,7 +492,6 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
             @Override
             public void onSubscribe(Disposable d) {
             }
-
             @Override
             public void onNext(String s) {
                 dialog.show();
@@ -496,15 +506,16 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
 //                        i++;
 //                    }while(i<GlobalVariable.billNolist.size());
                         billHeaderDAO.updateAll();
+                        billJsonDao.updateAll();
                     dialog.dismiss();
-                    int billLeft = Integer.parseInt(genericDao.getOneField("COUNT(_id)","armBillHeader","WHERE isUploaded =","0","","0"));
+                    int billLeft = Integer.parseInt(genericDao.getOneField("SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded = 0 AND isArchive = 'N'","0"));
                     if(billLeft<billRecordCount){
-                        msgDialog.showReupload(Sync.this,"Successfully uploaded\n" + billLeft+"/"+billRecordCount + " records",value1 -> {
+                        msgDialog.showReupload(Sync.this,"Successfully uploaded\n" +billRecordCount + " records",value1 -> {
                             if (value1.equals("OK"))
                                 insertBillUploadMaster();
                         });
                     }
-                    msgDialog.showAlertNoCancel(Sync.this, "Upload bill(s)","Successfully uploaded\n" + billLeft+"/"+billRecordCount + " records", value1 -> {
+                    msgDialog.showAlertNoCancel(Sync.this, "Upload bill(s)","Successfully uploaded\n" + billRecordCount + " records", value1 -> {
                         if (value1.equals("OK"))
                             uploadFile();
                     });
@@ -768,32 +779,39 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                         cancel(true);
                         break;
                     } else {
-                        publishProgress("Downloading " + downloadMessage[i]);
-                        if (i == 2 || i == 5 || i == 6 || i == 11 || i == 13)
-                            retClassGen = executeApiCall(urlList[i], Long.parseLong(idRDM));
-                        else if(i == 0)
-                            retClassGen = executeApiCall(urlList[i],getResources().getString(R.string.acct_version),Long.parseLong(idRDM));
-                        else if (i == 1)
-                            retClassGen = executeApiCall(urlList[i], "v2");
-                        else
-                            retClassGen = executeApiCall(urlList[i]);
-                        if (retClassGen.getRespCode() == 200) {
-                            genericDao.deleteTable(retClassGen.getTableName());
-                            List<Map<String, Object>> list = retClassGen.getResponseBodyList();
-                            if (list == null) {
-                                publishProgress("No Data Found", downloadMessage[i]);
-                            } else {
-                                if (list.size() > 0) {
-                                    for (Map<String, Object> obj : list) {
-                                        status = "Saving " + downloadMessage[i] + " " + genericDao.save(obj, retClassGen.getTableName());
-                                        publishProgress(status);
+                        try {
+                            PackageManager manager = getPackageManager();
+                            PackageInfo info= manager.getPackageInfo(getPackageName(), 0);
+
+                            publishProgress("Downloading " + downloadMessage[i]);
+                            if (i == 2 || i == 5 || i == 6 || i == 11 || i == 13)
+                                retClassGen = executeApiCall(urlList[i], Long.parseLong(idRDM));
+                            else if(i == 0)
+                                retClassGen = executeApiCall(urlList[i],getResources().getString(R.string.acct_version),Long.parseLong(idRDM));
+                            else if (i == 1)
+                                retClassGen = executeApiCall(urlList[i], "v2");
+                            else
+                                retClassGen = executeApiCallVersion(urlList[i],String.valueOf(info.versionCode));
+                            if (retClassGen.getRespCode() == 200) {
+                                genericDao.deleteTable(retClassGen.getTableName());
+                                List<Map<String, Object>> list = retClassGen.getResponseBodyList();
+                                if (list == null) {
+                                    publishProgress("No Data Found", downloadMessage[i]);
+                                } else {
+                                    if (list.size() > 0) {
+                                        for (Map<String, Object> obj : list) {
+                                            status = "Saving " + downloadMessage[i] + " " + genericDao.save(obj, retClassGen.getTableName());
+                                            publishProgress(status);
+                                        }
+                                        addToDiagnostics(downloadMessage[i], list.size(), reportDate);
                                     }
-                                    addToDiagnostics(downloadMessage[i], list.size(), reportDate);
+                                    status = "OK";
                                 }
-                                status = "OK";
+                            } else {
+                                publishProgress("No Data Found", downloadMessage[i]);
                             }
-                        } else {
-                            publishProgress("No Data Found", downloadMessage[i]);
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
                     }
                     i++;
@@ -821,6 +839,10 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
 
         private RetClassGen executeApiCall(String urlPath) {
             return retrofitHandler.downloadData(urlPath);
+        }
+
+        private RetClassGen executeApiCallVersion(String urlPath, String version) {
+            return retrofitHandler.downloadVersionData(urlPath,version);
         }
 
         private RetClassGen executeApiCall(String urlPath, String version) {
@@ -864,16 +886,18 @@ public class Sync extends BaseActivity implements NetworkReceiver.ConnectivityRe
                 Date last2Month = c.getTime();
 
                 File[] files = new File(jsonDIR+ "/RNBFile").listFiles();
-                for(int i =0;i < files.length; i++)
-                    if (!yeardateFormat.format(monthToday).equals(yeardateFormat.format(files[i].lastModified()))
-                            && !yeardateFormat.format(lastMonth).equals(files[i].lastModified())
-                            &&  !yeardateFormat.format(last2Month).equals(yeardateFormat.format(files[i].lastModified())))
-                        files[i].delete();
+                if(files!=null) {
+                    for (int i = 0; i < files.length; i++)
+                        if (!yeardateFormat.format(monthToday).equals(yeardateFormat.format(files[i].lastModified()))
+                                && !yeardateFormat.format(lastMonth).equals(files[i].lastModified())
+                                && !yeardateFormat.format(last2Month).equals(yeardateFormat.format(files[i].lastModified())))
+                            files[i].delete();
 
-
+                }
                 billHeaderDAO.deleteOldRecord();
                 editor.putString("dlDateTime", df.format(new Date()));
                 editor.commit();
+                saveToLogs("Data downloaded.");
                 observables.updateRDM(idRDM).subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {

@@ -1,16 +1,16 @@
 
-^squid:S1192""GDefine a constant instead of duplicating this literal "billNo" 4 times.(öãİŞ
-hsquid:S1192'"LDefine a constant instead of duplicating this literal "chargeTotal" 4 times.(ŠšŠ£øÿÿÿÿ
+ƒsquid:S4165D"gRemove this useless assignment; "isUpdated" already holds the assigned value along all execution paths.(ç†îŸùÿÿÿÿ
+msquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Á×Ò
+@squid:S1148«"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+isquid:S1192&"MDefine a constant instead of duplicating this literal "chargeAmount" 4 times.(³®ì®üÿÿÿÿ
+Gsquid:S1148Æ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8££ÔØ-
+bsquid:S1192%"KDefine a constant instead of duplicating this literal "chargeName" 3 times.(ÁÎ–ò
 ?squid:S1148C"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
 ?squid:S1148}"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-isquid:S1192&"MDefine a constant instead of duplicating this literal "chargeAmount" 4 times.(³®ì®üÿÿÿÿ
-bsquid:S1192%"KDefine a constant instead of duplicating this literal "chargeName" 3 times.(ÁÎ–ò
+hsquid:S1192'"LDefine a constant instead of duplicating this literal "chargeTotal" 4 times.(ŠšŠ£øÿÿÿÿ
+^squid:S1192""GDefine a constant instead of duplicating this literal "billNo" 4 times.(öãİŞ
 squid:S4165,"hRemove this useless assignment; "isInserted" already holds the assigned value along all execution paths.(à‡â
-@squid:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-msquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Á×Ò
-ƒsquid:S4165D"gRemove this useless assignment; "isUpdated" already holds the assigned value along all execution paths.(ç†îŸùÿÿÿÿ
 ?squid:S1148+"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
 ?squid:S1148g"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-@squid:S1148«"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
 hsquid:S1192#"QDefine a constant instead of duplicating this literal "printOrderMaster" 3 times.(ÃÔÂ¼
-Gsquid:S1148Æ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8££ÔØ-

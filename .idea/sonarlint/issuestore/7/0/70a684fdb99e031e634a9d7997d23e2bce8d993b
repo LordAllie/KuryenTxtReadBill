@@ -1,380 +1,441 @@
 
-Ysquid:S2209¦"5Change this instance-reference to a static reference.(ª£Øúÿÿÿÿ8„›¨ÒØ-
-Tsquid:S2209Ù"5Change this instance-reference to a static reference.(ßÃñî8„›¨ÒØ-
-msquid:S1192Ö"IDefine a constant instead of duplicating this literal "PRINTING" 4 times.(¨áã‡úÿÿÿÿ8‡ë§ÒØ-
-_squid:S1858ˆ"@"format" returns a string, there's no need to call "toString()".(‡“Ãİ8ãŠœÓØ-
-Gsquid:S1125º"(Remove the literal "true" boolean value.(µ«È8ÔäÉÔØ-
-Ysquid:S2209½"5Change this instance-reference to a static reference.(×‹Ğ¼ÿÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ó"5Change this instance-reference to a static reference.(úşµÆ8ê¹Ñ×Ø-
-Ysquid:S2209¦"5Change this instance-reference to a static reference.(ªÇ×ıøÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209î"5Change this instance-reference to a static reference.(´¤ì8ÀšÓØ-
-tsquid:S1192Š"PDefine a constant instead of duplicating this literal "Start Printing " 3 times.(ÿ…Õáüÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Í"5Change this instance-reference to a static reference.(†Óöÿ8„úĞ×Ø-
-_squid:HiddenFieldCheck”"5Rename "x" which hides the field declared at line 86.(¤êÕÈ8ê¹Ñ×Ø-
-psquid:S1192±"QDefine a constant instead of duplicating this literal "Total Amount Due" 4 times.(¬óß¦8ê¹Ñ×Ø-
-Ysquid:S2209Ç"5Change this instance-reference to a static reference.(çÃÉÇüÿÿÿÿ8ÈèĞ×Ø-
-dsquid:S1858…"@"format" returns a string, there's no need to call "toString()".(¨‚š¶şÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209£"5Change this instance-reference to a static reference.(¿ğğ˜8ê¹Ñ×Ø-
-dsquid:S1858‰"@"format" returns a string, there's no need to call "toString()".(ï©Òÿÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209¨"5Change this instance-reference to a static reference.(ÆœòÕøÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209"5Change this instance-reference to a static reference.(Ş¡º´şÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209¬"5Change this instance-reference to a static reference.(ê¦Ô°ùÿÿÿÿ8ê¹Ñ×Ø-
-jsquid:S1192Š"FDefine a constant instead of duplicating this literal "PRINT" 4 times.(ÿ…Õáüÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209¬"5Change this instance-reference to a static reference.(ê¦Ô°ùÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209ˆ"5Change this instance-reference to a static reference.(‡“Ãİ8ãŠœÓØ-
-qsquid:S3776
-"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ëÁˆ—8ê¹Ñ×Ø-
-Ysquid:S2209Ø"5Change this instance-reference to a static reference.(°¢Õøÿÿÿÿ8Ü¤¿×Ø-
-Tsquid:S2209Æ"5Change this instance-reference to a static reference.(ñ—ìú8ê¹Ñ×Ø-
-_squid:S1858£"@"format" returns a string, there's no need to call "toString()".(¹ôÑ8„úĞ×Ø-
-Tsquid:S2209Ê"5Change this instance-reference to a static reference.(ìµ¾¼8„úĞ×Ø-
-_squid:S1854Î";Remove this useless assignment to local variable "percent".(ä˜Ìëûÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209¾"5Change this instance-reference to a static reference.(–áÎïÿÿÿÿÿ8ãŠœÓØ-
-Tsquid:S2209ñ"5Change this instance-reference to a static reference.(£¹½8ê¹Ñ×Ø-
-Tsquid:S2209‰"5Change this instance-reference to a static reference.(•Ò»Æ8ê¹Ñ×Ø-
-Tsquid:S2209³"5Change this instance-reference to a static reference.(ìµ¾¼8ê¹Ñ×Ø-
-Tsquid:S2209Ó"5Change this instance-reference to a static reference.(‡åÑ8Ü¤¿×Ø-
-Ysquid:S2209Ò"5Change this instance-reference to a static reference.(á¶àäşÿÿÿÿ8ê¹Ñ×Ø-
-msquid:HiddenFieldCheckÏ">Rename "billHeader" which hides the field declared at line 71.(Š¯Ÿúÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ã"5Change this instance-reference to a static reference.(–²‰²øÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ç"5Change this instance-reference to a static reference.(¾ÅëÄıÿÿÿÿ8Ü¤¿×Ø-
-nsquid:S1192é"ODefine a constant instead of duplicating this literal "Please wait..." 7 times.(Õò¿å8ê¹Ñ×Ø-
-esquid:S2142ø"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-vsquid:S3776Ë"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Àâøäüÿÿÿÿ8ê¹Ñ×Ø-
-_squid:S1858œ"@"format" returns a string, there's no need to call "toString()".(ßÚû­8ê¹Ñ×Ø-
-Ysquid:S2209ç"5Change this instance-reference to a static reference.(·•‹àùÿÿÿÿ8„úĞ×Ø-
-Ysquid:S2209Š"5Change this instance-reference to a static reference.(ÈêÜŒøÿÿÿÿ8„›¨ÒØ-
-esquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-Tsquid:S1444U"1Make this "public static progressBar" field final(§ ’áøÿÿÿÿ8‡ë§ÒØ-
-Ysquid:S2209±"5Change this instance-reference to a static reference.(‚±“Ùşÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209‰"5Change this instance-reference to a static reference.(ï©Òÿÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2274˜":Remove this call to "wait" or move it into a "while" loop.(æŠù8ê¹Ñ×Ø-
-Ysquid:S2209ú"5Change this instance-reference to a static reference.(ŒÀÉÀûÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209"5Change this instance-reference to a static reference.(–”şÅÿÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ç"5Change this instance-reference to a static reference.(¾ÅëÄıÿÿÿÿ8ãŠœÓØ-
-Ysquid:S2209¯"5Change this instance-reference to a static reference.(îÌµÖûÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209Ô"5Change this instance-reference to a static reference.(‰åªîûÿÿÿÿ8ê¹Ñ×Ø-
-Ssquid:S2209ë"5Change this instance-reference to a static reference.(öõç|8ê¹Ñ×Ø-
-Psquid:S5261Ï"1Add explicit curly braces to avoid dangling else.(å¥‡8ê¹Ñ×Ø-
-Ysquid:S2209ˆ"5Change this instance-reference to a static reference.(Éİè©üÿÿÿÿ8Ü¤¿×Ø-
-Ysquid:S2209è"5Change this instance-reference to a static reference.(‡Õ÷‘øÿÿÿÿ8ãŠœÓØ-
-Gsquid:S1125¹"(Remove the literal "true" boolean value.(êã¨¬8åÆè×Ø-
-Tsquid:S2209£"5Change this instance-reference to a static reference.(¿ğğ˜8ê¹Ñ×Ø-
-Gsquid:S1148ê"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Æ"5Change this instance-reference to a static reference.(·Õ¿É8ê¹Ñ×Ø-
-Ysquid:S2209Â"5Change this instance-reference to a static reference.(Ûÿ÷¸øÿÿÿÿ8„›¨ÒØ-
-Tsquid:S2209£"5Change this instance-reference to a static reference.(¹ôÑ8ãŠœÓØ-
-Tsquid:S2209 "5Change this instance-reference to a static reference.(ÆŠãÑ8ãŠœÓØ-
-Tsquid:S2209Ô"5Change this instance-reference to a static reference.(„±µ…8Ü¤¿×Ø-
-Tsquid:S2209â"5Change this instance-reference to a static reference.(¼©ñé8ê¹Ñ×Ø-
-squid:S1192°"bDefine a constant instead of duplicating this literal "--------------------------------" 34 times.(×§º¨8„›¨ÒØ-
-vsquid:S3776º"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(şïñ¾şÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209È"5Change this instance-reference to a static reference.(Œœúø8ê¹Ñ×Ø-
-Ysquid:S2209‰"5Change this instance-reference to a static reference.(ï©Òÿÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209µ"5Change this instance-reference to a static reference.(Ô›•ùÿÿÿÿ8ãŠœÓØ-
-Ysquid:S2209Õ"5Change this instance-reference to a static reference.(½¢‘ñøÿÿÿÿ8„›¨ÒØ-
-Ysquid:S2209Ø"5Change this instance-reference to a static reference.(¢çøÈıÿÿÿÿ8„úĞ×Ø-
-Tsquid:S2209á"5Change this instance-reference to a static reference.(‘Øôô8„úĞ×Ø-
-qsquid:S3776‚"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¼Šì8ê¹Ñ×Ø-
-Tsquid:S2209¢"5Change this instance-reference to a static reference.(Ñö¬ç8„úĞ×Ø-
-dsquid:S1858¯"@"format" returns a string, there's no need to call "toString()".(îÌµÖûÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209„"5Change this instance-reference to a static reference.(ÈÃ²8ÛÏş­Ø-
-dsquid:S1858ò"@"format" returns a string, there's no need to call "toString()".(™Ùá½ùÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209Š"5Change this instance-reference to a static reference.(ÈêÜŒøÿÿÿÿ8Ü¤¿×Ø-
-bsquid:S1155Ô">Use isEmpty() to check whether the collection is empty or not.(Ù‡Ûµıÿÿÿÿ8ê¹Ñ×Ø-
-bsquid:S1155Á">Use isEmpty() to check whether the collection is empty or not.(¡µœáøÿÿÿÿ8ê¹Ñ×Ø-
-osquid:CommentedOutCodeLine¼"<This block of commented-out lines of code should be removed.(­ÇŸùùÿÿÿÿ8‡ë§ÒØ-
-Ysquid:S2209Ù"5Change this instance-reference to a static reference.(íû¼µıÿÿÿÿ8ÁšÓØ-
-Tsquid:S2209œ"5Change this instance-reference to a static reference.(ßÚû­8ê¹Ñ×Ø-
-Ysquid:S2209•"5Change this instance-reference to a static reference.(÷Û›üÿÿÿÿ8ãŠœÓØ-
-esquid:S2142Ü"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-Tsquid:S2209—"5Change this instance-reference to a static reference.(îğŸé8ÁšÓØ-
-Ysquid:S2209ù"5Change this instance-reference to a static reference.(š°áúÿÿÿÿ8‹¬í¨Ú-
-Ysquid:S2209â"5Change this instance-reference to a static reference.(ûÆé‰ÿÿÿÿÿ8„úĞ×Ø-
-Usquid:S5261Ò"1Add explicit curly braces to avoid dangling else.(„¶áìøÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ù"5Change this instance-reference to a static reference.(ßÃñî8Ü¤¿×Ø-
-usquid:S1450_"YRemove the "properties" field and declare it as a local variable in the relevant methods.(¶ŒºŠøÿÿÿÿ
-nsquid:S1192Š"JDefine a constant instead of duplicating this literal "Acct Name" 3 times.(ÈêÜŒøÿÿÿÿ8ê¹Ñ×Ø-
-Gsquid:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209©"5Change this instance-reference to a static reference.(éù©Ôúÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ò"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8ê¹Ñ×Ø-
-Ssquid:S1066›"/Merge this if statement with the enclosing one.(‹û‚˜úÿÿÿÿ8ê¹Ñ×Ø-
-Isquid:S1659ø"%Declare "totBill" on a separate line.(ÇÛ ×øÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ó"5Change this instance-reference to a static reference.(úşµÆ8ê¹Ñ×Ø-
-Gsquid:S1148ß"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-Ysquid:S2209Â"5Change this instance-reference to a static reference.(¡•Éüÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209‚"5Change this instance-reference to a static reference.(ûÄ½Á8„úĞ×Ø-
-Tsquid:S2209¶"5Change this instance-reference to a static reference.(Ã‰Í8ê¹Ñ×Ø-
-Tsquid:S2209Æ"5Change this instance-reference to a static reference.(ñ—ìú8ãŠœÓØ-
-Ysquid:S2209Ã"5Change this instance-reference to a static reference.(Äğ‹–ıÿÿÿÿ8„›¨ÒØ-
-Ysquid:S2209‡"5Change this instance-reference to a static reference.(¨ÖÇãúÿÿÿÿ8ãŠœÓØ-
-Tsquid:S2209á"5Change this instance-reference to a static reference.(‘Øôô8ÁšÓØ-
-Tsquid:S2209–"5Change this instance-reference to a static reference.(ıºƒ8ãŠœÓØ-
-Dsquid:S2129¦" Remove this "String" constructor(Ï˜¹‹üÿÿÿÿ8úšàÒØ-
-Tsquid:S2209Ä"5Change this instance-reference to a static reference.(‰ïÉ8ê¹Ñ×Ø-
-Tsquid:S2209‹"5Change this instance-reference to a static reference.(Ñ ›’8ê¹Ñ×Ø-
-Tsquid:S2209§"5Change this instance-reference to a static reference.(×œ«£8„›¨ÒØ-
-Tsquid:S2209Ş"5Change this instance-reference to a static reference.(ä¬£8„úĞ×Ø-
-Ysquid:S2209ı"5Change this instance-reference to a static reference.(«ïÂâÿÿÿÿÿ8‹¬í¨Ú-
-Tsquid:S2209â"5Change this instance-reference to a static reference.(¼©ñé8ê¹Ñ×Ø-
-X"squid:SwitchLastCaseIsDefaultCheckœ""Add a default case to this switch.(Ã«…œ8‡ë§ÒØ-
-Gsquid:S1148€"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209•"5Change this instance-reference to a static reference.(ÀĞÁœ8ê¹Ñ×Ø-
-Tsquid:S2209é"5Change this instance-reference to a static reference.(ÑÍÇ‰8ê¹Ñ×Ø-
-Ysquid:S2209î"5Change this instance-reference to a static reference.(ûõ£„øÿÿÿÿ8ê¹Ñ×Ø-
-dsquid:S1858î"@"format" returns a string, there's no need to call "toString()".(™Ùá½ùÿÿÿÿ8ê¹Ñ×Ø-
-]squid:S1155÷">Use isEmpty() to check whether the collection is empty or not.(à£Š¨8ê¹Ñ×Ø-
-Gsquid:S1148á"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ù"5Change this instance-reference to a static reference.(ìµ¾¼8ÁšÓØ-
-Tsquid:S2209¾"5Change this instance-reference to a static reference.(áıÃ¤8ê¹Ñ×Ø-
-Gsquid:S1148´"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-Ysquid:S2209Õ"5Change this instance-reference to a static reference.(½¢‘ñøÿÿÿÿ8ãŠœÓØ-
-dsquid:S1858¬"@"format" returns a string, there's no need to call "toString()".(ê¦Ô°ùÿÿÿÿ8ê¹Ñ×Ø-
-Gsquid:S1148Ë	"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ß"5Change this instance-reference to a static reference.(¹£İàúÿÿÿÿ8ãŠœÓØ-
-osquid:S1450X"SRemove the "gson" field and declare it as a local variable in the relevant methods.(°Öñ…øÿÿÿÿ
-Ysquid:S2209"5Change this instance-reference to a static reference.(Ş¡º´şÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ñ"5Change this instance-reference to a static reference.(œ¡©Ã8ê¹Ñ×Ø-
-Tsquid:S2209"5Change this instance-reference to a static reference.(™—ÍÏ8ê¹Ñ×Ø-
-Gsquid:S1148í"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209Æ"5Change this instance-reference to a static reference.(½‰µşÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ú"5Change this instance-reference to a static reference.(ŒÀÉÀûÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209é"5Change this instance-reference to a static reference.(ª«£Î8ê¹Ñ×Ø-
-Ysquid:S2209©"5Change this instance-reference to a static reference.(éù©Ôúÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ñ"5Change this instance-reference to a static reference.(·¦Í˜ıÿÿÿÿ8ãŠœÓØ-
-Ysquid:S2209à"5Change this instance-reference to a static reference.(à‡î²ıÿÿÿÿ8ÛÏş­Ø-
-Ysquid:S2209ò"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209±"5Change this instance-reference to a static reference.(‚±“Ùşÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ï"5Change this instance-reference to a static reference.(ä€şûÿÿÿÿ8ê¹Ñ×Ø-
-Nsquid:S1066è	"/Merge this if statement with the enclosing one.(ø÷Š8ê¹Ñ×Ø-
-;squid:S1643¢"Use a StringBuilder instead.( °¿8ê¹Ñ×Ø-
-Ssquid:S2209Û"5Change this instance-reference to a static reference.(½–-8ê¹Ñ×Ø-
-Ysquid:S2209í"5Change this instance-reference to a static reference.(ÊÖÏ‘ıÿÿÿÿ8Ü¤¿×Ø-
-Ysquid:S2209»"5Change this instance-reference to a static reference.(Æ¿±Éøÿÿÿÿ8ê¹Ñ×Ø-
-]squid:S1155“">Use isEmpty() to check whether the collection is empty or not.(¶šñ8ê¹Ñ×Ø-
-xsquid:S1450Y"bRemove the "billGroupCategories" field and declare it as a local variable in the relevant methods.(ÀÉÀ0
-Tsquid:S2209‡"5Change this instance-reference to a static reference.(ÏáØ8Ü¤¿×Ø-
-Ysquid:S2209Á"5Change this instance-reference to a static reference.(ã‚Ü·úÿÿÿÿ8„›¨ÒØ-
-Ysquid:S2209‡"5Change this instance-reference to a static reference.(¨ÖÇãúÿÿÿÿ8Ü¤¿×Ø-
-Tsquid:S2209¿"5Change this instance-reference to a static reference.(×Ö®ü8ãŠœÓØ-
-_squid:S1858È"@"format" returns a string, there's no need to call "toString()".(ñª¤8ê¹Ñ×Ø-
-Ysquid:S2209"5Change this instance-reference to a static reference.(–”şÅÿÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209¢"5Change this instance-reference to a static reference.(šÔ‰æ8Ü¤¿×Ø-
-Tsquid:S2209Ö"5Change this instance-reference to a static reference.(¨­ª›8„úĞ×Ø-
-dsquid:S1858¦"@"format" returns a string, there's no need to call "toString()".(ªÇ×ıøÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209‚"5Change this instance-reference to a static reference.(ûÄ½Á8Ü¤¿×Ø-
-msquid:HiddenFieldCheckü">Rename "billHeader" which hides the field declared at line 71.(Š¯Ÿúÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209î"5Change this instance-reference to a static reference.(¨Õ²…ÿÿÿÿÿ8ãŠœÓØ-
-Qsquid:S3398Ë"-Move this method into "PrintDOEOnBackground".(Àâøäüÿÿÿÿ8ê¹Ñ×Ø-
-esquid:S2142”"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-}squid:S1450J"_Remove the "billAddonCharges" field and declare it as a local variable in the relevant methods.(‚”¸8‡ë§ÒØ-
-osquid:CommentedOutCodeLineŒ"<This block of commented-out lines of code should be removed.(©Ç‘¢øÿÿÿÿ8ê¹Ñ×Ø-
-Gsquid:S1148ù"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2274ş":Remove this call to "wait" or move it into a "while" loop.(æŠù8ê¹Ñ×Ø-
-]squid:S1155Å">Use isEmpty() to check whether the collection is empty or not.(şŞÀç8ê¹Ñ×Ø-
-Tsquid:S2209“"5Change this instance-reference to a static reference.(¸®¶€8Ü¤¿×Ø-
-Tsquid:S2209¡"5Change this instance-reference to a static reference.(¢ç»8ãŠœÓØ-
-Ysquid:S2209î"5Change this instance-reference to a static reference.(ûõ£„øÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ù"5Change this instance-reference to a static reference.(ìµ¾¼8ÁšÓØ-
-Gsquid:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-Ysquid:S2209è"5Change this instance-reference to a static reference.(Æ•Şùıÿÿÿÿ8ãŠœÓØ-
-Tsquid:S2209•"5Change this instance-reference to a static reference.(ÀĞÁœ8ê¹Ñ×Ø-
-Tsquid:S2209„"5Change this instance-reference to a static reference.(ß—êş8ê¹Ñ×Ø-
-Gsquid:S1148ş"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-bsquid:S1155Ï">Use isEmpty() to check whether the collection is empty or not.(ÛÌ´ªüÿÿÿÿ8ê¹Ñ×Ø-
-wsquid:S3776¥"SRefactor this method to reduce its Cognitive Complexity from 131 to the 15 allowed.(³Ò²ùüÿÿÿÿ8‡ë§ÒØ-
-Tsquid:S2209Æ"5Change this instance-reference to a static reference.(·Õ¿É8ê¹Ñ×Ø-
-Gsquid:S1148 "#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-Ysquid:S2209ì"5Change this instance-reference to a static reference.(üŸ•¥øÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209à"5Change this instance-reference to a static reference.(à‡î²ıÿÿÿÿ8ãŠœÓØ-
-Ysquid:S2209ô"5Change this instance-reference to a static reference.(´ˆÿşÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209Ú"5Change this instance-reference to a static reference.(Ñó§÷úÿÿÿÿ8ÁšÓØ-
-Tsquid:S2209è"5Change this instance-reference to a static reference.(€ò›†8„úĞ×Ø-
-Ssquid:S2209ë"5Change this instance-reference to a static reference.(öõç|8ê¹Ñ×Ø-
-Ysquid:S2209Ü"5Change this instance-reference to a static reference.(µÂÉšùÿÿÿÿ8ê¹Ñ×Ø-
-_squid:S1858„"@"format" returns a string, there's no need to call "toString()".(ÈÃ²8‡ë§ÒØ-
-Tsquid:S2209¡"5Change this instance-reference to a static reference.(¢ç»8ãŠœÓØ-
-Tsquid:S2209ƒ"5Change this instance-reference to a static reference.(Äµ×8ãŠœÓØ-
-Ysquid:S2209Ğ"5Change this instance-reference to a static reference.(§ç‰×úÿÿÿÿ8Ü¤¿×Ø-
-vsquid:S1192Õ"RDefine a constant instead of duplicating this literal "Finished Printing" 6 times.(€á›üùÿÿÿÿ8ê¹Ñ×Ø-
-bsquid:S1155Æ">Use isEmpty() to check whether the collection is empty or not.(©»İİıÿÿÿÿ8ê¹Ñ×Ø-
-dsquid:S1858±"@"format" returns a string, there's no need to call "toString()".(‚±“Ùşÿÿÿÿ8ê¹Ñ×Ø-
-Gsquid:S1148ª"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-isquid:S3027¿"JPut single-quotes around '%' to use the faster "lastIndexOf(char)" method.(Ë²æ»8ê¹Ñ×Ø-
-]squid:S1155‘">Use isEmpty() to check whether the collection is empty or not.(¶šñ8ê¹Ñ×Ø-
-gsquid:S1192Ã"HDefine a constant instead of duplicating this literal "Acct No" 4 times.(ª¤¯8ê¹Ñ×Ø-
-Ysquid:S2209è"5Change this instance-reference to a static reference.(‡Õ÷‘øÿÿÿÿ8„úĞ×Ø-
-Tsquid:S2209ñ"5Change this instance-reference to a static reference.(£¹½8ê¹Ñ×Ø-
-Tsquid:S2209±"5Change this instance-reference to a static reference.(¬óß¦8ê¹Ñ×Ø-
-psquid:HiddenFieldCheck›"ARename "printerStatus" which hides the field declared at line 87.(Şè¤±üÿÿÿÿ8‡ë§ÒØ-
-Tsquid:S2209Ó"5Change this instance-reference to a static reference.(‡åÑ8„úĞ×Ø-
-Ysquid:S2209ğ"5Change this instance-reference to a static reference.(¡ËÙıÿÿÿÿ8ãŠœÓØ-
-Tsquid:S2209„"5Change this instance-reference to a static reference.(İ”®8ãŠœÓØ-
-hsquid:S1192è"IDefine a constant instead of duplicating this literal "Printing" 7 times.(‘£•Ô8„úĞ×Ø-
-Ssquid:S2209Û"5Change this instance-reference to a static reference.(½–-8ê¹Ñ×Ø-
-Tsquid:S2209Ş"5Change this instance-reference to a static reference.(ä¬£8Ü¤¿×Ø-
-Ysquid:S2209…"5Change this instance-reference to a static reference.(¨‚š¶şÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209„"5Change this instance-reference to a static reference.(ß—êş8ê¹Ñ×Ø-
-Ssquid:S2209Ö"5Change this instance-reference to a static reference.(ƒû8ê¹Ñ×Ø-
-Tsquid:S2209¬"5Change this instance-reference to a static reference.(êõè8ê¹Ñ×Ø-
-Gsquid:S1659Z")Declare "isSpikeDrop" on a separate line.(Ú¬ºæ8‡ë§ÒØ-
-Tsquid:S2209½"5Change this instance-reference to a static reference.(Ãü”É8„úĞ×Ø-
-Tsquid:S2209Ã"5Change this instance-reference to a static reference.(ª¤¯8ãŠœÓØ-
-Tsquid:S2209†"5Change this instance-reference to a static reference.(©š·Ç8ÈèĞ×Ø-
-Ysquid:S2209ê"5Change this instance-reference to a static reference.(ğŒèÄùÿÿÿÿ8„úĞ×Ø-
-Tsquid:S2209¤"5Change this instance-reference to a static reference.(ÇÄï½8ê¹Ñ×Ø-
-zsquid:S1192Ğ"VDefine a constant instead of duplicating this literal "Print receiving copy." 3 times.(ğøùåûÿÿÿÿ8ê¹Ñ×Ø-
-wsquid:S3776‹"SRefactor this method to reduce its Cognitive Complexity from 170 to the 15 allowed.(¦÷„úÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209é"5Change this instance-reference to a static reference.(ÑÍÇ‰8ê¹Ñ×Ø-
-Tsquid:S2209¤"5Change this instance-reference to a static reference.(ÇÄï½8ê¹Ñ×Ø-
-Tsquid:S2209¢"5Change this instance-reference to a static reference.(šÔ‰æ8Ü¤¿×Ø-
-Ysquid:S2209Â"5Change this instance-reference to a static reference.(¡•Éüÿÿÿÿ8ê¹Ñ×Ø-
-jsquid:S3027º"FPut single-quotes around '%' to use the faster "indexOf(char)" method.(¡ò‘Øûÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209…"5Change this instance-reference to a static reference.(‹ú‚©şÿÿÿÿ8ãŠœÓØ-
-Gsquid:S1148À"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-Tsquid:S2209¥"5Change this instance-reference to a static reference.(øÃ¨…8Ü¤¿×Ø-
-Usquid:UselessImportCheck1"*Remove this unused import 'okhttp3.Route'.(ü÷ï8‡ë§ÒØ-
-Ysquid:S2209®"5Change this instance-reference to a static reference.(çÉ´ôùÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209Ù"5Change this instance-reference to a static reference.(íû¼µıÿÿÿÿ8ÁšÓØ-
-Tsquid:S2209æ"5Change this instance-reference to a static reference.(Æúå£8„úĞ×Ø-
-Tsquid:S2209„"5Change this instance-reference to a static reference.(İ”®8„úĞ×Ø-
-Tsquid:S2209†"5Change this instance-reference to a static reference.(ÆŠãÑ8ãŠœÓØ-
-squid:S1450a"aRemove the "accountBillAuxList" field and declare it as a local variable in the relevant methods.(ŞÑ”Ù8‡ë§ÒØ-
-Tsquid:S2209Ö"5Change this instance-reference to a static reference.(¨­ª›8ãŠœÓØ-
-msquid:S1450Z"VRemove the "conType" field and declare it as a local variable in the relevant methods.(Ú¬ºæ
-Tsquid:S2209¤"5Change this instance-reference to a static reference.(ÎÄ—ä8ê¹Ñ×Ø-
-Ysquid:S2209Æ"5Change this instance-reference to a static reference.(½‰µşÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209ò"5Change this instance-reference to a static reference.(¯ù‹µ8ê¹Ñ×Ø-
-esquid:S2142™"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-dsquid:S1858©"@"format" returns a string, there's no need to call "toString()".(éù©Ôúÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209†"5Change this instance-reference to a static reference.(ÆŠãÑ8ãŠœÓØ-
-Tsquid:S2209¾"5Change this instance-reference to a static reference.(áıÃ¤8ê¹Ñ×Ø-
-Isquid:S00108¹")Either remove or fill this block of code.(êã¨¬8åÆè×Ø-
-Tsquid:S2209æ"5Change this instance-reference to a static reference.(Æúå£8ãŠœÓØ-
-Ysquid:S2209¦"5Change this instance-reference to a static reference.(ªÇ×ıøÿÿÿÿ8ê¹Ñ×Ø-
-Š"squid:ClassVariableVisibilityCheckU"WMake progressBar a static final constant or non-public and provide accessors if needed.(§ ’áøÿÿÿÿ
-Tsquid:S2209Ğ"5Change this instance-reference to a static reference.(é¢¯8ê¹Ñ×Ø-
-Ssquid:S2209«"5Change this instance-reference to a static reference.(ˆ´«8ê¹Ñ×Ø-
-Ysquid:S2209¨"5Change this instance-reference to a static reference.(üùË…ûÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ò"5Change this instance-reference to a static reference.(•º×¢8ãŠœÓØ-
-xsquid:S1450\"URemove the "header" field and declare it as a local variable in the relevant methods.(Òïæêüÿÿÿÿ8‡ë§ÒØ-
-ksquid:S1192ü"LDefine a constant instead of duplicating this literal "\nMessage: " 4 times.(Ï¶¥Á8ê¹Ñ×Ø-
-Tsquid:S2209È"5Change this instance-reference to a static reference.(Œœúø8ê¹Ñ×Ø-
-Tsquid:S2209¼"5Change this instance-reference to a static reference.(çÎ ì8ê¹Ñ×Ø-
-Ssquid:S2209Ö"5Change this instance-reference to a static reference.(ƒû8ê¹Ñ×Ø-
-Tsquid:S2209Ğ"5Change this instance-reference to a static reference.(é¢¯8ê¹Ñ×Ø-
-Tsquid:S2209Ë"5Change this instance-reference to a static reference.(¬éÂâ8ê¹Ñ×Ø-
-Ysquid:S2209Ñ"5Change this instance-reference to a static reference.(òÈØÛıÿÿÿÿ8ãŠœÓØ-
-esquid:S2142é"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-Tsquid:S2209í"5Change this instance-reference to a static reference.(¼ÙÑ8„úĞ×Ø-
-Tsquid:S2209ò"5Change this instance-reference to a static reference.(©‘8ê¹Ñ×Ø-
-dsquid:S1858‡"@"format" returns a string, there's no need to call "toString()".(¨ÖÇãúÿÿÿÿ8Ü¤¿×Ø-
-Tsquid:S2209»"5Change this instance-reference to a static reference.(˜Ì»ã8ê¹Ñ×Ø-
-Ysquid:S2274ß":Remove this call to "wait" or move it into a "while" loop.(æŠù8ê¹Ñ×Ø-
-Ysquid:S2209À"5Change this instance-reference to a static reference.(ö„„Âûÿÿÿÿ8ãŠœÓØ-
-Tsquid:S2209˜"5Change this instance-reference to a static reference.(åˆ‹„8ê¹Ñ×Ø-
-Tsquid:S2209ƒ"5Change this instance-reference to a static reference.(Äµ×8Ü¤¿×Ø-
+Tsquid:S2209ß"5Change this instance-reference to a static reference.(£¹½8‡Ú¿è-
+Ysquid:S2209È"5Change this instance-reference to a static reference.(³Ú°Æşÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209è"5Change this instance-reference to a static reference.(íû¼µıÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209–"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+bsquid:S1155½">Use isEmpty() to check whether the collection is empty or not.(ÛÌ´ªüÿÿÿÿ8Ôûõ”è-
+]squid:S1155”	">Use isEmpty() to check whether the collection is empty or not.(Ğ¦‘Û8Õ¹”è-
+Ysquid:S2209ù"5Change this instance-reference to a static reference.(ğŒèÄùÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209°"5Change this instance-reference to a static reference.(¡•Éüÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209÷"5Change this instance-reference to a static reference.(‡Õ÷‘øÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209ß"5Change this instance-reference to a static reference.(£¹½8‡Ú¿è-
+Tsquid:S2209‘"5Change this instance-reference to a static reference.(ûÄ½Á8™îùŒ.
+Ssquid:S2209Ó"5Change this instance-reference to a static reference.(ˆ´«8‡Ú¿è-
+Ysquid:S2209é"5Change this instance-reference to a static reference.(ê›Ÿıÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209“"5Change this instance-reference to a static reference.(İ”®8‡Ú¿è-
+Ysquid:S2209è"5Change this instance-reference to a static reference.(íû¼µıÿÿÿÿ8‡Ú¿è-
+osquid:S1450Z"SRemove the "gson" field and declare it as a local variable in the relevant methods.(°Öñ…øÿÿÿÿ
+dsquid:S1858˜"@"format" returns a string, there's no need to call "toString()".(ï©Òÿÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209Ö"5Change this instance-reference to a static reference.(ÑÍÇ‰8‡Ú¿è-
+psquid:S1192Ÿ"QDefine a constant instead of duplicating this literal "Total Amount Due" 4 times.(¬óß¦8Ôûõ”è-
+dsquid:S1858Û"@"format" returns a string, there's no need to call "toString()".(™Ùá½ùÿÿÿÿ8‡Ú¿è-
+;squid:S1643±"Use a StringBuilder instead.( °¿8Õ¹”è-
+Ysquid:S2209Ü"5Change this instance-reference to a static reference.(ûõ£„øÿÿÿÿ8‡Ú¿è-
+Gsquid:S1148ù"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Õ¹”è-
+Ysquid:S2209ß"5Change this instance-reference to a static reference.(§ç‰×úÿÿÿÿ8™îùŒ.
+Ysquid:S2209µ"5Change this instance-reference to a static reference.(ªÇ×ıøÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ü"5Change this instance-reference to a static reference.(¿úÆúÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209í"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+Ysquid:S2274Í":Remove this call to "wait" or move it into a "while" loop.(æŠù8Ôûõ”è-
+Tsquid:S2209’"5Change this instance-reference to a static reference.(Äµ×8™îùŒ.
+Tsquid:S2209±"5Change this instance-reference to a static reference.(Ñö¬ç8‡Ú¿è-
+Tsquid:S2209²"5Change this instance-reference to a static reference.(¹ôÑ8‡Ú¿è-
+Ysquid:S2209”"5Change this instance-reference to a static reference.(‹ú‚©şÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209î"5Change this instance-reference to a static reference.(’œ“çÿÿÿÿÿ8‡Ú¿è-
+_squid:S1858²"@"format" returns a string, there's no need to call "toString()".(¹ôÑ8‡Ú¿è-
+gsquid:S1858®"I"arrayData" is an array of strings, there's no need to call "toString()".(¦û8“Ë”è-
+Ysquid:S2209÷"5Change this instance-reference to a static reference.(‡Õ÷‘øÿÿÿÿ8‡Ú¿è-
+osquid:CommentedOutCodeLine›	"<This block of commented-out lines of code should be removed.(©Ç‘¢øÿÿÿÿ8Õ¹”è-
+squid:S1192¸"bDefine a constant instead of duplicating this literal "--------------------------------" 34 times.(×§º¨8„›¨ÒØ-
+Ysquid:S2209Ü"5Change this instance-reference to a static reference.(ûõ£„øÿÿÿÿ8‡Ú¿è-
 w
-squid:S135ˆ"YReduce the total number of break and continue statements in this loop to use at most one.(øãÌ¸8ê¹Ñ×Ø-
-Tsquid:S2209³"5Change this instance-reference to a static reference.(ìµ¾¼8ê¹Ñ×Ø-
-Ysquid:S2209£"5Change this instance-reference to a static reference.(«¼Ï‰üÿÿÿÿ8„úĞ×Ø-
-Gsquid:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-Psquid:S5261Å"1Add explicit curly braces to avoid dangling else.(ÔÍØ8ê¹Ñ×Ø-
-Ysquid:S2209µ"5Change this instance-reference to a static reference.(Ô›•ùÿÿÿÿ8Ü¤¿×Ø-
-Tsquid:S2209¶"5Change this instance-reference to a static reference.(Ã‰Í8ê¹Ñ×Ø-
-Ysquid:S2209Ø"5Change this instance-reference to a static reference.(Ïâÿ×ıÿÿÿÿ8„›¨ÒØ-
-gsquid:S1192“"HDefine a constant instead of duplicating this literal "DU_CODE" 4 times.(éÎš8‡ë§ÒØ-
-Tsquid:S2209£"5Change this instance-reference to a static reference.(¹ôÑ8ãŠœÓØ-
-Ysquid:S2209¨"5Change this instance-reference to a static reference.(şÃ•”üÿÿÿÿ8ãŠœÓØ-
-Ysquid:S2209î"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8ê¹Ñ×Ø-
-esquid:S2142ÿ"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-[squid:UselessImportCheck*"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8úšàÒØ-
-Ysquid:S2209Å"5Change this instance-reference to a static reference.(¿ğÊùÿÿÿÿ8„úĞ×Ø-
-xsquid:S1450`"aRemove the "billSurchargesList" field and declare it as a local variable in the relevant methods.(¥‹†È
-vsquid:S00117¦"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï˜¹‹üÿÿÿÿ8úšàÒØ-
-Tsquid:S2209©"5Change this instance-reference to a static reference.(ËÕÄ…8ê¹Ñ×Ø-
-Ysquid:S2209â"5Change this instance-reference to a static reference.(ûÆé‰ÿÿÿÿÿ8„úĞ×Ø-
-Tsquid:S2209"5Change this instance-reference to a static reference.(™—ÍÏ8ê¹Ñ×Ø-
-Ysquid:S2209€"5Change this instance-reference to a static reference.(’œ“çÿÿÿÿÿ8‹¬í¨Ú-
-Ysquid:S2209Å"5Change this instance-reference to a static reference.(¿ğÊùÿÿÿÿ8Ü¤¿×Ø-
-Ysquid:S2209î"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8ê¹Ñ×Ø-
-Gsquid:S1148É"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
-Gsquid:S1148Ÿ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-vsquid:S1450H"_Remove the "billChargeGroups" field and declare it as a local variable in the relevant methods.(ùÀ¡š
-esquid:S2142à"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
-Tsquid:S2209‰"5Change this instance-reference to a static reference.(©š·Ç8Ü¤¿×Ø-
-Ysquid:S2209Ø"5Change this instance-reference to a static reference.(°¢Õøÿÿÿÿ8„úĞ×Ø-
-usquid:S1450["YRemove the "delayTimer" field and declare it as a local variable in the relevant methods.(±È²àúÿÿÿÿ
-Ysquid:S2209Ú"5Change this instance-reference to a static reference.(Ñó§÷úÿÿÿÿ8ÁšÓØ-
-Ssquid:S2209ª"5Change this instance-reference to a static reference.(„¾£8ê¹Ñ×Ø-
-Ysquid:S2209è"5Change this instance-reference to a static reference.(Æ•Şùıÿÿÿÿ8Ü¤¿×Ø-
-Tsquid:S2209„"5Change this instance-reference to a static reference.(ß—êş8ê¹Ñ×Ø-
-Gsquid:S1148•"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ˆ"5Change this instance-reference to a static reference.(Éİè©üÿÿÿÿ8ãŠœÓØ-
-Tsquid:S2209À"5Change this instance-reference to a static reference.(‰ïÉ8ê¹Ñ×Ø-
-Tsquid:S2209ˆ"5Change this instance-reference to a static reference.(‡“Ãİ8ãŠœÓØ-
-Tsquid:S2209Î"5Change this instance-reference to a static reference.(´ ¦ì8ê¹Ñ×Ø-
-Tsquid:S2209±"5Change this instance-reference to a static reference.(¬óß¦8ê¹Ñ×Ø-
-Ysquid:S2209Î"5Change this instance-reference to a static reference.(ßôé„üÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209Ø"5Change this instance-reference to a static reference.(Ïâÿ×ıÿÿÿÿ8„úĞ×Ø-
-Tsquid:S2209È"5Change this instance-reference to a static reference.(ñª¤8ê¹Ñ×Ø-
-Ysquid:S2209ì"5Change this instance-reference to a static reference.(üŸ•¥øÿÿÿÿ8ê¹Ñ×Ø-
-Usquid:S3398ö"1Move this method into "PrintSummaryOnBackground".(ÏéÏşÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209é"5Change this instance-reference to a static reference.(ª«£Î8ê¹Ñ×Ø-
-xsquid:S1450I"\Remove the "billAddonKwhs" field and declare it as a local variable in the relevant methods.(×±‰üÿÿÿÿ
-Ysquid:S2274÷":Remove this call to "wait" or move it into a "while" loop.(æŠù8ê¹Ñ×Ø-
-Ysquid:S2209”"5Change this instance-reference to a static reference.(¨ ‹÷ıÿÿÿÿ8‡ë§ÒØ-
-Tsquid:S2209è"5Change this instance-reference to a static reference.(€ò›†8Ü¤¿×Ø-
-Ysquid:S2209Ú"5Change this instance-reference to a static reference.(³Ú°Æşÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ß"5Change this instance-reference to a static reference.(¹£İàúÿÿÿÿ8ìîñ¨Ø-
-Ysquid:S2209ê"5Change this instance-reference to a static reference.(ğŒèÄùÿÿÿÿ8ãŠœÓØ-
-jsquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(áÁÒé8ê¹Ñ×Ø-
-Zsquid:S2696²"6Make the enclosing method "static" or remove this set.(·Î¬öøÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209×"5Change this instance-reference to a static reference.(Ñ°À8„›¨ÒØ-
-Tsquid:S2209Ç"5Change this instance-reference to a static reference.(³öá8ê¹Ñ×Ø-
-Ysquid:S2209Ú"5Change this instance-reference to a static reference.(ê›Ÿıÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209‹"5Change this instance-reference to a static reference.(Ñ ›’8ê¹Ñ×Ø-
-Ysquid:S2209ô"5Change this instance-reference to a static reference.(´ˆÿşÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ê"5Change this instance-reference to a static reference.(ìµ¾¼8Ü¤¿×Ø-
-Ysquid:S2209ã"5Change this instance-reference to a static reference.(–²‰²øÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209 "5Change this instance-reference to a static reference.(ŠÂ–­8ê¹Ñ×Ø-
-Zsquid:S3398µ"6Move this method into "PrintNotificationOnBackground".(ü°¡’üÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209ü"5Change this instance-reference to a static reference.(¢¨Î³ùÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209Ô"5Change this instance-reference to a static reference.(„±µ…8ãŠœÓØ-
-Ysquid:S2209¦"5Change this instance-reference to a static reference.(ßù±×ùÿÿÿÿ8ê¹Ñ×Ø-
-Gsquid:S1148ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209„"5Change this instance-reference to a static reference.(ÈÃ²8–‘ïÎØ-
-Tsquid:S2209ñ"5Change this instance-reference to a static reference.(İ¦•á8„›¨ÒØ-
-dsquid:S1858ô"@"format" returns a string, there's no need to call "toString()".(´ˆÿşÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209¢"5Change this instance-reference to a static reference.(Ñö¬ç8„›¨ÒØ-
-Ysquid:S2209Ø"5Change this instance-reference to a static reference.(¢çøÈıÿÿÿÿ8„›¨ÒØ-
-Usquid:S3398º"1Move this method into "PrintSummaryOnBackground".(şïñ¾şÿÿÿÿ8ê¹Ñ×Ø-
-esquid:S2142³"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‡ë§ÒØ-
-Ksquid:S3010y"(Remove this assignment of "progressBar".(·Î¬öøÿÿÿÿ8‡ë§ÒØ-
-]squid:S1155…">Use isEmpty() to check whether the collection is empty or not.(Ğ¦‘Û8ê¹Ñ×Ø-
-Ysquid:S2209…"5Change this instance-reference to a static reference.(‹ú‚©şÿÿÿÿ8ãŠœÓØ-
-Tsquid:S2209œ"5Change this instance-reference to a static reference.(ßÚû­8ê¹Ñ×Ø-
-Ysquid:S2209Ú"5Change this instance-reference to a static reference.(³Ú°Æşÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209‰"5Change this instance-reference to a static reference.(•Ò»Æ8ê¹Ñ×Ø-
-Tsquid:S2209é"5Change this instance-reference to a static reference.(›Çå©8ãŠœÓØ-
-Tsquid:S2209é"5Change this instance-reference to a static reference.(›Çå©8ãŠœÓØ-
-Tsquid:S2209‡"5Change this instance-reference to a static reference.(ÏáØ8ãŠœÓØ-
-Tsquid:S2209Ó"5Change this instance-reference to a static reference.(ÏáÔ¹8ãŠœÓØ-
-Ysquid:S2209£"5Change this instance-reference to a static reference.(ÛÖô€úÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209…"5Change this instance-reference to a static reference.(¨‚š¶şÿÿÿÿ8ê¹Ñ×Ø-
-Ysquid:S2209Ä"5Change this instance-reference to a static reference.(æüéÈşÿÿÿÿ8„›¨ÒØ-
-Tsquid:S2209ï"5Change this instance-reference to a static reference.(–ÚÎ¾8ãŠœÓØ-
-qsquid:S3776º"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(ëÁˆ—8ê¹Ñ×Ø-
-…squid:S1192ü"fDefine a constant instead of duplicating this literal "Printer error encounter\nError Code: " 4 times.(Ï¶¥Á8ê¹Ñ×Ø-
-Ysquid:S2209¯"5Change this instance-reference to a static reference.(îÌµÖûÿÿÿÿ8ê¹Ñ×Ø-
-Gsquid:S1148İ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
-_squid:S1858¤"@"format" returns a string, there's no need to call "toString()".(ÇÄï½8ê¹Ñ×Ø-
-Tsquid:S2209 "5Change this instance-reference to a static reference.(ÆŠãÑ8Ü¤¿×Ø-
-Tsquid:S2209Ë"5Change this instance-reference to a static reference.(¬éÂâ8ê¹Ñ×Ø-
-‡"squid:ClassVariableVisibilityCheckV"MMake x a static final constant or non-public and provide accessors if needed.(±Šõ¶ûÿÿÿÿ8‡ë§ÒØ-
-Tsquid:S2209×"5Change this instance-reference to a static reference.(Ñ°À8„›¨ÒØ-
-Ysquid:S2209Ú"5Change this instance-reference to a static reference.(ê›Ÿıÿÿÿÿ8ê¹Ñ×Ø-
-Tsquid:S2209ä"5Change this instance-reference to a static reference.(Ù›¼8ê¹Ñ×Ø-
-Tsquid:S2209¿"5Change this instance-reference to a static reference.(Ë²æ»8ê¹Ñ×Ø-
-Ysquid:S2209ç"5Change this instance-reference to a static reference.(·•‹àùÿÿÿÿ8„úĞ×Ø-
-Tsquid:S2209§"5Change this instance-reference to a static reference.(Â†ÿ8„úĞ×Ø-
+squid:S135—	"YReduce the total number of break and continue statements in this loop to use at most one.(øãÌ¸8Õ¹”è-
+Tsquid:S2209°"5Change this instance-reference to a static reference.(¢ç»8™îùŒ.
+Tsquid:S2209Ç"5Change this instance-reference to a static reference.(ìµ¾¼8‡Ú¿è-
+Ysquid:S2209µ"5Change this instance-reference to a static reference.(ªÇ×ıøÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Ú"5Change this instance-reference to a static reference.(üŸ•¥øÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Õ"5Change this instance-reference to a static reference.(Æ•Şùıÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209–"5Change this instance-reference to a static reference.(¤Ø…8‡Ú¿è-
+_squid:S1858×"@"format" returns a string, there's no need to call "toString()".(ñª¤8Õ¹”è-
+Gsquid:S1148Â"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
+Tsquid:S2209—"5Change this instance-reference to a static reference.(‡“Ãİ8‡Ú¿è-
+Ksquid:S1659¯"'Declare "cnt_llSub" on a separate line.(Âï¤øÿÿÿÿ8¾¨áãæ-
+zsquid:S1192ß	"VDefine a constant instead of duplicating this literal "Print receiving copy." 3 times.(ğøùåûÿÿÿÿ8Õ¹”è-
+dsquid:S1858ó"@"format" returns a string, there's no need to call "toString()".(¨‚š¶şÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ÿ"5Change this instance-reference to a static reference.(¡ËÙıÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209¸"5Change this instance-reference to a static reference.(éù©Ôúÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ç"5Change this instance-reference to a static reference.(ŒÀÉÀûÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ï"5Change this instance-reference to a static reference.(êÇ­øÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209½"5Change this instance-reference to a static reference.(Ïâÿ×ıÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209¿"5Change this instance-reference to a static reference.(ßÃñî8‡Ú¿è-
+Ysquid:S2209¼"5Change this instance-reference to a static reference.(£ëŸòøÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209¹"5Change this instance-reference to a static reference.(¬éÂâ8‡Ú¿è-
+Tsquid:S2209õ"5Change this instance-reference to a static reference.(Æúå£8™îùŒ.
+Tsquid:S2209Ç"5Change this instance-reference to a static reference.(ìµ¾¼8‡Ú¿è-
+Ssquid:S1066‡"/Merge this if statement with the enclosing one.(‹û‚˜úÿÿÿÿ8Ôûõ”è-
+Tsquid:S2209õ"5Change this instance-reference to a static reference.(©š·Ç8™îùŒ.
+Tsquid:S2209ø"5Change this instance-reference to a static reference.(›Çå©8‡Ú¿è-
+tsquid:S1450\"VRemove the "conType" field and declare it as a local variable in the relevant methods.(Ú¬ºæ8Ôûõ”è-
+Tsquid:S2209¨"5Change this instance-reference to a static reference.(ß—êş8‡Ú¿è-
+lsquid:S1192â"HDefine a constant instead of duplicating this literal "Acct No" 3 times.(Àğğôÿÿÿÿÿ8Ôûõ”è-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(¾ÅëÄıÿÿÿÿ8™îùŒ.
+rsquid:S1192Ì"NDefine a constant instead of duplicating this literal "IS_PRINT_ZERO" 3 times.(ù”êÃøÿÿÿÿ8¾¨áãæ-
+psquid:HiddenFieldCheck"ARename "printerStatus" which hides the field declared at line 89.(Şè¤±üÿÿÿÿ8‡ë§ÒØ-
+Ysquid:S2209ü"5Change this instance-reference to a static reference.(ÊÖÏ‘ıÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209³"5Change this instance-reference to a static reference.(ÇÄï½8‡Ú¿è-
+Ysquid:S2209ç"5Change this instance-reference to a static reference.(ŒÀÉÀûÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ı"5Change this instance-reference to a static reference.(Ğİ¦åùÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209µ"5Change this instance-reference to a static reference.(³öá8‡Ú¿è-
+‡"squid:ClassVariableVisibilityCheckX"MMake x a static final constant or non-public and provide accessors if needed.(±Šõ¶ûÿÿÿÿ8‡ë§ÒØ-
+Tsquid:S2209¡"5Change this instance-reference to a static reference.(ìµ¾¼8‡Ú¿è-
+Gsquid:S1148Ú
+"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Õ¹”è-
+Tsquid:S2209×"5Change this instance-reference to a static reference.(ñª¤8‡Ú¿è-
+Tsquid:S2209¬"5Change this instance-reference to a static reference.(áıÃ¤8‡Ú¿è-
+Isquid:S00108Â")Either remove or fill this block of code.(ùñÙƒ8¾¨áãæ-
+Tsquid:S2209÷"5Change this instance-reference to a static reference.(Ñ ›’8‡Ú¿è-
+Gsquid:S1148¶"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
+Gsquid:S1125Ã"(Remove the literal "true" boolean value.(µ«È8ÔäÉÔØ-
+Dsquid:S2129­" Remove this "String" constructor(Ï˜¹‹üÿÿÿÿ8úšàÒØ-
+Ysquid:S2209•"5Change this instance-reference to a static reference.(üùË…ûÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ó"5Change this instance-reference to a static reference.(¨‚š¶şÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ß"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8‡Ú¿è-
+_squid:S1858«"@"format" returns a string, there's no need to call "toString()".(ßÚû­8Õ¹”è-
+Tsquid:S2209ñ"5Change this instance-reference to a static reference.(¼©ñé8‡Ú¿è-
+Ysquid:S2209­"5Change this instance-reference to a static reference.(–”şÅÿÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209å"5Change this instance-reference to a static reference.(¨­ª›8‡Ú¿è-
+Ysquid:S2209Ô"5Change this instance-reference to a static reference.(¿ğÊùÿÿÿÿ8¤”œœŒ.
+}squid:S1450K"_Remove the "billAddonCharges" field and declare it as a local variable in the relevant methods.(‚”¸8‡ë§ÒØ-
+Tsquid:S2209Ì"5Change this instance-reference to a static reference.(Ãü”É8‡Ú¿è-
+Ysquid:S2209ç"5Change this instance-reference to a static reference.(š°áúÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209é"5Change this instance-reference to a static reference.(ê›Ÿıÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209°"5Change this instance-reference to a static reference.(¡•Éüÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209é"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+Tsquid:S2209â"5Change this instance-reference to a static reference.(ÏáÔ¹8‡Ú¿è-
+Ssquid:S2209"5Change this instance-reference to a static reference.(½–-8‡Ú¿è-
+Ysquid:S2209—"5Change this instance-reference to a static reference.(œÈˆÄûÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Ë"5Change this instance-reference to a static reference.(ÛÖô€úÿÿÿÿ8‡Ú¿è-
+Gsquid:S1148Ï"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ôûõ”è-
+Tsquid:S2209å"5Change this instance-reference to a static reference.(¨­ª›8‡Ú¿è-
+‚squid:S1157Á"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Ê¯ôñ8Ôûõ”è-
+_squid:S1858†"@"format" returns a string, there's no need to call "toString()".(ÈÃ²8‡Ú¿è-
+Ysquid:S2209ã"5Change this instance-reference to a static reference.(‰åªîûÿÿÿÿ8‡Ú¿è-
+dsquid:S1858ß"@"format" returns a string, there's no need to call "toString()".(™Ùá½ùÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209ƒ"5Change this instance-reference to a static reference.(îğŸé8‡Ú¿è-
+Tsquid:S2209±"5Change this instance-reference to a static reference.(Ñö¬ç8¤”œœŒ.
+Tsquid:S2209’"5Change this instance-reference to a static reference.(´¤ì8‡Ú¿è-
+Tsquid:S2209ø"5Change this instance-reference to a static reference.(›Çå©8‡Ú¿è-
+Ysquid:S2209À"5Change this instance-reference to a static reference.(‚±“Ùşÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209"5Change this instance-reference to a static reference.(šÔ‰æ8‡Ú¿è-
+Ysquid:S2209î"5Change this instance-reference to a static reference.(¹£İàúÿÿÿÿ8™îùŒ.
+nsquid:S1192ø"ODefine a constant instead of duplicating this literal "Please wait..." 7 times.(Õò¿å8äŞ›”è-
+Tsquid:S2209„"5Change this instance-reference to a static reference.(åˆ‹„8‡Ú¿è-
+esquid:S2142ì"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Ôûõ”è-
+Ysquid:S2209ç"5Change this instance-reference to a static reference.(¢çøÈıÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209±"5Change this instance-reference to a static reference.(ßôé„üÿÿÿÿ8‡Ú¿è-
+‡squid:S1157â"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Àğğôÿÿÿÿÿ8Ôûõ”è-
+Tsquid:S2209÷"5Change this instance-reference to a static reference.(•Ò»Æ8™îùŒ.
+Usquid:S5261µ"1Add explicit curly braces to avoid dangling else.(„¶áìøÿÿÿÿ8Ôûõ”è-
+Tsquid:S2209ô"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+vsquid:S3776Ú"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(Àâøäüÿÿÿÿ8Õ¹”è-
+Ysquid:S2209Ğ"5Change this instance-reference to a static reference.(–²‰²øÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209×"5Change this instance-reference to a static reference.(ª«£Î8‡Ú¿è-
+Ssquid:S2209ú"5Change this instance-reference to a static reference.(öõç|8‡Ú¿è-
+Ysquid:S2209Æ"5Change this instance-reference to a static reference.(°¢Õøÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Ú"5Change this instance-reference to a static reference.(üŸ•¥øÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(Éİè©üÿÿÿÿ8™îùŒ.
+Ysquid:S2209Å"5Change this instance-reference to a static reference.(Ñó§÷úÿÿÿÿ8¤”œœŒ.
+Ysquid:S2209­"5Change this instance-reference to a static reference.(–”şÅÿÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ü"5Change this instance-reference to a static reference.(¿úÆúÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Œ"5Change this instance-reference to a static reference.(úÚˆ€úÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209–"5Change this instance-reference to a static reference.(¨ÖÇãúÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209÷"5Change this instance-reference to a static reference.(Ñ ›’8‡Ú¿è-
+Ysquid:S2209"5Change this instance-reference to a static reference.(Ñó§÷úÿÿÿÿ8‡Ú¿è-
+W
+squid:S106­"9Replace this use of System.out or System.err by a logger.(“¦ªù8ÔÜÎ”è-
+\
+squid:S106»"9Replace this use of System.out or System.err by a logger.(ñ·™¶ÿÿÿÿÿ8Õ¹”è-
+]squid:S1155ä">Use isEmpty() to check whether the collection is empty or not.(à£Š¨8Ôûõ”è-
+Tsquid:S2209¯"5Change this instance-reference to a static reference.(ÆŠãÑ8‡Ú¿è-
+Isquid:S1659‡"%Declare "totBill" on a separate line.(ÇÛ ×øÿÿÿÿ8Õ¹”è-
+isquid:S3027Î"JPut single-quotes around '%' to use the faster "lastIndexOf(char)" method.(Ë²æ»8Õ¹”è-
+wsquid:S3776¬"SRefactor this method to reduce its Cognitive Complexity from 192 to the 15 allowed.(³Ò²ùüÿÿÿÿ8‡ë§ÒØ-
+Tsquid:S2209¹"5Change this instance-reference to a static reference.(¬éÂâ8‡Ú¿è-
+Tsquid:S2209•"5Change this instance-reference to a static reference.(”ıúµ8‡Ú¿è-
+Gsquid:S1148á"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
+qsquid:S3776‘	"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(¼Šì8Õ¹”è-
+Ysquid:S2209‹"5Change this instance-reference to a static reference.(åó³’ıÿÿÿÿ8¤”œœŒ.
+Ysquid:S2209Ô"5Change this instance-reference to a static reference.(¿ğÊùÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Æ"5Change this instance-reference to a static reference.(°¢Õøÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ä"5Change this instance-reference to a static reference.(½¢‘ñøÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209õ"5Change this instance-reference to a static reference.(Æúå£8‡Ú¿è-
+Tsquid:S2209†"5Change this instance-reference to a static reference.(ÈÃ²8‡Ú¿è-
+Ysquid:S2274ë":Remove this call to "wait" or move it into a "while" loop.(æŠù8Ôûõ”è-
+Tsquid:S2209ò"5Change this instance-reference to a static reference.(©š·Ç8‡Ú¿è-
+Ysquid:S2209"5Change this instance-reference to a static reference.(÷Û›üÿÿÿÿ8‡Ú¿è-
+Vsquid:S1068S"3Remove this unused "billMonthFormat" private field.(«òëşıÿÿÿÿ8¾¨áãæ-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(ÈêÜŒøÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209¾"5Change this instance-reference to a static reference.(îÌµÖûÿÿÿÿ8™îùŒ.
+Gsquid:S1148ü	"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Õ¹”è-
+usquid:S1450]"YRemove the "delayTimer" field and declare it as a local variable in the relevant methods.(±È²àúÿÿÿÿ
+esquid:S2142ø"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Õ¹”è-
+qsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ëÁˆ—8Õ¹”è-
+Tsquid:S2209ƒ"5Change this instance-reference to a static reference.(ÀĞÁœ8‡Ú¿è-
+Gsquid:S1148ˆ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ôûõ”è-
+Tsquid:S2209Õ"5Change this instance-reference to a static reference.(ñ—ìú8‡Ú¿è-
+Ysquid:S2209È"5Change this instance-reference to a static reference.(³Ú°Æşÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ä"5Change this instance-reference to a static reference.(½¢‘ñøÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209õ"5Change this instance-reference to a static reference.(ÏáØ8™îùŒ.
+qsquid:S00117®"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©öæ»8¾¨áãæ-
+Tsquid:S2209İ"5Change this instance-reference to a static reference.(´ ¦ì8‡Ú¿è-
+Tsquid:S2209"5Change this instance-reference to a static reference.(©‘8‡Ú¿è-
+_squid:S1858—"@"format" returns a string, there's no need to call "toString()".(‡“Ãİ8‡Ú¿è-
+Ysquid:S2209ı"5Change this instance-reference to a static reference.(¨Õ²…ÿÿÿÿÿ8™îùŒ.
+Usquid:UselessImportCheck2"*Remove this unused import 'okhttp3.Route'.(ü÷ï8Ôûõ”è-
+W
+squid:S106º"9Replace this use of System.out or System.err by a logger.(ˆ§ŸÀ8ËÁš”è-
+]squid:S1155³">Use isEmpty() to check whether the collection is empty or not.(şŞÀç8Ôûõ”è-
+esquid:S2142µ"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
+Tsquid:S2209Õ"5Change this instance-reference to a static reference.(ñ—ìú8¤”œœŒ.
+Gsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
+Tsquid:S2209•"5Change this instance-reference to a static reference.(ÆŠãÑ8‡Ú¿è-
+bsquid:S1155Â">Use isEmpty() to check whether the collection is empty or not.(Ù‡Ûµıÿÿÿÿ8Ôûõ”è-
+Tsquid:S2209"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+Tsquid:S2209ã"5Change this instance-reference to a static reference.(„±µ…8™îùŒ.
+Ysquid:S2209›"5Change this instance-reference to a static reference.(çÉ´ôùÿÿÿÿ8‡Ú¿è-
+gsquid:S1192Š"HDefine a constant instead of duplicating this literal "Address" 5 times.(Ê¯ôñ8Ôûõ”è-
+Ysquid:S2209ß"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8‡Ú¿è-
+Usquid:S1481İ"1Remove this unused "chargeAmount" local variable.(ş¾õúÿÿÿÿ8ø²•¿è-
+]squid:S1155ÿ">Use isEmpty() to check whether the collection is empty or not.(¶šñ8Ôûõ”è-
+Tsquid:S2209¸"5Change this instance-reference to a static reference.(ìµ¾¼8‡Ú¿è-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(¯Å–äşÿÿÿÿ8‡Ú¿è-
+Nsquid:S1066÷
+"/Merge this if statement with the enclosing one.(ø÷Š8Õ¹”è-
+Ysquid:S2209"5Change this instance-reference to a static reference.(Ñó§÷úÿÿÿÿ8¤”œœŒ.
+Tsquid:S2209¨"5Change this instance-reference to a static reference.(ß—êş8‡Ú¿è-
+xsquid:S1450b"aRemove the "billSurchargesList" field and declare it as a local variable in the relevant methods.(¥‹†È
+Ysquid:S2209¸"5Change this instance-reference to a static reference.(éù©Ôúÿÿÿÿ8‡Ú¿è-
+_squid:HiddenFieldCheck£	"5Rename "x" which hides the field declared at line 88.(¤êÕÈ8Õ¹”è-
+Ysquid:S2209À"5Change this instance-reference to a static reference.(á¶àäşÿÿÿÿ8‡Ú¿è-
+squid:S1450c"aRemove the "accountBillAuxList" field and declare it as a local variable in the relevant methods.(ŞÑ”Ù8‡ë§ÒØ-
+[squid:UselessImportCheck+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8úšàÒØ-
+Ysquid:S2209ï"5Change this instance-reference to a static reference.(à‡î²ıÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(ÈêÜŒøÿÿÿÿ8‡Ú¿è-
+Gsquid:S1148Ë"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
+Zsquid:S2696Á	"6Make the enclosing method "static" or remove this set.(·Î¬öøÿÿÿÿ8äŞ›”è-
+Tsquid:S2209Î"5Change this instance-reference to a static reference.(Ë²æ»8‡Ú¿è-
+Tsquid:S2209á"5Change this instance-reference to a static reference.(•º×¢8‡Ú¿è-
+Ysquid:S2209˜"5Change this instance-reference to a static reference.(ï©Òÿÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Ò"5Change this instance-reference to a static reference.(Äğ‹–ıÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209“"5Change this instance-reference to a static reference.(ßù±×ùÿÿÿÿ8™îùŒ.
+Ksquid:S3010{"(Remove this assignment of "progressBar".(·Î¬öøÿÿÿÿ8‡ë§ÒØ-
+Tsquid:S2209ÿ"5Change this instance-reference to a static reference.(¸®¶€8™îùŒ.
+Ysquid:S2209Û"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8‡Ú¿è-
+xsquid:S1450^"URemove the "header" field and declare it as a local variable in the relevant methods.(Òïæêüÿÿÿÿ8‡ë§ÒØ-
+Ysquid:S2209Ô"5Change this instance-reference to a static reference.(·•‹àùÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209¡"5Change this instance-reference to a static reference.(ìµ¾¼8‡Ú¿è-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(Éİè©üÿÿÿÿ8™îùŒ.
+Tsquid:S2209ñ"5Change this instance-reference to a static reference.(¼©ñé8‡Ú¿è-
+Tsquid:S2209ğ"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+Tsquid:S2209‚"5Change this instance-reference to a static reference.(ıºƒ8‡Ú¿è-
+Ysquid:S2209‘"5Change this instance-reference to a static reference.(Æñ˜ışÿÿÿÿ8‡Ú¿è-
+dsquid:S1858±"E"toLowerCase" returns a string, there's no need to call "toString()".(å¯æ¡8ËÁš”è-
+Tsquid:S2209²"5Change this instance-reference to a static reference.(¹ôÑ8‡Ú¿è-
+Gsquid:S1659°"#Declare "llSub" on a separate line.(òÑê©ıÿÿÿÿ8¾¨áãæ-
+Ysquid:S2209ë"5Change this instance-reference to a static reference.(µÂÉšùÿÿÿÿ8‡Ú¿è-
+vsquid:S00117¯"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âï¤øÿÿÿÿ8¾¨áãæ-
+dsquid:S1858¸"@"format" returns a string, there's no need to call "toString()".(éù©Ôúÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209Ê"5Change this instance-reference to a static reference.(˜Ì»ã8™îùŒ.
+Tsquid:S2209³"5Change this instance-reference to a static reference.(ÇÄï½8‡Ú¿è-
+osquid:CommentedOutCodeLine¬"<This block of commented-out lines of code should be removed.(ı‘ı¼øÿÿÿÿ8¾¨áãæ-
+Gsquid:S1148§"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
+vsquid:S1450I"_Remove the "billChargeGroups" field and declare it as a local variable in the relevant methods.(ùÀ¡š
+\
+squid:S106˜"9Replace this use of System.out or System.err by a logger.(Í§ãùÿÿÿÿ8¾¨áãæ-
+Ysquid:S2209ë"5Change this instance-reference to a static reference.(«ïÂâÿÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209î"5Change this instance-reference to a static reference.(¹£İàúÿÿÿÿ8™îùŒ.
+Tsquid:S2209–"5Change this instance-reference to a static reference.(¯ù‹µ8‡Ú¿è-
+Tsquid:S2209¨"5Change this instance-reference to a static reference.(ß—êş8‡Ú¿è-
+Gsquid:S1148ì"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Õ¹”è-
+Tsquid:S2209"5Change this instance-reference to a static reference.(šÔ‰æ8‡Ú¿è-
+Tsquid:S2209“"5Change this instance-reference to a static reference.(İ”®8‡Ú¿è-
+Gsquid:S1148á"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ôûõ”è-
+Qsquid:S1481á"2Remove this unused "acctNumLength" local variable.(š£Â€8Ôûõ”è-
+Ysquid:S2209Î"5Change this instance-reference to a static reference.(ª£Øúÿÿÿÿ8‡Ú¿è-
+esquid:S1858²"G"newData" is an array of strings, there's no need to call "toString()".(ˆïÑi8ËÁš”è-
+Ysquid:S2209“"5Change this instance-reference to a static reference.(ä€şûÿÿÿÿ8‡Ú¿è-
+Qsquid:S3398Ú"-Move this method into "PrintDOEOnBackground".(Àâøäüÿÿÿÿ8Õ¹”è-
+…squid:S1192‹	"fDefine a constant instead of duplicating this literal "Printer error encounter\nError Code: " 4 times.(Ï¶¥Á8Õ¹”è-
+Ysquid:S2209£"5Change this instance-reference to a static reference.(¯Å–äşÿÿÿÿ8‡Ú¿è-
+]squid:S1155">Use isEmpty() to check whether the collection is empty or not.(¶šñ8Ôûõ”è-
+Ysquid:S2209€"5Change this instance-reference to a static reference.(¨ ‹÷ıÿÿÿÿ8™îùŒ.
+esquid:S2142‡"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Ôûõ”è-
+xsquid:S1450J"\Remove the "billAddonKwhs" field and declare it as a local variable in the relevant methods.(×±‰üÿÿÿÿ
+Ysquid:S2209©"5Change this instance-reference to a static reference.(¿úÆúÿÿÿÿ8‡Ú¿è-
+Usquid:S3398…"1Move this method into "PrintSummaryOnBackground".(ÏéÏşÿÿÿÿ8Õ¹”è-
+Tsquid:S2209•"5Change this instance-reference to a static reference.(Â†ÿ8‡Ú¿è-
+esquid:S2142­	"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Õ¹”è-
+Tsquid:S2209Œ"5Change this instance-reference to a static reference.(ô‡¸‚8¤”œœŒ.
+Tsquid:S2209’"5Change this instance-reference to a static reference.(Äµ×8™îùŒ.
+dsquid:S1858¾"@"format" returns a string, there's no need to call "toString()".(îÌµÖûÿÿÿÿ8™îùŒ.
+Tsquid:S2209Î"5Change this instance-reference to a static reference.(×Ö®ü8‡Ú¿è-
+dsquid:S1858µ"@"format" returns a string, there's no need to call "toString()".(ªÇ×ıøÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209»"5Change this instance-reference to a static reference.(ê¦Ô°ùÿÿÿÿ8‡Ú¿è-
+Ssquid:S2209»"5Change this instance-reference to a static reference.(ƒû8‡Ú¿è-
+Gsquid:S1148í"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ôûõ”è-
+vsquid:S00117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï˜¹‹üÿÿÿÿ8úšàÒØ-
+Ysquid:S2209Ô"5Change this instance-reference to a static reference.(·•‹àùÿÿÿÿ8‡Ú¿è-
+Ssquid:S2209—"5Change this instance-reference to a static reference.(„¾£8‡Ú¿è-
+\
+squid:S106¹"9Replace this use of System.out or System.err by a logger.(¤üï½ıÿÿÿÿ8™îùŒ.
+Tsquid:S2209Ş"5Change this instance-reference to a static reference.(Ã‰Í8‡Ú¿è-
+Ysquid:S2209Ğ"5Change this instance-reference to a static reference.(şÃ•”üÿÿÿÿ8‡Ú¿è-
+Ysquid:S2274†":Remove this call to "wait" or move it into a "while" loop.(æŠù8Ôûõ”è-
+Tsquid:S2209"5Change this instance-reference to a static reference.(¿ğğ˜8‡Ú¿è-
+Psquid:S5261Ÿ"1Add explicit curly braces to avoid dangling else.(å¥‡8Ôûõ”è-
+Gsquid:S1125Â"(Remove the literal "true" boolean value.(ùñÙƒ8¾¨áãæ-
+Tsquid:S2209Õ"5Change this instance-reference to a static reference.(·Õ¿É8‡Ú¿è-
+hsquid:S1192÷"IDefine a constant instead of duplicating this literal "Printing" 7 times.(‘£•Ô8Õ¹”è-
+Psquid:S5261²"1Add explicit curly braces to avoid dangling else.(å¥‡8Ôûõ”è-
+Tsquid:S2209’"5Change this instance-reference to a static reference.(ÎÄ—ä8‡Ú¿è-
+Tsquid:S2209í"5Change this instance-reference to a static reference.(ä¬£8‡Ú¿è-
+Ysquid:S2209¾"5Change this instance-reference to a static reference.(îÌµÖûÿÿÿÿ8™îùŒ.
+osquid:CommentedOutCodeLine¾"<This block of commented-out lines of code should be removed.(­ÇŸùùÿÿÿÿ8‡ë§ÒØ-
+Tsquid:S2209°"5Change this instance-reference to a static reference.(†Óöÿ8‡Ú¿è-
+Gsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
+Tsquid:S2209¶"5Change this instance-reference to a static reference.(úşµÆ8‡Ú¿è-
+Tsquid:S2209¿"5Change this instance-reference to a static reference.(ßÃñî8‡Ú¿è-
+Š"squid:ClassVariableVisibilityCheckW"WMake progressBar a static final constant or non-public and provide accessors if needed.(§ ’áøÿÿÿÿ
+Ysquid:S2209Û"5Change this instance-reference to a static reference.(™Ùá½ùÿÿÿÿ8‡Ú¿è-
+bsquid:S1155Ğ">Use isEmpty() to check whether the collection is empty or not.(¡µœáøÿÿÿÿ8Õ¹”è-
+Ysquid:S2209‘"5Change this instance-reference to a static reference.(«¼Ï‰üÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209â"5Change this instance-reference to a static reference.(‡åÑ8™îùŒ.
+Ysquid:S2209‹"5Change this instance-reference to a static reference.(¢¨Î³ùÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Í"5Change this instance-reference to a static reference.(–áÎïÿÿÿÿÿ8™îùŒ.
+_squid:S1854¼";Remove this useless assignment to local variable "percent".(ä˜Ìëûÿÿÿÿ8ê¹Ñ×Ø-
+Tsquid:S2209æ"5Change this instance-reference to a static reference.(Ñ°À8‡Ú¿è-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(¾ÅëÄıÿÿÿÿ8™îùŒ.
+_squid:S1858³"@"format" returns a string, there's no need to call "toString()".(ÇÄï½8™îùŒ.
+Tsquid:S2209†"5Change this instance-reference to a static reference.(ÈÃ²8‡Ú¿è-
+gsquid:S1192™"HDefine a constant instead of duplicating this literal "DU_CODE" 4 times.(éÎš8Ôûõ”è-
+jsquid:S3027É"FPut single-quotes around '%' to use the faster "indexOf(char)" method.(¡ò‘Øûÿÿÿÿ8Õ¹”è-
+Ysquid:S2209À"5Change this instance-reference to a static reference.(‚±“Ùşÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209¹"5Change this instance-reference to a static reference.(ßÃñî8‡Ú¿è-
+Gsquid:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ôûõ”è-
+Gsquid:S1148®	"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Õ¹”è-
+Ysquid:S2209Ï"5Change this instance-reference to a static reference.(ö„„Âûÿÿÿÿ8‡Ú¿è-
+‚squid:S1157Š"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Ê¯ôñ8Ôûõ”è-
+Tsquid:S2209°"5Change this instance-reference to a static reference.(¢ç»8™îùŒ.
+qsquid:S3776É	"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(ëÁˆ—8Õ¹”è-
+Zsquid:S3398Ä"6Move this method into "PrintNotificationOnBackground".(ü°¡’üÿÿÿÿ8‡Ú¿è-
+msquid:S1192Ø"IDefine a constant instead of duplicating this literal "PRINTING" 4 times.(¨áã‡úÿÿÿÿ8‡ë§ÒØ-
+Tsquid:S2209×"5Change this instance-reference to a static reference.(ª«£Î8‡Ú¿è-
+Ssquid:S2209»"5Change this instance-reference to a static reference.(ƒû8‡Ú¿è-
+Ysquid:S2209»"5Change this instance-reference to a static reference.(ê¦Ô°ùÿÿÿÿ8‡Ú¿è-
+Gsquid:S1659\")Declare "isSpikeDrop" on a separate line.(Ú¬ºæ8‡ë§ÒØ-
+Gsquid:S1148¤"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Õ¹”è-
+Tsquid:S2209Ş"5Change this instance-reference to a static reference.(Ã‰Í8‡Ú¿è-
+Ysquid:S2209á"5Change this instance-reference to a static reference.(´ˆÿşÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209ó"5Change this instance-reference to a static reference.(Ù›¼8‡Ú¿è-
+Ysquid:S2209Ï"5Change this instance-reference to a static reference.(ûÆé‰ÿÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209ã"5Change this instance-reference to a static reference.(„±µ…8™îùŒ.
+Tsquid:S2209¡"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+msquid:HiddenFieldCheckŞ">Rename "billHeader" which hides the field declared at line 72.(Š¯Ÿúÿÿÿÿ8Õ¹”è-
+Lsquid:S1125Ü"(Remove the literal "true" boolean value.(î“Îáüÿÿÿÿ8¾¨áãæ-
+Tsquid:S2209•"5Change this instance-reference to a static reference.(ÆŠãÑ8‡Ú¿è-
+dsquid:S1854à"@Remove this useless assignment to local variable "chargeAmount".(í¯¹Öúÿÿÿÿ8ø²•¿è-
+Ysquid:S2209©"5Change this instance-reference to a static reference.(¿úÆúÿÿÿÿ8‡Ú¿è-
+dsquid:S1858á"@"format" returns a string, there's no need to call "toString()".(´ˆÿşÿÿÿÿ8‡Ú¿è-
+jsquid:CommentedOutCodeLineô	"<This block of commented-out lines of code should be removed.(áÁÒé8Õ¹”è-
+Tsquid:S2209â"5Change this instance-reference to a static reference.(‡åÑ8‡Ú¿è-
+Ysquid:S2209Ğ"5Change this instance-reference to a static reference.(–²‰²øÿÿÿÿ8‡Ú¿è-
+tsquid:S1192™	"PDefine a constant instead of duplicating this literal "Start Printing " 3 times.(ÿ…Õáüÿÿÿÿ8Õ¹”è-
+Ysquid:S2209˜"5Change this instance-reference to a static reference.(ï©Òÿÿÿÿÿ8‡Ú¿è-
+msquid:HiddenFieldCheck‹">Rename "billHeader" which hides the field declared at line 72.(Š¯Ÿúÿÿÿÿ8Õ¹”è-
+vsquid:S3776É"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(şïñ¾şÿÿÿÿ8Õ¹”è-
+Ysquid:S2209Ñ"5Change this instance-reference to a static reference.(Ûÿ÷¸øÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209ú"5Change this instance-reference to a static reference.(òšçƒ8‡Ú¿è-
+Tsquid:S2209†"5Change this instance-reference to a static reference.(ÁçÄ8‡Ú¿è-
+Tsquid:S2209Ÿ"5Change this instance-reference to a static reference.(¬óß¦8‡Ú¿è-
+Gsquid:S1148€"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ë§ÒØ-
+Ysquid:S2209Ï"5Change this instance-reference to a static reference.(ûÆé‰ÿÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209„"5Change this instance-reference to a static reference.(Æ¿±Éøÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209™"5Change this instance-reference to a static reference.(êõè8‡Ú¿è-
+jsquid:S1192™	"FDefine a constant instead of duplicating this literal "PRINT" 4 times.(ÿ…Õáüÿÿÿÿ8Õ¹”è-
+usquid:S1450a"YRemove the "properties" field and declare it as a local variable in the relevant methods.(¶ŒºŠøÿÿÿÿ
+Tsquid:S2209š"5Change this instance-reference to a static reference.(‰ïÉ8‡Ú¿è-
+Ysquid:S2274›":Remove this call to "wait" or move it into a "while" loop.(æŠù8ê¹Ñ×Ø-
+Ysquid:S2209İ"5Change this instance-reference to a static reference.(Ô›•ùÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209¸"5Change this instance-reference to a static reference.(ìµ¾¼8‡Ú¿è-
+Ysquid:S2209Ğ"5Change this instance-reference to a static reference.(ã‚Ü·úÿÿÿÿ8‡Ú¿è-
+esquid:S2142£"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Õ¹”è-
+Ysquid:S2209ö"5Change this instance-reference to a static reference.(¯Å–äşÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209æ"5Change this instance-reference to a static reference.(Ñ°À8‡Ú¿è-
+Tsquid:S2209¬"5Change this instance-reference to a static reference.(áıÃ¤8‡Ú¿è-
+Tsquid:S2209ğ"5Change this instance-reference to a static reference.(‘Øôô8‡Ú¿è-
+Tsquid:S2209Ï"5Change this instance-reference to a static reference.(×œ«£8‡Ú¿è-
+Tsquid:S2209Ö"5Change this instance-reference to a static reference.(€ò›†8‡Ú¿è-
+ksquid:S1192‹	"LDefine a constant instead of duplicating this literal "\nMessage: " 4 times.(Ï¶¥Á8Õ¹”è-
+Tsquid:S2209—"5Change this instance-reference to a static reference.(‡“Ãİ8‡Ú¿è-
+Ysquid:S2209á"5Change this instance-reference to a static reference.(´ˆÿşÿÿÿÿ8‡Ú¿è-
+dsquid:S1858–"@"format" returns a string, there's no need to call "toString()".(¨ÖÇãúÿÿÿÿ8™îùŒ.
+Tsquid:S2209ğ"5Change this instance-reference to a static reference.(‘Øôô8‡Ú¿è-
+fsquid:S1858°"G"newData" is an array of strings, there's no need to call "toString()".(ÿ À™8™îùŒ.
+Ysquid:S2209”"5Change this instance-reference to a static reference.(‹ú‚©şÿÿÿÿ8¤”œœŒ.
+Gsquid:S1125Â"(Remove the literal "true" boolean value.(ùñÙƒ8¾¨áãæ-
+xsquid:S1450["bRemove the "billGroupCategories" field and declare it as a local variable in the relevant methods.(ÀÉÀ0
+Tsquid:S2209Í"5Change this instance-reference to a static reference.(øÃ¨…8‡Ú¿è-
+Tsquid:S2209ƒ"5Change this instance-reference to a static reference.(ÀĞÁœ8‡Ú¿è-
+wsquid:S3776³"SRefactor this method to reduce its Cognitive Complexity from 242 to the 15 allowed.(¦÷„úÿÿÿÿ8Ôûõ”è-
+Ysquid:S2209ó"5Change this instance-reference to a static reference.(¨‚š¶şÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209§"5Change this instance-reference to a static reference.(òšçƒ8‡Ú¿è-
+Ysquid:S2209à"5Change this instance-reference to a static reference.(òÈØÛıÿÿÿÿ8™îùŒ.
+Tsquid:S2209à"5Change this instance-reference to a static reference.(œ¡©Ã8™îùŒ.
+Tsquid:S2209¶"5Change this instance-reference to a static reference.(úşµÆ8‡Ú¿è-
+Tsquid:S2209¹"5Change this instance-reference to a static reference.(ßÃñî8‡Ú¿è-
+Ysquid:S2209Â"5Change this instance-reference to a static reference.(åó³’ıÿÿÿÿ8¤”œœŒ.
+esquid:S2142œ"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ê¹Ñ×Ø-
+Ysquid:S2209œ"5Change this instance-reference to a static reference.(êÇ­øÿÿÿÿ8‡Ú¿è-
+Ssquid:S2209Æ"5Change this instance-reference to a static reference.(½–-8¤”œœŒ.
+Ssquid:S2209ú"5Change this instance-reference to a static reference.(öõç|8‡Ú¿è-
+Tsquid:S2209Ã"5Change this instance-reference to a static reference.(ô‡¸‚8¤”œœŒ.
+dsquid:S1858À"@"format" returns a string, there's no need to call "toString()".(‚±“Ùşÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209Ÿ"5Change this instance-reference to a static reference.(¬óß¦8‡Ú¿è-
+Ysquid:S2209–"5Change this instance-reference to a static reference.(¨ÖÇãúÿÿÿÿ8‡Ú¿è-
+nsquid:S1192ö"JDefine a constant instead of duplicating this literal "Acct Name" 3 times.(ÈêÜŒøÿÿÿÿ8Ôûõ”è-
+Tsquid:S2209í"5Change this instance-reference to a static reference.(ä¬£8™îùŒ.
+dsquid:S1854ß"@Remove this useless assignment to local variable "chargeAmount".(¨„Â÷ıÿÿÿÿ8ø²•¿è-
+Ysquid:S2209½"5Change this instance-reference to a static reference.(Ïâÿ×ıÿÿÿÿ8‡Ú¿è-
+?squid:S2129®" Remove this "String" constructor(©öæ»8¾¨áãæ-
+Ssquid:S2209"5Change this instance-reference to a static reference.(ã·£!8™îùŒ.
+Tsquid:S2209"5Change this instance-reference to a static reference.(¿ğğ˜8‡Ú¿è-
+Ysquid:S2209Ö"5Change this instance-reference to a static reference.(çÃÉÇüÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209–"5Change this instance-reference to a static reference.(ÆœòÕøÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209Ñ"5Change this instance-reference to a static reference.(ËÕÄ…8‡Ú¿è-
+Tsquid:S2209÷"5Change this instance-reference to a static reference.(•Ò»Æ8™îùŒ.
+bsquid:S1155Õ">Use isEmpty() to check whether the collection is empty or not.(©»İİıÿÿÿÿ8Õ¹”è-
+Tsquid:S2209«"5Change this instance-reference to a static reference.(ßÚû­8™îùŒ.
+X"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(Ã«…œ8‡ë§ÒØ-
+Ysquid:S2209ç"5Change this instance-reference to a static reference.(¢çøÈıÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209«"5Change this instance-reference to a static reference.(ßÚû­8™îùŒ.
+Tsquid:S2209õ"5Change this instance-reference to a static reference.(ÏáØ8™îùŒ.
+Tsquid:S2209³"5Change this instance-reference to a static reference.(é¢¯8‡Ú¿è-
+Ysquid:S2209ï"5Change this instance-reference to a static reference.(à‡î²ıÿÿÿÿ8‡Ú¿è-
+esquid:S2142ë"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Õ¹”è-
+Ysquid:S2209Å"5Change this instance-reference to a static reference.(Ñó§÷úÿÿÿÿ8‡Ú¿è-
+esquid:S2142Î"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Ôûõ”è-
+Tsquid:S2209Ë"5Change this instance-reference to a static reference.(çÎ ì8‡Ú¿è-
+Ysquid:S2209Ó"5Change this instance-reference to a static reference.(æüéÈşÿÿÿÿ8‡Ú¿è-
+Ssquid:S2209"5Change this instance-reference to a static reference.(½–-8¤”œœŒ.
+Tsquid:S2209³"5Change this instance-reference to a static reference.(é¢¯8‡Ú¿è-
+vsquid:S1192ä	"RDefine a constant instead of duplicating this literal "Finished Printing" 6 times.(€á›üùÿÿÿÿ8Õ¹”è-
+Tsquid:S2209¯"5Change this instance-reference to a static reference.(ÆŠãÑ8‡Ú¿è-
+Ysquid:S2209ù"5Change this instance-reference to a static reference.(ğŒèÄùÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209ı"5Change this instance-reference to a static reference.(Ğİ¦åùÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209‘"5Change this instance-reference to a static reference.(ûÄ½Á8™îùŒ.
+Ssquid:S2209Æ"5Change this instance-reference to a static reference.(½–-8‡Ú¿è-
+Tsquid:S2209Ö"5Change this instance-reference to a static reference.(€ò›†8‡Ú¿è-
+Psquid:S5261ò"1Add explicit curly braces to avoid dangling else.(å¥‡8Ôûõ”è-
+Gsquid:S1148õ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ê¹Ñ×Ø-
+dsquid:S1858»"@"format" returns a string, there's no need to call "toString()".(ê¦Ô°ùÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209€"5Change this instance-reference to a static reference.(·¦Í˜ıÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209£"5Change this instance-reference to a static reference.(¯Å–äşÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209İ"5Change this instance-reference to a static reference.(Ô›•ùÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209û"5Change this instance-reference to a static reference.(Âäùµøÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209Ö"5Change this instance-reference to a static reference.(ÑÍÇ‰8‡Ú¿è-
+Usquid:S3398É"1Move this method into "PrintSummaryOnBackground".(şïñ¾şÿÿÿÿ8Õ¹”è-
+Ysquid:S2209û"5Change this instance-reference to a static reference.(Âäùµøÿÿÿÿ8‡Ú¿è-
+Ysquid:S2209Õ"5Change this instance-reference to a static reference.(Æ•Şùıÿÿÿÿ8‡Ú¿è-
+Tsquid:S2209ş"5Change this instance-reference to a static reference.(–ÚÎ¾8‡Ú¿è-
+Tsquid:S1444W"1Make this "public static progressBar" field final(§ ’áøÿÿÿÿ8‡ë§ÒØ-
+Tsquid:S2209Õ"5Change this instance-reference to a static reference.(·Õ¿É8½¤ÖÕ™.

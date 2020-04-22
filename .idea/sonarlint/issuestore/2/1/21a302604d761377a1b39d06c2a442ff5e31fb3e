@@ -1,0 +1,14 @@
+
+Gsquid:S2093¸"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+@squid:S1148Õ"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+qsquid:S1450."URemove the "buffer" field and declare it as a local variable in the relevant methods.(éê½Õþÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºßËïýÿÿÿÿ
+@squid:S1148Ë"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+Hsquid:S1612d",Replace this lambda with a method reference.(£Æü¨üÿÿÿÿ
+fsquid:S2095½"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ÿ‘ôç
+Jsquid:S1135´"2Complete the task associated to this TODO comment.(ÛÔßˆ
+Csquid:S1075µ"&Remove this hard-coded path-delimiter.(ì×³šøÿÿÿÿ
+Rsquid:S1141¸"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+^squid:UselessImportCheck%"5Remove this unused import 'retrofit2.http.Multipart'.(ù«÷åþÿÿÿÿ
+Vsquid:UselessImportCheck "3Remove this unused import 'io.reactivex.Scheduler'.(çší
+@squid:S1148¬"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

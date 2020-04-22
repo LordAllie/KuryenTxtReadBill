@@ -26,7 +26,7 @@ public class BaseDAO extends SQLiteOpenHelper {
 
     public static final String APP_PROPERTY_SETTING = "app_config";
     public static final String SP_KEY_DB_VER = "db_ver";
-    public static final int DB_VERSION = 24; //20 lastVersion 2018-08-13 updated version 2019-06-14 //18 to prod 20 updated 08/13/18
+    public static final int DB_VERSION = 27; //20 lastVersion 2018-08-13 updated version 2019-06-14 //18 to prod 20 updated 08/13/18
     public static String DB_PATH = "";
     public static String DB_NAME = "read&bill.db";
     public SharedPreferences prefs;
@@ -77,6 +77,7 @@ public class BaseDAO extends SQLiteOpenHelper {
                                 dbCon[0].execSQL(databaseChecker.getUpdateQuery());
                                 dbCon[0].setTransactionSuccessful();
                                 dbCon[0].endTransaction();
+                                Log.d("UpdateChecker: ",databaseChecker.getUpdateQuery());
                             }
                             Log.d("UPDATECHECKER" ,databaseChecker.getUpdateQuery());
                         }
@@ -89,7 +90,6 @@ public class BaseDAO extends SQLiteOpenHelper {
             @Override
             public void onError(Throwable e) {
                 Log.d("UPDATECHECKER", e.getMessage());
-                dbCon[0].close();
             }
 
             @Override
@@ -159,7 +159,5 @@ public class BaseDAO extends SQLiteOpenHelper {
         }
         return isUploaded;
     }
-
-
 
 }

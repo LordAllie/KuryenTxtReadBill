@@ -47,11 +47,14 @@ public class RatePerKwChargeDetail {
     @SerializedName("isOffIfLifeliner")
     @Expose
     private String isOffIfLifeliner;
+    @SerializedName("idChargeType")
+    @Expose
+    private int idChargeType;
 
     public RatePerKwChargeDetail() {
     }
 
-    public RatePerKwChargeDetail(int id, String chargeType, String perKwRateName, int printOrder, int rateId, double totalAmount, double fixedAddtl, double adjToLifeline, double adjToSc, String isSubToSurcharge, String isSubjectToLifeLine, String isOffIfSenior, String isOffIfLifeliner) {
+    public RatePerKwChargeDetail(int id, String chargeType, String perKwRateName, int printOrder, int rateId, double totalAmount, double fixedAddtl, double adjToLifeline, double adjToSc, String isSubToSurcharge, String isSubjectToLifeLine, String isOffIfSenior, String isOffIfLifeliner, int idChargeType) {
         this.id = id;
         this.chargeType = chargeType;
         this.perKwRateName = perKwRateName;
@@ -65,6 +68,7 @@ public class RatePerKwChargeDetail {
         this.isSubjectToLifeLine = isSubjectToLifeLine;
         this.isOffIfSenior = isOffIfSenior;
         this.isOffIfLifeliner = isOffIfLifeliner;
+        this.idChargeType=idChargeType;
     }
 
     public int getId() {
@@ -169,5 +173,13 @@ public class RatePerKwChargeDetail {
 
     public void setIsOffIfLifeliner(String isOffIfLifeliner) {
         this.isOffIfLifeliner = isOffIfLifeliner;
+    }
+
+    public int getIdChargeType() {
+        return idChargeType;
+    }
+
+    public void setIdChargeType(int idChargeType) {
+        this.idChargeType = idChargeType;
     }
 }

@@ -1,0 +1,8 @@
+
+nsquid:S1450"WRemove the "retrofit" field and declare it as a local variable in the relevant methods.(ƒ¼ò
+4squid:S1118"Hide this public constructor.(Æ¦
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºßËïıÿÿÿÿ
+€squid:S1488"dImmediately return this expression instead of assigning it to the temporary variable "okHttpClient".(éÛôşşÿÿÿÿ
+˜squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Æ¦
+‰"squid:ClassVariableVisibilityCheck"VMake apiBaseUrl a static final constant or non-public and provide accessors if needed.(Ü¿äáøÿÿÿÿ
+Lsquid:S1444"0Make this "public static apiBaseUrl" field final(Ü¿äáøÿÿÿÿ

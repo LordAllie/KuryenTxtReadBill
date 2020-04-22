@@ -233,7 +233,7 @@ public class AccountListAdapter extends BaseAdapter implements Filterable {
                                 , filterList.get(i).getC09(), filterList.get(i).getC10(), filterList.get(i).getC11(), filterList.get(i).getC12(), filterList.get(i).getCurrentReading(),filterList.get(i).getCurrentConsumption()
                                 , filterList.get(i).getMoAvgConsumption(), filterList.get(i).getStopMeterFixedConsumption(), filterList.get(i).getMeterMultiplier(), filterList.get(i).getIsSeniorCitizen()
                                 , filterList.get(i).getIsActive(), filterList.get(i).getIsRead(), filterList.get(i).getRemarks(), filterList.get(i).getMinimumContractedEnergy(),filterList.get(i).getMinimumContractedDemand()
-                                , filterList.get(i).getArrears(), filterList.get(i).getArrearsAsOf(), filterList.get(i).getIsForAverage(),filterList.get(i).getAutoComputeMode());
+                                , filterList.get(i).getArrears(), filterList.get(i).getArrearsAsOf(), filterList.get(i).getIsForAverage(),filterList.get(i).getAutoComputeMode(),filterList.get(i).getSoaFooter());
                         filters.add(list);
                     }
                 }

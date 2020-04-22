@@ -1,0 +1,7 @@
+
+vsquid:UselessImportCheck"SRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.NewMeterModel'.(‰’ֿ7
+?squid:S1148J"#Use a logger to log this exception.(€ֹװ…‎ÿÿÿÿ
+?squid:S1148,"#Use a logger to log this exception.(€ֹװ…‎ÿÿÿÿ
+jsquid:UselessImportCheck"ARemove this unused import 'org.apache.commons.lang3.ObjectUtils'.(‰תוגüÿÿÿÿ
+msquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’„ט¬
+%squid:RedundantThrowsDeclarationCheck4"iRemove the declaration of thrown exception 'java.lang.NullPointerException' which is a runtime exception.(גûֲ

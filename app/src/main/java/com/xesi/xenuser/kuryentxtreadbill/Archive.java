@@ -45,6 +45,7 @@ import com.xesi.xenuser.kuryentxtreadbill.model.UploadData;
 import com.xesi.xenuser.kuryentxtreadbill.model.bill.BillHeader;
 import com.xesi.xenuser.kuryentxtreadbill.model.bill.UploadBillMaster;
 import com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen;
+import com.xesi.xenuser.kuryentxtreadbill.network.Kuryentxt;
 import com.xesi.xenuser.kuryentxtreadbill.network.NetworkReceiver;
 import com.xesi.xenuser.kuryentxtreadbill.util.PrintReceipt;
 
@@ -137,6 +138,7 @@ public class Archive extends BaseActivity{
         GlobalVariable.billNolist=billHeaderDAO.getAllArchiveBillNo();
         totalBillsCount.setText("Total Archives: " + billsCount);
         recordListAdapter = new RecordListAdapter(this, displayRecords());
+        lvReports.setAdapter(recordListAdapter);
         lvReports.setOnItemClickListener((parent, view, position, id) -> {
             view.setSelected(true);
             String billNo = recordListAdapter.getSelectedItem(position);
@@ -145,7 +147,6 @@ public class Archive extends BaseActivity{
             startActivityForResult(i, 1);
             finish();
         });
-        lvReports.setAdapter(recordListAdapter);
 
         try {
 
@@ -187,6 +188,7 @@ public class Archive extends BaseActivity{
 
     @Override
     public void onBackPressed() {
+        closeDB();
         Intent i = new Intent(getApplicationContext(), Homepage.class);
         startActivity(i);
         finish();
@@ -210,13 +212,34 @@ public class Archive extends BaseActivity{
     }
 
     public void uploadData(View view) {
-        if ((wakelock != null) && (wakelock.isHeld() == false))
-            wakelock.acquire();
-        int newMeterCount = Integer.parseInt(genericDao.getOneField("COUNT(id)","armNewMeter","WHERE isUploaded = 0","","","0"));
-        if (newMeterCount == 0) insertBillUploadMaster();
-        else {
-            UploadNewMeters uploadNewMeters = new UploadNewMeters();
-            uploadNewMeters.execute();
+        totalAccounts = Integer.parseInt(genericDao.getOneField("SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded = 0 AND isArchive = 'Y'","0"));
+        if(totalAccounts>0) {
+            if ((wakelock != null) && (wakelock.isHeld() == false))
+                wakelock.acquire();
+            int newMeterCount = Integer.parseInt(genericDao.getOneField("COUNT(id)", "armNewMeter", "WHERE isUploaded = 0", "", "", "0"));
+            if (newMeterCount == 0) insertBillUploadMaster();
+            else {
+                UploadNewMeters uploadNewMeters = new UploadNewMeters();
+                uploadNewMeters.execute();
+            }
+        }else{
+            msgDialog.showAlertNoCancel(this ,"","No unuploaded bill(s) to upload", value1 -> {
+                if (value1.equals("OK")) {
+//                    msgDialog.showAlert(this ,"Untagged all bills?", value2 -> {
+//                        if (value2.equals("OK")){
+//                            BillHeaderDAO untaggedBHD = new BillHeaderDAO(this);
+//                            untaggedBHD.instantiateDb();
+//                            untaggedBHD.untaggedBills();
+//                            untaggedBHD.close();
+//                            msgDialog.showAlertNoCancel(this ,"","Bill successfully untagged as uploaded", value3 -> {
+//                                if (value3.equals("OK")){}
+////                                    uploadFile();
+//                            });
+//                        }else{}
+////                            uploadFile();
+//                    });
+                }
+            });
         }
     }
 
@@ -248,21 +271,21 @@ public class Archive extends BaseActivity{
     private void insertBillUploadMaster() {
         UploadBillMaster uploadBillMaster = setUploadMasterData();
         if (billRecordCount == 0) {
-            msgDialog.showAlertNoCancel(this ,"","No bill(s) to upload", value1 -> {
+            msgDialog.showAlertNoCancel(this ,"","No unuploaded bill(s) to upload", value1 -> {
                 if (value1.equals("OK")) {
-                    msgDialog.showAlert(this ,"Untagged all bills?", value2 -> {
-                        if (value2.equals("OK")){
-                            BillHeaderDAO untaggedBHD = new BillHeaderDAO(this);
-                            untaggedBHD.instantiateDb();
-                            untaggedBHD.untaggedBills();
-                            untaggedBHD.close();
-                            msgDialog.showAlertNoCancel(this ,"","Bill successfully untagged as uploaded", value3 -> {
-                                if (value3.equals("OK")){}
-//                                    uploadFile();
-                            });
-                        }else{}
-//                            uploadFile();
-                    });
+//                    msgDialog.showAlert(this ,"Untagged all bills?", value2 -> {
+//                        if (value2.equals("OK")){
+//                            BillHeaderDAO untaggedBHD = new BillHeaderDAO(this);
+//                            untaggedBHD.instantiateDb();
+//                            untaggedBHD.untaggedBills();
+//                            untaggedBHD.close();
+//                            msgDialog.showAlertNoCancel(this ,"","Bill successfully untagged as uploaded", value3 -> {
+//                                if (value3.equals("OK")){}
+////                                    uploadFile();
+//                            });
+//                        }else{}
+////                            uploadFile();
+//                    });
                 }
             });
         } else {
@@ -355,6 +378,7 @@ public class Archive extends BaseActivity{
                 } else {
                     showMsgDialog("All meter(s) are successfully uploaded", 0);
                 }
+
             } else {
                 msgDialog.showErrDialog("Failed to upload new meters\n"
                         + retClassGen.getRespMsg() + "\nPlease try again");
@@ -421,7 +445,7 @@ public class Archive extends BaseActivity{
     }
 
     private void uploadBills(int billMasterId) {
-        billJsonList = billHeaderDAO.getAllStringBills();
+        billJsonList = billHeaderDAO.getAllStringArchiveBills();
         uploadData.setBillMasterId(billMasterId);
         uploadData.setBills(billJsonList);
         observables.uploadBills(uploadData).subscribe(new Observer<String>() {
@@ -432,8 +456,8 @@ public class Archive extends BaseActivity{
             @Override
             public void onNext(String s) {
                 dialog.show();
-                editor.putString("ulDateTime", df.format(new Date()));
-                editor.commit();
+//                editor.putString("ulDateTime", df.format(new Date()));
+//                editor.commit();
                 saveLogsToDB("ulf", Long.parseLong(sharedPref.getString("authID", "0")),
                         Long.parseLong(idRDM));
                 if (s.equals("OK")) {
@@ -444,16 +468,19 @@ public class Archive extends BaseActivity{
                     }while(i< GlobalVariable.billNolist.size());
 //                    billHeaderDAO.updateAll();
                     dialog.dismiss();
-                    int billLeft = Integer.parseInt(genericDao.getOneField("COUNT(_id)","armBillHeader","WHERE isUploaded =","0","","0"));
+                    int billLeft = Integer.parseInt(genericDao.getOneField(" SELECT COUNT(_id) FROM armBillHeader WHERE isUploaded =0 AND isArchive='Y'","0"));
                     if(billLeft<billRecordCount){
-                        msgDialog.showReupload(Archive.this,"Successfully uploaded\n" + billLeft+"/"+billRecordCount + " records",value1 -> {
+                        msgDialog.showReupload(Archive.this,"Successfully uploaded\n" +billRecordCount + " records",value1 -> {
                             if (value1.equals("OK"))
                                 insertBillUploadMaster();
                         });
                     }
-                    msgDialog.showAlertNoCancel(Archive.this, "Upload bill(s)","Successfully uploaded\n" + billLeft+"/"+billRecordCount + " records", value1 -> {
-                        if (value1.equals("OK")){}
-//                            uploadFile();
+                    msgDialog.showAlertNoCancel(Archive.this, "Upload bill(s)","Successfully uploaded\n" +billRecordCount + " records", value1 -> {
+                        if (value1.equals("OK")) {
+                            Intent intent = new Intent(Archive.this.getApplicationContext(), Archive.class);
+                            Archive.this.startActivity(intent);
+                            finish();
+                        }
                     });
                 } else {
                     msgDialog.showErrDialog("Failed to upload\n" + billRecordCount + " records");
@@ -471,8 +498,8 @@ public class Archive extends BaseActivity{
 
             @Override
             public void onComplete() {
-                editor.putString("ulDateTime", df.format(new Date()));
-                editor.commit();
+//                editor.putString("ulDateTime", df.format(new Date()));
+//                editor.commit();
             }
         });
     }
@@ -513,4 +540,25 @@ public class Archive extends BaseActivity{
         });
     }
 
+    @Override
+    protected void onStop() {
+        closeDB();
+        super.onStop();
+    }
+
+    private void closeDB() {
+        genericDao = new GenericDao(this);
+        billHeaderDAO = new BillHeaderDAO(this);
+        billHeaderDAO.instantiateDb();
+        newMeterDao = new NewMeterDao(this);
+        logDao = new LogDao(this);
+    }
+
+    @Override
+    public void onPause() {
+        closeDB();
+        super.onPause();
+        if (progressUpload != null)
+            progressUpload.dismiss();
+    }
 }

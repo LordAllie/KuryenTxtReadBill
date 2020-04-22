@@ -1,0 +1,9 @@
+
+psquid:S1450"YRemove the "sharedPref" field and declare it as a local variable in the relevant methods.(æ²Ïê
+qsquid:S1450"ZRemove the "logsAdapter" field and declare it as a local variable in the relevant methods.(¯ÑÊ®
+^squid:UselessImportCheck"5Remove this unused import 'android.widget.ImageView'.(ú¯ëàüÿÿÿÿ
+š%squid:RedundantThrowsDeclarationCheck "iRemove the declaration of thrown exception 'java.lang.NullPointerException' which is a runtime exception.(¿ý’É
+{squid:S1450"_Remove the "headerFooterInfo" field and declare it as a local variable in the relevant methods.(Ê•Å’ùÿÿÿÿ
+Zsquid:S1155+">Use isEmpty() to check whether the collection is empty or not.(þŸ²“þÿÿÿÿ
+Esquid:S1068".Remove this unused "sharedPref" private field.(æ²Ïê
+Ÿ%squid:RedundantThrowsDeclarationCheck0"iRemove the declaration of thrown exception 'java.lang.NullPointerException' which is a runtime exception.(°®ž‰úÿÿÿÿ

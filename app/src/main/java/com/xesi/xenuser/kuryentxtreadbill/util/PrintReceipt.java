@@ -32,6 +32,7 @@ import com.xesi.xenuser.kuryentxtreadbill.model.download.AccountBillAux;
 import com.xesi.xenuser.kuryentxtreadbill.model.download.AccountModelV2;
 import com.xesi.xenuser.kuryentxtreadbill.model.download.DUProperty;
 
+
 import org.apache.commons.lang3.text.WordUtils;
 
 import java.math.BigDecimal;
@@ -79,6 +80,7 @@ public class PrintReceipt {
     private DecimalFormat dformatter = new DecimalFormat("#,##0.00");
     private SimpleDateFormat dueDateFormat = new SimpleDateFormat("MMM dd, yyyy");
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    private SimpleDateFormat billMonthFormat = new SimpleDateFormat("MMyyyy");
     private DUPropertyDAO duPropertyDAO;
     private MsgDialog msgDialog;
     private int counter = 0;
@@ -272,12 +274,17 @@ public class PrintReceipt {
             String newDateValidity = formatHelper.getBillValidityDate(billHeader.getDueDate(), daysOfValidity);
             String mobileNo = "9171234567";
             String totalAmountDue = new BigDecimal(billHeader.getTotalAmountDue()).setScale(2, BigDecimal.ROUND_HALF_UP).toString().replace(".", "");
+            String acctNum = billHeader.getOldAccountNo();
+            String acctName = formatHelper.FormatActName(billHeader.getAcctName());
+            String billMonth  = formatHelper.billMothFormat(billHeader.getBillingMonth());
+            System.out.println(acctNum+"~"+acctName+"~"+billMonth);
             String sToQRCode = duPropertyDAO.getPropertyValue("DU_CODE") + ","
                     + billHeader.getBillNo() + "," + newDueDateFormat + ","
-                    + totalAmountDue + "," + mobileNo + "," + newDateValidity;
+                    + totalAmountDue + "," + mobileNo + "," + newDateValidity + "," +acctNum + "," + acctName + "," +billMonth;
             formatHelper.encodeAsBitmap(sToQRCode);
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
@@ -353,7 +360,7 @@ public class PrintReceipt {
                                         if(detail.getChargeAmount().compareTo(BigDecimal.ZERO) == 0)
                                             printChargeDetail(detail.getChargeName(),"",UniversalHelper.dformatter.format(Double.parseDouble(chargeTotal)));
                                         else
-                                            printChargeDetail(detail.getChargeName(),UniversalHelper.dformat.format(chargeAmount),UniversalHelper.dformatter.format(Double.parseDouble(chargeTotal)));
+                                            printChargeDetail(detail.getChargeName(),UniversalHelper.dformat.format(detail.getChargeAmount()),UniversalHelper.dformatter.format(Double.parseDouble(detail.getChargeTotal().toString())));
                                     }
                                 } else {
                                     //changes
@@ -616,6 +623,7 @@ public class PrintReceipt {
                     }
                 }
             }
+
             printTextWithDelay(formatHelper.padRight("kWh Used", 17) + formatHelper.padLeft(UniversalHelper.df.format(header.getTotalConsumption()).toString(), 15));
             printTextWithDelay("--------------------------------");
             printTextWithDelay(formatHelper.padRight("Period from", 17) + formatHelper.padLeft(header.getPeriodFrom(), 15));
@@ -742,8 +750,6 @@ public class PrintReceipt {
                     printTextWithDelay(formatHelper.padLeftDynamic(map.get("FOOTER_LINE_3"),32), Integer.parseInt(getProperty(map.get("FS_FOOTERLN3"), "1")));
             }
 
-
-
             if (getProperty(map.get("IS_PRINT_BAR_CODE"), "N").equals("Y")) {
                 printTextWithDelay(formatHelper.padLeftDynamic(" "  , 32));
                 generateBarcode(header.getOldAccountNo());
@@ -790,9 +796,42 @@ public class PrintReceipt {
                 }
             }
             print.printEndLine();
+
+            if(account.getSoaFooter()!=null || !account.getSoaFooter().equals("NO_VALUE") || !account.getSoaFooter().equals("")) {
+                printSoaFooter(account.getSoaFooter());
+                print.printEndLine();
+            }
         }
         status = checkPaperStatus();
         return status;
+    }
+
+    private void printSoaFooter(String data){
+        String[] arrayData = data.split("\n");
+        int i=0;
+        do {
+            System.out.println("arrayData: " + arrayData[i].length());
+            if(arrayData[i].toString().length()>1) {
+                String[] newData = arrayData[i].split("~");
+                int fontSize = Integer.parseInt(newData[0].toString());
+                String alignment = newData[1].toLowerCase().toString();
+                String value = newData[2].toString().replace("\r", "");
+                int legnth = 0;
+                if (fontSize == 1) {
+                    legnth = 32;
+                } else if (fontSize == 2) {
+                    legnth = 16;
+                }
+                System.out.println("alignment: " + alignment);
+                System.out.println("fontsize: " + fontSize);
+                System.out.println("value: " + value);
+                printTextWithDelay(formatHelper.alignment(alignment, value, legnth), fontSize);
+            }
+            else {
+                printTextWithDelay("");
+            }
+            i++;
+        }while (arrayData.length>i);
     }
 
     private void printLabelSOA(int count,String soaLabel, int fontSize, int lengthParam){

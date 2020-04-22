@@ -1,0 +1,4 @@
+
+Fsquid:S1068"*Remove this unused "retVal" private field.(ÿנפֿרÿÿÿÿ
+Usquid:UselessImportCheck"1Remove this unused import 'java.math.BigDecimal'.(ךך
+lsquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ׁA

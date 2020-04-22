@@ -169,7 +169,7 @@ public class BillHeaderDAO extends BaseDAO {
         try {
             ContentValues values = new ContentValues();
             values.put("isUploaded", "1");
-            mcfDB.update(TABLE_NAME, values, null, null);
+            mcfDB.update(TABLE_NAME, values, "isArchive = ?", new String[]{"N"});
             isUploaded = true;
 
         } catch (Exception e) {
@@ -375,7 +375,32 @@ public class BillHeaderDAO extends BaseDAO {
 
         String query = "SELECT billNo, billJson " +
                 " FROM " + TABLE_NAME +
-                " WHERE isUploaded = 0";
+                " WHERE isUploaded = 0 AND isArchive = 'N'";
+        try {
+            Cursor cursor = mcfDB.rawQuery(query, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    StringBill bill = new StringBill();
+                    bill.setBillNo(cursor.getString(0));
+                    bill.setBillJson(cursor.getString(1));
+                    billJsonList.add(bill);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            mcfDB.close();
+        }
+        return billJsonList;
+    }
+
+    public List<StringBill> getAllStringArchiveBills() {
+        List<StringBill> billJsonList = new ArrayList<>();
+        mcfDB = this.getWritableDatabase();
+
+        String query = "SELECT billNo, billJson " +
+                " FROM " + TABLE_NAME +
+                " WHERE isUploaded = 0 AND isArchive = 'Y'";
         try {
             Cursor cursor = mcfDB.rawQuery(query, null);
             if (cursor.moveToFirst()) {
@@ -427,7 +452,7 @@ public class BillHeaderDAO extends BaseDAO {
 
         String query = "SELECT billNo " +
                 " FROM " + TABLE_NAME +
-                " WHERE isUploaded = 0";
+                " WHERE isUploaded =  0 AND isArchive = 'N'";
         try {
             Cursor cursor = mcfDB.rawQuery(query, null);
             if (cursor.moveToFirst()) {

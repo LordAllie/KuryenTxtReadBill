@@ -1,0 +1,18 @@
+
+Ksquid:S1066X"/Merge this if statement with the enclosing one.(á‘”úÿÿÿÿ
+hsquid:UselessImportCheck"DRemove this unused import 'android.database.sqlite.SQLiteException'.(‡è‡İ
+?squid:S11482"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S1148:"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S1148r"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S1148x"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Œsquid:S1845T"uRename method "createDataBase" to prevent any misunderstanding/clash with method "createDatabase" defined on line 28.(¯²¤Æ
+wsquid:S3252E"[Use static access with "com.xesi.xenuser.kuryentxtreadbill.dao.base.BaseDAO" for "DB_NAME".(ú“ºøÿÿÿÿ
+Qsquid:S2209E"5Change this instance-reference to a static reference.(ú“ºøÿÿÿÿ
+wsquid:S3252K"[Use static access with "com.xesi.xenuser.kuryentxtreadbill.dao.base.BaseDAO" for "DB_PATH".(òÊÁıøÿÿÿÿ
+Qsquid:S2209K"5Change this instance-reference to a static reference.(òÊÁıøÿÿÿÿ
+wsquid:S3252c"[Use static access with "com.xesi.xenuser.kuryentxtreadbill.dao.base.BaseDAO" for "DB_NAME".(ÎËÎ¤ûÿÿÿÿ
+Qsquid:S2209c"5Change this instance-reference to a static reference.(ÎËÎ¤ûÿÿÿÿ
+rsquid:S3252e"[Use static access with "com.xesi.xenuser.kuryentxtreadbill.dao.base.BaseDAO" for "DB_PATH".(Ò™×¯
+Lsquid:S2209e"5Change this instance-reference to a static reference.(Ò™×¯
+Fsquid:S2093a"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ

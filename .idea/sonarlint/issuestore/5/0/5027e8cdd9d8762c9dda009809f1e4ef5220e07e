@@ -1,0 +1,8 @@
+
+Fsquid:S1148G"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8÷¯Ó˜ø-
+Fsquid:S1148X"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ü„ø-
+ssquid:UselessImportCheck"CRemove this unused import 'android.database.sqlite.SQLiteDatabase'.(ãµèÈùÿÿÿÿ8÷¯Ó˜ø-
+ysquid:S00116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å­Õ‘üÿÿÿÿ8–Ô®˜ø-
+Fsquid:S1148-"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™î¾˜ø-
+ysquid:UselessImportCheck
+"NRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.BillJson'.(‹û²¨8÷¯Ó˜ø-

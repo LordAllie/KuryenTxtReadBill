@@ -1,60 +1,64 @@
 
-„squid:UselessImportCheck"[Remove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.bill.UploadBillMaster'.(÷„¤şÿÿÿÿ
-_squid:S1192B"HDefine a constant instead of duplicating this literal "prevRdg" 4 times.(¯·òà
-^squid:S1192?"GDefine a constant instead of duplicating this literal "acctNo" 3 times.(‡ü¢È
-dsquid:S1192J"MDefine a constant instead of duplicating this literal "billingMonth" 3 times.(ù±Éé
-@squid:S1148¬"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-]squid:S1192N"FDefine a constant instead of duplicating this literal "devId" 3 times.(ÒÖÛ¿
-hsquid:S1192C"LDefine a constant instead of duplicating this literal "consumption" 4 times.(¨ªÂÿÿÿÿÿ
-@squid:S1148´"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-fsquid:S1192L"JDefine a constant instead of duplicating this literal "discoDate" 3 times.(Î†ùÅşÿÿÿÿ
-@squid:S1148…"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-msquid:S00116$"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¥…÷
-asquid:S1192:"JDefine a constant instead of duplicating this literal "oldAcctNo" 3 times.(ĞÚÁ
-csquid:S1192@"MDefine a constant instead of duplicating this literal "consumerType" 3 times.(¼˜›
-csquid:S1192%"GDefine a constant instead of duplicating this literal "billNo" 5 times.(ƒØ™¡ÿÿÿÿÿ
+bsquid:S1192G"KDefine a constant instead of duplicating this literal "multiplier" 3 times.(‚ÀãÊ
+@squid:S1148°"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+esquid:S1192H"IDefine a constant instead of duplicating this literal "coreloss" 3 times.(ëàüœøÿÿÿÿ
+^squid:S1192D"GDefine a constant instead of duplicating this literal "curRdg" 4 times.(Ö·ºó
+@squid:S1148Ç"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148‹"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148”"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148í"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Gsquid:S1148§"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÌÂŞ—ø-
+msquid:S1192J"QDefine a constant instead of duplicating this literal "totalConsumption" 4 times.(ìçº¿ûÿÿÿÿ
+`squid:S1192"HDefine a constant instead of duplicating this literal " FROM " 10 times.(…Ğë¥
+@squid:S1148†"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+}squid:S1192ø"YDefine a constant instead of duplicating this literal "SELECT billNo, billJson " 3 times.(Ë¤Öçúÿÿÿÿ8ÌÂŞ—ø-
 squid:UselessImportCheck"XRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.apiHandler.MyObservables'.(û†ú£ùÿÿÿÿ
-Hsquid:S1153^"1Directly append the argument of String.valueOf().(î™õå
-@squid:S1148Ş"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-esquid:S1192E"IDefine a constant instead of duplicating this literal "coreloss" 3 times.(ëàüœøÿÿÿÿ
-@squid:S1148›"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-@squid:S1148Ù"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-esquid:S1192I"IDefine a constant instead of duplicating this literal "periodTo" 3 times.(İ²²ïùÿÿÿÿ
-bsquid:S1192<"FDefine a constant instead of duplicating this literal "seqNo" 3 times.(ãõèÕûÿÿÿÿ
-nsquid:S00116%"QRename this field "BILLNO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒØ™¡ÿÿÿÿÿ
+@squid:S1148ê"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148İ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148ş"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+fsquid:S1192@"JDefine a constant instead of duplicating this literal "accntName" 3 times.(ÁŒğåøÿÿÿÿ
+Hsquid:S1153b"1Directly append the argument of String.valueOf().(î™õå
+bsquid:S1192o"FDefine a constant instead of duplicating this literal " =  ?" 5 times.(ïä«³ûÿÿÿÿ
+?squid:S1148t"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+_squid:S1192N"HDefine a constant instead of duplicating this literal "dueDate" 3 times.(ö¿µ
+dsquid:S1192<"HDefine a constant instead of duplicating this literal "runDate" 3 times.(ÛàÆ£üÿÿÿÿ
+esquid:S1192L"IDefine a constant instead of duplicating this literal "periodTo" 3 times.(İ²²ïùÿÿÿÿ
+_squid:S1192S"HDefine a constant instead of duplicating this literal "idRoute" 3 times.(·»çş
+esquid:S1192I"NDefine a constant instead of duplicating this literal "addonKwhTotal" 3 times.(ãÚ¥
+^squid:S1192B"GDefine a constant instead of duplicating this literal "acctNo" 3 times.(‡ü¢È
+asquid:S1192="JDefine a constant instead of duplicating this literal "oldAcctNo" 3 times.(ĞÚÁ
 „squid:UselessImportCheck"[Remove this unused import 'com.xesi.xenuser.kuryentxtreadbill.apiHandler.ServiceGenerator'.(ª§“ÿÿÿÿÿ
-_squid:S1192K"HDefine a constant instead of duplicating this literal "dueDate" 3 times.(ö¿µ
-fsquid:S1192="JDefine a constant instead of duplicating this literal "accntName" 3 times.(ÁŒğåøÿÿÿÿ
-fsquid:S1192V"JDefine a constant instead of duplicating this literal "editCount" 4 times.(ø¥¼—şÿÿÿÿ
-?squid:S1148p"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-_squid:S1192P"HDefine a constant instead of duplicating this literal "idRoute" 3 times.(·»çş
-@squid:S1148î"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-gsquid:S1192H"KDefine a constant instead of duplicating this literal "periodFrom" 3 times.(û×ãŸøÿÿÿÿ
-?squid:S1185)"(Remove this method to simply inherit it.(ùš‰
-ƒsquid:UselessImportCheck"ZRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen'.(Øñôûÿÿÿÿ
-[squid:UselessImportCheck"2Remove this unused import 'io.reactivex.Observer'.(ÛËÿÅÿÿÿÿÿ
-@squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-@squid:S1148È"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-xsquid:S1450#"\Remove the "contentValues" field and declare it as a local variable in the relevant methods.(ÓÏ•üÿÿÿÿ
-bsquid:S1192k"FDefine a constant instead of duplicating this literal " =  ?" 5 times.(ïä«³ûÿÿÿÿ
-msquid:S1192G"QDefine a constant instead of duplicating this literal "totalConsumption" 4 times.(ìçº¿ûÿÿÿÿ
-@squid:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-^squid:S1192A"GDefine a constant instead of duplicating this literal "curRdg" 4 times.(Ö·ºó
-dsquid:UselessImportCheck"@Remove this unused import 'io.reactivex.disposables.Disposable'.(¶µ¾®
-fsquid:S1192;"JDefine a constant instead of duplicating this literal "routeCode" 3 times.(Çì“äúÿÿÿÿ
-osquid:S00117ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùŞü„øÿÿÿÿ
-bsquid:S1192D"KDefine a constant instead of duplicating this literal "multiplier" 3 times.(‚ÀãÊ
-Wsquid:S1161’":Add the "@Override" annotation above this method signature(Ä‚—”ıÿÿÿÿ
-@squid:S1148‡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-csquid:S1192M"GDefine a constant instead of duplicating this literal "reader" 3 times.(Şİ±Àüÿÿÿÿ
-@squid:S1148Ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-dsquid:S1192O"HDefine a constant instead of duplicating this literal "remarks" 4 times.(„ºûÿÿÿÿ
-_squid:S1192ı"GDefine a constant instead of duplicating this literal " FROM " 8 times.(…Ğë¥
-@squid:S1148ñ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-esquid:S1192F"NDefine a constant instead of duplicating this literal "addonKwhTotal" 3 times.(ãÚ¥
-@squid:S1148è"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-=squid:S1170%"!Make this final field static too.(ƒØ™¡ÿÿÿÿÿ
+„squid:UselessImportCheck"[Remove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.bill.UploadBillMaster'.(÷„¤şÿÿÿÿ
+Gsquid:S1148×"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÌÂŞ—ø-
+dsquid:S1192M"MDefine a constant instead of duplicating this literal "billingMonth" 3 times.(ù±Éé
+bsquid:S1192?"FDefine a constant instead of duplicating this literal "seqNo" 3 times.(ãõèÕûÿÿÿÿ
+fsquid:S1192>"JDefine a constant instead of duplicating this literal "routeCode" 3 times.(Çì“äúÿÿÿÿ
+Wsquid:S1161È":Add the "@Override" annotation above this method signature(Ä‚—”ıÿÿÿÿ
+gsquid:S1192K"KDefine a constant instead of duplicating this literal "periodFrom" 3 times.(û×ãŸøÿÿÿÿ
+xsquid:S1450&"\Remove the "contentValues" field and declare it as a local variable in the relevant methods.(ÓÏ•üÿÿÿÿ
+fsquid:S1192Y"JDefine a constant instead of duplicating this literal "editCount" 4 times.(ø¥¼—şÿÿÿÿ
+csquid:S1192P"GDefine a constant instead of duplicating this literal "reader" 3 times.(Şİ±Àüÿÿÿÿ
+csquid:S1192("GDefine a constant instead of duplicating this literal "billNo" 5 times.(ƒØ™¡ÿÿÿÿÿ
 ~squid:UselessImportCheck"URemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.interfaces.APIHandler'.(¯œŞûÿÿÿÿ
-@squid:S1148ˆ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-dsquid:S1192>"HDefine a constant instead of duplicating this literal "meterNo" 3 times.(àÿ©ıÿÿÿÿ
-dsquid:S11929"HDefine a constant instead of duplicating this literal "runDate" 3 times.(ÛàÆ£üÿÿÿÿ
+@squid:S1148ò"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148Ÿ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+dsquid:S1192A"HDefine a constant instead of duplicating this literal "meterNo" 3 times.(àÿ©ıÿÿÿÿ
+[squid:UselessImportCheck"2Remove this unused import 'io.reactivex.Observer'.(ÛËÿÅÿÿÿÿÿ
+]squid:S1192Q"FDefine a constant instead of duplicating this literal "devId" 3 times.(ÒÖÛ¿
+_squid:S1192E"HDefine a constant instead of duplicating this literal "prevRdg" 4 times.(¯·òà
+fsquid:S1192O"JDefine a constant instead of duplicating this literal "discoDate" 3 times.(Î†ùÅşÿÿÿÿ
+hsquid:S1192F"LDefine a constant instead of duplicating this literal "consumption" 4 times.(¨ªÂÿÿÿÿÿ
+@squid:S1148‰"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+nsquid:S00116("QRename this field "BILLNO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒØ™¡ÿÿÿÿÿ
+osquid:S00117ı"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùŞü„øÿÿÿÿ
+Gsquid:S1148¾"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÌÂŞ—ø-
+=squid:S1170("!Make this final field static too.(ƒØ™¡ÿÿÿÿÿ
+ƒsquid:UselessImportCheck"ZRemove this unused import 'com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen'.(Øñôûÿÿÿÿ
+dsquid:S1192R"HDefine a constant instead of duplicating this literal "remarks" 4 times.(„ºûÿÿÿÿ
+csquid:S1192C"MDefine a constant instead of duplicating this literal "consumerType" 3 times.(¼˜›
+@squid:S1148Ò"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S1185,"(Remove this method to simply inherit it.(ùš‰
+@squid:S1148¹"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+msquid:S00116'"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¥…÷
+dsquid:UselessImportCheck"@Remove this unused import 'io.reactivex.disposables.Disposable'.(¶µ¾®

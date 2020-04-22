@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
@@ -180,7 +181,24 @@ public class UniversalHelper {
             outputStream = context.openFileOutput(context.getString(R.string.qrcode_filename), Context.MODE_PRIVATE);
             outputStream.write(buffer.array());
             outputStream.close();
+            saveQR(bitmap);
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveQR(Bitmap bmp){
+        String filename = "qr.png";
+        File sd = Environment.getExternalStorageDirectory();
+        File dest = new File(sd, filename);
+
+        Bitmap bitmap = bmp;
+        try {
+            FileOutputStream out = new FileOutputStream(dest);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 90, out);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -435,4 +453,49 @@ public class UniversalHelper {
         return originalString;
     }
 
+    public static String billMothFormat(String month){
+        String billMonth="";
+        String y = billMonth=month.substring(0,4);
+        String m = billMonth=month.substring(4,6);
+
+        billMonth = m+""+y;
+
+        return billMonth;
+    }
+
+    public static String FormatActName(String acctName){
+        String newName="";
+        newName = acctName.replace(",","");
+        return newName;
+    }
+
+    public static String alignment(String align,String data,int legnth){
+        String padCharacter = " ";
+        String space = "";
+        int counter = 0;
+        int len = data.length();
+
+        if(align.equals("c")){
+            if (len < legnth) {
+                int numOfSpace = (legnth - len) / 2;
+                while (counter <= numOfSpace) {
+                    space = space + padCharacter;
+                    counter++;
+                }
+                data = space + data;
+
+            }
+        }else if(align.equals("r")){
+            if (len < legnth) {
+                int numOfSpace = (legnth - len);
+                while (counter < numOfSpace) {
+                    space = space + padCharacter;
+                    counter++;
+                }
+                data = space + data;
+
+            }
+        }
+        return data;
+    }
 }

@@ -13,6 +13,7 @@ import com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
@@ -25,6 +26,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 /**
  * Created by xenuser on 2/2/2017.
@@ -78,6 +80,9 @@ public interface APIHandler {
 
     @GET("{urlPath}")
     Call<RetClassGen> downloadData(@Path("urlPath") String urlPath);
+
+    @GET("{urlPath}")
+    Call<RetClassGen> downloadData(@Path("urlPath") String urlPath,@QueryMap(encoded = true) Map<String, String> params);
 
     @GET("{urlPath}/{idRdm}")
     Call<RetClassGen> downloadData(@Path("urlPath") String urlPath, @Path("idRdm") long idRdm);

@@ -11,6 +11,8 @@ import com.xesi.xenuser.kuryentxtreadbill.model.RdmModel;
 import com.xesi.xenuser.kuryentxtreadbill.model.download.RetClassGen;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -87,6 +89,19 @@ public class RetrofitHandler {
     public RetClassGen downloadData(String urlPath) {
         RetClassGen retClassGen = new RetClassGen();
         Call<RetClassGen> call = handler.downloadData(urlPath);
+        try {
+            retClassGen = call.execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return retClassGen;
+    }
+
+    public RetClassGen downloadVersionData(String urlPath, String version) {
+        RetClassGen retClassGen = new RetClassGen();
+        final Map<String, String> params = new HashMap<>();
+        params.put("version",version);
+        Call<RetClassGen> call = handler.downloadData(urlPath,params);
         try {
             retClassGen = call.execute().body();
         } catch (IOException e) {
